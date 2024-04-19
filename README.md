@@ -1,5 +1,4 @@
-[![Tests](https://github.com/Mat-O-Lab/ckanext-matolabtheme/workflows/Tests/badge.svg?branch=main)](https://github.com/Mat-O-Lab/ckanext-matolabtheme/actions)
-
+[![Tests](https://github.com/Mat-O-Lab/ckanext-matolabtheme/actions/workflows/test.yml/badge.svg)](https://github.com/Mat-O-Lab/ckanext-matolabtheme/actions/workflows/test.yml)
 # ckanext-matolabtheme
 
 **TODO:** Put a description of your extension here:  What does it do? What features does it have? Consider including some screenshots or embedding a video!
