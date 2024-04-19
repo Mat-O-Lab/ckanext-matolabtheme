@@ -50,6 +50,7 @@ To temporary patch the CKAN configuration for the duration of a test you can use
 
 import pytest
 import ckanext.matolabtheme.plugin as plugin
+from ckan.plugins.core import plugin_loaded
 
 
 @pytest.mark.ckan_config("ckan.plugins", "matolabtheme")
