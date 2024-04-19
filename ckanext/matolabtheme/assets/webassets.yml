@@ -1,0 +1,14 @@
+# matolabtheme-js:
+#   filter: rjsmin
+#   output: ckanext-matolabtheme/%(version)s-matolabtheme.js
+#   contents:
+#     - js/matolabtheme.js
+#   extra:
+#     preload:
+#       - base/main
+
+# matolabtheme-css:
+#   filter: cssrewrite
+#   output: ckanext-matolabtheme/%(version)s-matolabtheme.css
+#   contents:
+#     - css/matolabtheme.css
