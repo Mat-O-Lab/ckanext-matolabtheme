@@ -43,11 +43,7 @@ jobs:
       CKAN_DATASTORE_READ_URL: postgresql://datastore_read:pass@postgres/datastore_test
       CKAN_SOLR_URL: http://solr:8983/solr/ckan
       CKAN_REDIS_URL: redis://redis:6379/1
-      CKANINI__CKANEXT__FUSEKI__URL: http://fuseki:3030/
-      CKANINI__CKANEXT__FUSEKI__USERNAME: admin
-      CKANINI__CKANEXT__FUSEKI__PASSWORD: admin
-      CKANINI__CKANEXT__FUSEKI__FORMATS: turtle text/turtle n3 nt hext trig longturtle xml json-ld ld+json jsonld
-
+      
     steps:
     - uses: actions/checkout@v3
     - name: Install requirements
@@ -63,7 +59,7 @@ jobs:
       run: |
         ckan -c test.ini db init
     - name: Run tests
-      run: pytest --ckan-ini=test.ini --cov=ckanext.fuseki --disable-warnings ckanext/fuseki || ([ $? = 5 ] && exit 0 || exit $?)
+      run: pytest --ckan-ini=test.ini --cov=ckanext.matolabtheme --disable-warnings ckanext/matolabtheme || ([ $? = 5 ] && exit 0 || exit $?)
     - name: Upload coverage report to codecov
       uses: codecov/codecov-action@v1
       with:
