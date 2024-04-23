@@ -1,0 +1,123 @@
+{% set dataset_type = h.default_package_type() %}
+
+{% block header_wrapper %} 
+{% block header_account %}
+<nav class="navbar navbar-expand-lg navbar-light bg-dark border-bottom border-dark">
+  <div class="container-fluid">
+    {% block header_logo %}
+      {% if g.site_logo %}
+      <a class="navbar-brand" href="{{ h.url_for('home.index') }}">
+        <img src="{{ h.url_for_static_or_external(g.site_logo) }}" alt="{{ g.site_title }}"
+          title="{{ g.site_title }}" height="30"/>
+      </a>
+      {% else %}
+      <h1 class="navbar-brand">
+        <a href="{{ h.url_for('home.index') }}">{{ g.site_title }}</a>
+      </h1>
+      {% endif %}
+    {% endblock %}
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="nav navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Navigation
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          {% block header_site_navigation %}
+              {% block header_site_navigation_tabs %}
+                {% set org_type = h.default_group_type('organization') %}
+                {% set group_type = h.default_group_type('group') %}
+
+                {{ h.build_nav_main(
+                  (dataset_type ~ '.search', h.humanize_entity_type('package', dataset_type, 'main nav') or _('Datasets'), ["dataset", "resource"]),
+                  (org_type ~ '.index',
+                    h.humanize_entity_type('organization', org_type, 'main nav') or _('Organizations'), ['organization']),
+                  (group_type ~ '.index',
+                    h.humanize_entity_type('group', group_type, 'main nav') or _('Groups'), ['group']),
+                  ('home.about', _('About')) ) }}
+              {% endblock %}
+          {% endblock %}
+          </ul>
+        </li>
+      </ul>
+      {% block header_site_search %}
+      <form class=" nav navbar-form navbar-left me-auto">
+        <div class="input-group">
+          <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+        </div>
+      </form>
+      {% endblock %}
+      {% block header_account_container_content %}
+      {% if c.userobj %}
+      <ul class="nav navbar-nav navbar-right" data-module="me" data-me="{{ c.userobj.id }}">
+        <li class="nav-item dropdown">
+          {% block header_account_profile %}
+          <a href="#" class="image nav-link dropdown-toggle" title="{{ _('View profile') }}" href="#" id="navbarAccountDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                {{ h.user_image((c.user if c and  c.user else ''), size=22) }}
+                <span class="username">{{ c.userobj.display_name }}</span>
+          </a>
+          <!-- {{ h.url_for('user.read', id=c.userobj.name) }} -->
+          {% endblock %}
+          <ul class="dropdown-menu" aria-labelledby="navbarAccountDropdownMenuLink">
+          {% block header_account_logged %} 
+            {% if c.userobj.sysadmin %}
+            <li>
+              <a class="dropdown-item" href="{{ h.url_for('admin.index') }}" title="{{ _('Sysadmin settings') }}">
+                <i class="fa fa-gavel" aria-hidden="true"></i>
+                <span class="text">{{ _('Admin') }}</span>
+              </a>
+            </li>
+            {% endif %}
+            {% block header_dashboard %}
+            <li>
+              <a class="dropdown-item" href="{{ h.url_for('dashboard.datasets') }}" title="{{ _('View dashboard') }}">
+                <i class="fa fa-tachometer" aria-hidden="true"></i>
+                <span class="text">{{ _('Dashboard') }}</span>
+            </a>
+            </li>
+            {% endblock %}
+            {% block header_account_settings_link %}
+            <li>
+              <a class="dropdown-item" href="{{ h.url_for('user.edit', id=c.userobj.name) }}" title="{{ _('Profile settings') }}">
+                <i class="fa fa-cog" aria-hidden="true"></i>
+                <span class="text">{{ _('Profile settings') }}</span>
+              </a>
+            </li>
+            {% endblock %}
+            {% block header_account_log_out_link %}
+            <li><hr class="dropdown-divider"></li>
+            <li>
+              <form class="" action="{{ h.url_for('user.logout') }}" method="post">
+                  {{ h.csrf_input() }}
+                  <button class="btn" type="submit" title="{{ _('Log out') }}">
+                    <i class="fa fa-sign-out" aria-hidden="true"></i>
+                    <span class="text">{{ _('Logout') }}</span>
+                  </button>
+              </form>
+            </li>
+            {% endblock %} 
+          {% endblock %} 
+          </ul>
+        </li>
+      </ul>
+      {% else %}
+      <ul class="nav navbar-nav navbar-right" aria-label="{{ _('Account') }}"></ul>
+    
+        {% block header_account_notlogged %}
+        <li>{% link_for _('Log in'), named_route='user.login' %}</li>
+        {% if h.check_access('user_create') %}
+        <li>{% link_for _('Register'), named_route='user.register', class_='sub' %}</li>
+        {% endif %} {% endblock %}
+      </ul>
+      {% endif %} 
+      {% endblock %}
+    </div>
+  </div>
+</nav>
+{% endblock %}
+{% endblock %}
+
