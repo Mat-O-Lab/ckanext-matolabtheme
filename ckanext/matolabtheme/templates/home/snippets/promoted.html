@@ -1,0 +1,26 @@
+{% set intro = g.site_intro_text %}
+
+{% block home_image %}
+  <section class="bsb-hero-5 px-3 bsb-overlay banner" style="background-image: url('./img/banner.png');">
+    <div class="container">
+      <div class="row justify-content-md-center align-items-center text-white">
+        <div class="col-12 col-md-11 col-lg-9 col-xl-8 col-xxl-7 mb-3">
+          {% if intro %}
+              {{ h.render_markdown(intro) }}
+          {% else %}
+          <h1 class="display-1 text-center fw-bold mb-4">{{ _("Welcome to CKAN") }}</h1>
+          <p class="lead text-center mb-5 d-flex justify-content-sm-center">
+            <span class="col-12 col-sm-10 col-md-8 col-xxl-7">{% trans %}This is a nice introductory paragraph about CKAN or the site
+            in general. We don't have any copy to go here yet but soon we will
+            {% endtrans %}
+            </span>
+          </p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <a class="btn bsb-btn-2xl btn-outline-light" href="http://matolab.org" role="button">Contact Us</a>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

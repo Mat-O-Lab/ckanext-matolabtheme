@@ -6,6 +6,7 @@ from ckanext.matolabtheme import helpers
 
 class MatolabthemePlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfigurer)
+    plugins.implements(plugins.ITemplateHelpers)
 
     # IConfigurer
 
@@ -17,8 +18,4 @@ class MatolabthemePlugin(plugins.SingletonPlugin):
     # ITemplateHelpers
 
     def get_helpers(self):
-        return {
-            "parent_site_url": helpers.parent_site_url,
-            "modify_geojson": helpers.modify_geojson,
-            "check_ckan_version": toolkit.check_ckan_version,
-        }
+        return helpers.get_helpers()

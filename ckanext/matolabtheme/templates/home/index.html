@@ -1,0 +1,39 @@
+{% extends "page.html" %}
+
+{% block subtitle %}{{ _("Welcome") }}{% endblock %}
+
+{% block maintag %}{% endblock %}
+{% block toolbar %}{% endblock %}
+
+{% block content %}
+<main class="homepage">
+  <div id="content" class="container">
+    {{ self.flash() }}
+  </div>
+  {% block primary_content %}
+  {% block promoted %}
+  {% snippet 'home/snippets/promoted.html' %}
+  {% endblock %}
+  <div class="container mt-5 mb-5" role="main">
+
+    <div class="row row-cols-1 row-cols-md-3 mb-3">
+      <div class="col-md-6">
+        {# Note: this featured_group block is used as an example in the theming
+        tutorial in the docs! If you change this code, be sure to check
+        whether you need to update the docs. #}
+        {# Start template block example. #}
+        {% block featured_group %}
+        {% snippet 'home/snippets/featured_group.html' %}
+        {% endblock %}
+        {# End template block example. #}
+      </div>
+      <div class="col-md-6">
+        {% block featured_organization %}
+        {% snippet 'home/snippets/featured_organization.html' %}
+        {% endblock %}
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+</div>
+{% endblock %}
