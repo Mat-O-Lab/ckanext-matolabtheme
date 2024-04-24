@@ -5,14 +5,15 @@
   {% block skip %}
     <div class="visually-hidden-focusable"><a href="#content">{{ _('Skip to main content') }}</a></div>
   {% endblock %}
-
+  
   {%- block header %}
     {% include "header.html" %}
   {% endblock -%}
 
   {# The content block allows you to replace the content of the page if needed #}
   {%- block content %}
-    {% block maintag %}<div class="main">{% endblock %}
+    {% block maintag %}
+    <div class="main flex-grow-1">{% endblock %}
       <div id="content" class="container">
         {% block main_content %}
           {% block flash %}
@@ -109,8 +110,9 @@
           </div>
         {% endblock %}
       </div>
+    </div>
   {% endblock -%}
-
+  
   {#
   Override the footer on a page by page basis by extending this block. If
   making sitewide header changes it is preferable to override the footer.html-u
@@ -127,3 +129,4 @@
   {{ super() }}
 {% endblock -%}
 </div>
+
