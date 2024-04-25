@@ -6,31 +6,31 @@
 {% block toolbar %}{% endblock %}
 
 {% block content %}
-<div class="main p-0  flex-grow-1">
-  <div id="content" class="container">
-    {{ self.flash() }}
-  </div>
-  {% block primary_content %}
   {% block promoted %}
   {% snippet 'home/snippets/promoted.html' %}
   {% endblock %}
-    <div class="row row-cols-1 row-cols-md-3 mb-3">
-      <div class="col-md-6">
-        {# Note: this featured_group block is used as an example in the theming
-        tutorial in the docs! If you change this code, be sure to check
-        whether you need to update the docs. #}
-        {# Start template block example. #}
-        {% block featured_group %}
-        {% snippet 'home/snippets/featured_group.html' %}
-        {% endblock %}
-        {# End template block example. #}
-      </div>
-      <div class="col-md-6">
-        {% block featured_organization %}
-        {% snippet 'home/snippets/featured_organization.html' %}
-        {% endblock %}
-      </div>
+  <div class="main p-0  flex-grow-1">
+    <div id="content" class="row">
+      {{ self.flash() }}
     </div>
-  {% endblock %}
-</div>
+    {% block primary_content %}  
+    <div class="row row-cols-1 row-cols-md-3 m-3">
+        <div class="col-md-6">
+          {# Note: this featured_group block is used as an example in the theming
+          tutorial in the docs! If you change this code, be sure to check
+          whether you need to update the docs. #}
+          {# Start template block example. #}
+          {% block featured_group %}
+          {% snippet 'home/snippets/featured_group.html' %}
+          {% endblock %}
+          {# End template block example. #}
+        </div>
+        <div class="col-md-6">
+          {% block featured_organization %}
+          {% snippet 'home/snippets/featured_organization.html' %}
+          {% endblock %}
+        </div>
+    </div>
+    {% endblock %}
+  </div>
 {% endblock %}

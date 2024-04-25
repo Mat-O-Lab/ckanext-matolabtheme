@@ -84,16 +84,27 @@ body {
 }
 
 aside {
-  background: var(--bs-light);
+  /* background: var(--bs-light); */
 }
+
+.page-row {
+  background-color: rgba(var(--bs-light-rgb),.2);
+}
+
 
 .editor .editor-info-block {
   background-color: var(--bs-secondary);
   color: var(--bs-light);
 }
 
-.module-heading {
-  background-color: rgba(var(--bs-light-rgb),1.0);
+.form-check-input {
+  background-color: var(--bs-light)!important;
+  color: var(--bs-primary)!important;
+}
+
+.module-heading{
+  color: var(--bs-body-color);
+  background-color: rgba(var(--bs-body-bg-rgb),0.4);
 }
 
 .module {
@@ -136,7 +147,8 @@ aside {
 }
 
 .site-footer {
-  background: var(--bs-primary) url("../../../base/images/bg.png");
+  background-size:100% 100%;
+  mix-blend-mode: multiply;
   padding: 20px 0;
 }
 
@@ -162,7 +174,7 @@ aside {
 }
 
 .main .primary {
-  background-color: var(--bs-light);
+  /* background-color: var(--bs-light); */
 }
 
 .badge[data-format=csv], .badge[data-format*=csv] {
@@ -4659,7 +4671,7 @@ textarea.form-control-lg {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #fff;
+  background-color: var(--bs-body-bg);
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
