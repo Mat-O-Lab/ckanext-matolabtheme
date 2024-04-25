@@ -9,12 +9,20 @@
               {{ h.render_markdown(intro) }}
           {% else %}
           <h1 class="display-1 text-center fw-bold mb-4">{{ _("Welcome to CKAN") }}</h1>
-          <p class="lead text-center mb-5 d-flex justify-content-sm-center">
+          <p class="lead text-center mb-3 d-flex justify-content-sm-center">
             <span class="col-12 col-sm-10 col-md-8 col-xxl-7">{% trans %}This is a nice introductory paragraph about CKAN or the site
             in general. We don't have any copy to go here yet but soon we will
             {% endtrans %}
             </span>
           </p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-1">
+            <form class="nav navbar-form navbar-left" action="{{url_for('dataset.search')}}" method="get">
+              <div class="input-group">
+                <input id="search" class="form-control"  type="search" name="q" placeholder="{{ _('Search our database...') }}" aria-label="{{ _('Search') }}"/>
+                <button class="btn btn-secondary" type="submit"  aria-label="{{ _('Submit') }}"><i class="fa fa-search"></i></button>
+              </div>
+            </form>
+          </div>
           <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
             <a class="btn bsb-btn-2xl btn-outline-light" href="http://matolab.org" role="button">Contact Us</a>
           </div>

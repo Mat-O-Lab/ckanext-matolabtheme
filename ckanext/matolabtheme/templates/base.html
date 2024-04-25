@@ -1,72 +1,16 @@
-{# Allows the DOCTYPE to be set on a page by page basis #}
-{%- block doctype %}<!DOCTYPE html>{% endblock -%}
+{% ckan_extends %}
 
-{# Allows custom attributes to be added to the <html> tag #}
-{%- block htmltag -%}
-{% set lang = h.lang() %}
-<!--[if IE 9]> <html lang="{{ lang }}" class="ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="{{ lang }}" {% if h.is_rtl_language()  %} dir="rtl" {% endif %} > <!--<![endif]-->
+{% block meta %}
+  {{ super() }}
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#111111" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#eeeeee" media="(prefers-color-scheme: dark)">
 {%- endblock -%}
 
-  {# Allows custom attributes to be added to the <head> tag #}
-  <head{% block headtag %}{% endblock %}>
-    {%- block meta -%}
-      <meta charset="utf-8" />
-      <meta name="csrf_field_name" content="{{ g.csrf_field_name }}" />
-      <meta name="{{ g.csrf_field_name }}" content="{{ csrf_token() }}" />
-      <!-- The page supports both dark and light color schemes,
-         and the page author prefers / default is light. -->
-      <!-- Optional Meta Theme Color is also supported on Safari and Chrome -->
-      {% block meta_generator %}<meta name="generator" content="ckan {{ h.ckan_version() }}" />{% endblock %}
-      {% block meta_viewport %}<meta name="viewport" content="width=device-width, initial-scale=1.0">{% endblock %}
-      <meta name="color-scheme" content="light dark">
-      <meta name="theme-color" content="#111111" media="(prefers-color-scheme: light)">
-      <meta name="theme-color" content="#eeeeee" media="(prefers-color-scheme: dark)">
-    {%- endblock -%}
-    <title>
-      {%- block title -%}
-        {%- block subtitle %}{% endblock -%}
-        {%- if self.subtitle()|trim %} {{ g.template_title_delimiter }} {% endif -%}
-        {{ g.site_title }}
-      {%- endblock -%}
-    </title>
+{%- block styles %}
+  {{ super() }}
+  {% asset 'matolabtheme/style' %}
+{% endblock %}
 
-    {#
-    The links block allows you to add additonal content before the stylesheets
-    such as rss feeds and favicons in the same way as the meta block.
-    #}
-    {% block links -%}
-      <link rel="shortcut icon" href="{{ g.favicon }}" />
-    {% endblock -%}
-    {%- block styles %}
-      {% set theme = h.get_rtl_theme() if h.is_rtl_language() else g.theme %}
-      {% asset theme %}
-      {% asset 'matolabtheme/style' %}
-    {% endblock %}
-    {# render all assets included in styles block #}
-    {{ h.render_assets('style') }}
-    {%- block custom_styles %}
-      {%- if g.site_custom_css -%}
-      <style>
-        {{ g.site_custom_css | safe }}
-      </style>
-      {%- endif %}
-    {% endblock %}
-  </head>
+{% block bodytag %} class="d-flex flex-column min-vh-100" data-site-root="{{ h.url_for('home.index', locale='default', qualified=true) }}" data-locale-root="{{ h.url_for('home.index', qualified=true) }}" {% endblock %}
 
-  {# Allows custom attributes to be added to the <body> tag #}
-  <body{% block bodytag %} class="d-flex flex-column min-vh-100" data-site-root="{{ h.url_for('home.index', locale='default', qualified=true) }}" data-locale-root="{{ h.url_for('home.index', qualified=true) }}" {% endblock %}>
-    {%- block page %}{% endblock -%}
-    {#
-    DO NOT USE THIS BLOCK FOR ADDING SCRIPTS
-    Scripts should be loaded by the {% assets %} tag except in very special
-    circumstances
-    #}
-    {%- block scripts %}
-    {% endblock -%}
-    {# render all assets included in scripts block and everywhere else #}
-    {# make sure there are no calls to `asset` tag after this point #}
-    {{ h.render_assets('style') }}
-    {{ h.render_assets('script') }}
-  </body>
-</html>

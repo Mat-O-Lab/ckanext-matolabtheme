@@ -97,9 +97,10 @@ aside {
   color: var(--bs-light);
 }
 
-.form-check-input {
-  background-color: var(--bs-light)!important;
-  color: var(--bs-primary)!important;
+
+.form-switch .form-check-input,.form-switch .form-check-input:checked {
+  background-color: rgba(var(--bs-primary-rgb),0.7);
+  border-color: var(--bs-primary);
 }
 
 .module-heading{
