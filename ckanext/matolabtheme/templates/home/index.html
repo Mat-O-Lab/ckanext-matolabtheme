@@ -6,7 +6,7 @@
 {% block toolbar %}{% endblock %}
 
 {% block content %}
-<main class="homepage">
+<div class="main p-0  flex-grow-1">
   <div id="content" class="container">
     {{ self.flash() }}
   </div>
@@ -14,8 +14,6 @@
   {% block promoted %}
   {% snippet 'home/snippets/promoted.html' %}
   {% endblock %}
-  <div class="container mt-5 mb-5" role="main">
-
     <div class="row row-cols-1 row-cols-md-3 mb-3">
       <div class="col-md-6">
         {# Note: this featured_group block is used as an example in the theming
@@ -33,7 +31,6 @@
         {% endblock %}
       </div>
     </div>
-  </div>
   {% endblock %}
 </div>
 {% endblock %}
