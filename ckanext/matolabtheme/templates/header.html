@@ -43,10 +43,10 @@
         {% endblock %}
         </ul>
         {% block header_site_search %}
-        <form class="nav navbar-form navbar-left">
+        <form class="nav navbar-form navbar-left" action="{% url_for dataset_type ~ '.search' %}" method="get">
           <div class="input-group">
-            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-secondary" type="submit"><i class="fa fa-search"></i></button>
+            <input id="search" class="form-control"  type="search" name="q" placeholder="{{ _('Search') }}" aria-label="{{ h.humanize_entity_type('package', dataset_type, 'search_placeholder') or _('Search datasets...') }}"/>
+            <button class="btn btn-secondary" type="submit"  aria-label="{{ _('Submit') }}"><i class="fa fa-search"></i></button>
           </div>
         </form>
         {% endblock %}
