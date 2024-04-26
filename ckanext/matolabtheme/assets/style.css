@@ -71,7 +71,20 @@ body {
 }
 
 .main {
-  background: var(--bs-body-bg);
+  mix-blend-mode: multiply;
+}
+
+.bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(var(--bs-body-bg-rgb) 0.5); /* change the alpha value as needed */
+  z-index: -1;
+  /* background-size:100% 100%; */
+  mix-blend-mode: multiply;
+  opacity: 0.05;
 }
 
 .homepage .module-promotion {
@@ -80,7 +93,6 @@ body {
 
 .banner {
   background-size:100% 100%;
-  mix-blend-mode: multiply;
 }
 
 aside {
@@ -88,7 +100,7 @@ aside {
 }
 
 .page-row {
-  background-color: rgba(var(--bs-light-rgb),.2);
+  background-color: rgba(var(--bs-light-rgb),1.0);
 }
 
 

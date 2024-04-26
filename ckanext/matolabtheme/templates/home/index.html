@@ -16,6 +16,7 @@
     {% block primary_content %}
     <div class="row row-cols-1 row-cols-md-3 m-3 justify-content-center">
         <div class="col-md-auto align-self-center">
+          <div class="bg-overlay" style="background-image: url('/img/voronoi_bg.png');"></div>
             {% with items = h.get_facet_items_dict("tags", search_facets, 30) %}
             {% if items or not hide_empty %}
             {% for item in items %}
