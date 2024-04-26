@@ -106,6 +106,7 @@ body {
   background-color: transparent;
   border: 0;
   padding: 0.5rem 0.5rem;
+  color: var(--bs-light);
 }
 
 .dropdown-menu {
