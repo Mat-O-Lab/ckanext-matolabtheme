@@ -14,3 +14,8 @@
 
 {% block bodytag %} class="d-flex flex-column min-vh-100" data-site-root="{{ h.url_for('home.index', locale='default', qualified=true) }}" data-locale-root="{{ h.url_for('home.index', qualified=true) }}" {% endblock %}
 
+{%- block scripts %}
+  {{ super() }}
+  {% asset 'matolabtheme/js' %}
+{% endblock %}
+

@@ -1,5 +1,6 @@
 js:
-  output: matolabtheme/script.js
+  filters: rjsmin
+  output: matolabtheme/%(version)s_matolabtheme.js
   contents:
     - script.js
   extra:
@@ -9,4 +10,4 @@ js:
 style:
   contents:
     - style.css
-  output: matolabtheme/style.css
+  output: matolabtheme/%(version)s_matolabtheme.css
