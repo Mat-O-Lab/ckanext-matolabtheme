@@ -3,10 +3,10 @@
 {% block home_image %}
   <section class="bsb-hero-5 px-3 bsb-overlay banner" style="background-image: url('./img/banner.png');">
     <div class="container">
-      <div class="row justify-content-md-center align-items-center text-white ">
-        <div class="col-12 col-md-11 col-lg-9 col-xl-8 col-xxl-7 mb-3">
+      <div class="row justify-content-md-center align-items-center text-white justify-content-center">
+        <div class="col-12 col-md-11 col-lg-9 col-xl-8 col-xxl-7 mb-3 text-center" >
           {% if intro %}
-              {{ h.render_markdown(intro) }}
+              {{ h.render_markdown(intro|replace('^[ \t]*|[ \t]*$', '')) }}
           {% else %}
           <h1 class="display-1 text-center fw-bold mb-4">{{ _("Welcome to CKAN") }}</h1>
           <p class="lead text-center mb-3 d-flex justify-content-sm-center">
@@ -15,6 +15,7 @@
             {% endtrans %}
             </span>
           </p>
+          {% endif %}
           <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-1">
             <form class="nav navbar-form navbar-left" action="{{url_for('dataset.search')}}" method="get">
               <div class="input-group">
@@ -26,7 +27,6 @@
           <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
             <a class="btn bsb-btn-2xl btn-outline-light" href="http://matolab.org" role="button">Contact Us</a>
           </div>
-          {% endif %}
         </div>
       </div>
     </div>

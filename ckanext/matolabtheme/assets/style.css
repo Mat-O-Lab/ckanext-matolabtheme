@@ -222,7 +222,7 @@ aside {
 }
 
 .controls > .form-control,.input-group > .form-control, .input-group > .form-select {
-  color: var(--bs-light);
+  color: var(--bs-body-color);
   background-color: var(--bs-body-bg);
 }
 .search-form .control-order-by .form-control {
