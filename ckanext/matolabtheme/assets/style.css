@@ -92,6 +92,10 @@ aside {
 }
 
 
+.theme-counter {
+  display: inline;
+}
+
 .editor .editor-info-block {
   background-color: var(--bs-secondary);
   color: var(--bs-light);

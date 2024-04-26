@@ -5,8 +5,11 @@ ckan.module("matolabtheme-module", function ($, _) {
       debug: false,
     },
     initialize: function () {
-      const counters = document.querySelectorAll(".theme-counter");
+      console.log("Initialized Counter Aniation for element: ", this.el);
+      const counters = this.el.get(0).querySelectorAll('.theme-counter')
+      // this.el.querySelectorAll(".theme-counter");
       counters.forEach((counter) => {
+        console.log("counter element: ", counter);
         counter.innerText = "0";
         const updateCounter = () => {
           const target = +counter.getAttribute("data-target");
