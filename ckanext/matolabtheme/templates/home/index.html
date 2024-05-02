@@ -20,7 +20,7 @@
             {% with items = h.get_facet_items_dict("tags", search_facets, 30) %}
             {% if items or not hide_empty %}
             {% for item in items %}
-            <a type="button" class="btn btn-primary position-relative rounded-pill m-3 popup" href="{{url_for('dataset.search')}}/?tags={{item.name}}">
+            <a type="button" class="btn btn-primary position-relative rounded-pill m-3 popup" href="{{url_for('dataset.search')}}?tags={{item.name}}">
               {{item.name}}
               <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info">
                 {{item.count}}
