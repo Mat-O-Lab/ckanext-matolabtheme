@@ -4,7 +4,7 @@
   <section class="bsb-hero-5 px-3 banner" style="background-image: url('./img/banner.png');">
     <div class="container">
       <div class="row justify-content-md-center align-items-center text-white justify-content-center">
-        <div class="col-12 col-md-11 col-lg-9 col-xl-8 col-xxl-7 mb-3 text-center" >
+        <div class="col-12 col-md-11 col-lg-9 col-xl-8 col-xxl-7 mb-3 text-center text-light pt-3" >
           {% if intro %}
               {{ h.render_markdown(intro|replace('^[ \t]*|[ \t]*$', '')) }}
           {% else %}
@@ -16,7 +16,7 @@
             </span>
           </p>
           {% endif %}
-          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-1">
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-3">
             <form class="nav navbar-form navbar-left" action="{{url_for('dataset.search')}}" method="get">
               <div class="input-group">
                 <input id="search" class="form-control"  type="search" name="q" placeholder="{{ _('Search our database...') }}" aria-label="{{ _('Search') }}"/>
