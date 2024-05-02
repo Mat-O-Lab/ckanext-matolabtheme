@@ -58,7 +58,15 @@ To install ckanext-matolabtheme:
 
 ## Config settings
 
-None at present
+```bash
+CKANINI__CKANEXT__MATOLABTHEME__CONTACT_URL = <url to contact site>
+```
+or ckan.ini parameters.
+```bash
+ckan.matolabtheme.contact_url = <url to contact site>
+```
+If no contact_url is given, it will relate to the about page!
+
 
 **TODO:** Document any optional config settings here. For example:
 

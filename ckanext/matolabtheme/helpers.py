@@ -1,9 +1,11 @@
 from ckan.common import config
 import ckan.plugins.toolkit as toolkit
-import urllib.request, json
+import urllib.request, json, os
 from typing import Union, Any
 from markupsafe import Markup
 from ckan.lib.helpers import _link_to, _link_active
+
+CONTACT_URL = os.environ.get("CKANINI__CKANEXT__MATOLABTHEME__CONTACT_URL", "/about")
 
 
 def parent_site_url():
@@ -14,6 +16,10 @@ def parent_site_url():
     setting is missing
     """
     return toolkit.h.url("home")
+
+
+def contact_url():
+    return CONTACT_URL
 
 
 def all_datasets_count():
@@ -105,4 +111,5 @@ def get_helpers():
         "all_datasets_count": all_datasets_count,
         "all_resource_count": all_resource_count,
         "all_organizations_count": all_organizations_count,
+        "contact_url": contact_url,
     }
