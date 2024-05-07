@@ -1,63 +1,66 @@
 {% set intro = g.site_intro_text %}
 
 {% block home_image %}
-  <section class="bsb-hero-5 px-3 banner" style="background-image: url('./img/banner.png');">
-    <div class="container">
-      <div class="row justify-content-md-center align-items-center text-white justify-content-center">
-        <div class="col-12 col-md-11 col-lg-9 col-xl-8 col-xxl-7 mb-3 text-center text-light pt-3" >
-          {% if intro %}
-              {{ h.render_markdown(intro|replace('^[ \t]*|[ \t]*$', '')) }}
-          {% else %}
-          <h1 class="display-1 text-center fw-bold mb-4">{{ _("Welcome to CKAN") }}</h1>
-          <p class="lead text-center mb-3 d-flex justify-content-sm-center">
-            <span class="col-12 col-sm-10 col-md-8 col-xxl-7">{% trans %}This is a nice introductory paragraph about CKAN or the site
+<section class="bsb-hero-5 px-3 banner" style="background-image: url('./img/banner.png');">
+  <div class="container">
+    <div class="row justify-content-md-center align-items-center justify-content-center">
+      <div class="col-12 col-md-11 col-lg-9 col-xl-8 col-xxl-7 mb-3 text-center text-light pt-3">
+        {% if intro %}
+        {{ h.render_markdown(intro|replace('^[ \t]*|[ \t]*$', '')) }}
+        {% else %}
+        <h1 class="display-1 text-center fw-bold mb-4">{{ _("Welcome to CKAN") }}</h1>
+        <p class="lead text-center mb-3 d-flex justify-content-sm-center">
+          <span class="col-12 col-sm-10 col-md-8 col-xxl-7">{% trans %}This is a nice introductory paragraph about CKAN
+            or the site
             in general. We don't have any copy to go here yet but soon we will
             {% endtrans %}
-            </span>
-          </p>
-          {% endif %}
-          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-3">
-            <form class="nav navbar-form navbar-left" action="{{url_for('dataset.search')}}" method="get">
-              <div class="input-group">
-                <input id="search" class="form-control"  type="search" name="q" placeholder="{{ _('Search our database...') }}" aria-label="{{ _('Search') }}"/>
-                <button class="btn btn-secondary" type="submit"  aria-label="{{ _('Submit') }}"><i class="fa fa-search"></i></button>
-              </div>
-            </form>
-          </div>
-          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-            <a class="btn bsb-btn-2xl btn-outline-light" href="{{ h.contact_url() }}" role="button">Contact Us</a>
-          </div>
+          </span>
+        </p>
+        {% endif %}
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-3">
+          <form class="nav navbar-form navbar-left" action="{{url_for('dataset.search')}}" method="get">
+            <div class="input-group">
+              <input id="search" class="form-control" type="search" name="q"
+                placeholder="{{ _('Search our database...') }}" aria-label="{{ _('Search') }}" />
+              <button class="btn btn-secondary" type="submit" aria-label="{{ _('Submit') }}"><i
+                  class="fa fa-search"></i></button>
+            </div>
+          </form>
+        </div>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          <a class="btn bsb-btn-2xl btn-outline-light" href="{{ h.contact_url() }}" role="button">Contact Us</a>
         </div>
       </div>
     </div>
-  </section>
-  <div class="counter-row m-0 row g-4 py-1 row-cols-1 row-cols-md-3" data-module="matolabtheme-module">
-    <div class="col d-flex align-items-start justify-content-center border-light-5 ">
-      <a class="counter-link m-3" href="{{url_for('dataset.search')}}">
-        <h1 class="fw-bold mb-0">
-          <i class="fas fa-database"></i>
-          <div class="theme-counter" data-target="{{ h.all_datasets_count() }}" data-duration="0.5"></div>
-        </h1>
-        <h3>{{ _("Datasets") }}</h3>
-      </a>
-    </div>
-    <div class="col d-flex justify-content-center border-start border-light-5">
-      <a class="counter-link m-3" href="{{url_for('dataset.search')}}">
-        <h1 class="fw-bold mb-0">
-          <i class="fas fa-file"></i>
-          <div class="theme-counter" data-target="{{ h.all_resource_count() }}" data-duration="0.5"></div>
-        </h1>
-        <h3>{{ _("Resources") }}</h3>
-      </a>
-    </div>
-    <div class="col d-flex justify-content-center border-start border-light-5">
-      <a class="counter-link m-3" href="{{url_for('organization.index')}}">
-        <h1 class="fw-bold mb-0">
-          <i class="fas fa-building"></i>
-          <div class="theme-counter" data-target="{{ h.all_organizations_count() }}" data-duration="0.5"></div>
-        </h1>
-        <h3>{{ _("Organizations") }}</h3>
-      </a>
-    </div>
   </div>
+</section>
+<div class="counter-row m-0 row g-4 py-1 row-cols-1 row-cols-md-3" data-module="matolabtheme-module">
+  <div class="col d-flex align-items-start justify-content-center border-light-5 ">
+    <a class="counter-link m-3" href="{{url_for('dataset.search')}}">
+      <h1 class="fw-bold mb-0">
+        <i class="fas fa-database"></i>
+        <div class="theme-counter" data-target="{{ h.all_datasets_count() }}" data-duration="0.5"></div>
+      </h1>
+      <h3>{{ _("Datasets") }}</h3>
+    </a>
+  </div>
+  <div class="col d-flex justify-content-center border-start border-light-5">
+    <a class="counter-link m-3" href="{{url_for('dataset.search')}}">
+      <h1 class="fw-bold mb-0">
+        <i class="fas fa-file"></i>
+        <div class="theme-counter" data-target="{{ h.all_resource_count() }}" data-duration="0.5"></div>
+      </h1>
+      <h3>{{ _("Resources") }}</h3>
+    </a>
+  </div>
+  <div class="col d-flex justify-content-center border-start border-light-5">
+    <a class="counter-link m-3" href="{{url_for('organization.index')}}">
+      <h1 class="fw-bold mb-0">
+        <i class="fas fa-building"></i>
+        <div class="theme-counter" data-target="{{ h.all_organizations_count() }}" data-duration="0.5"></div>
+      </h1>
+      <h3>{{ _("Organizations") }}</h3>
+    </a>
+  </div>
+</div>
 {% endblock %}

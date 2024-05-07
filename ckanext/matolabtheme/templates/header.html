@@ -1,69 +1,73 @@
 {% ckan_extends %}
 
-{% block header_wrapper %} 
+{% block header_wrapper %}
 {% block header_account %}
 <nav class="navbar navbar-dark navbar-expand-lg navbar-light bg-primary">
   <div class="container-fluid">
     {% block header_logo %}
-      {% if g.site_logo %}
-      <a class="navbar-brand" href="{{ h.url_for('home.index') }}">
-        <img src="{{ h.url_for_static_or_external(g.site_logo) }}" alt="{{ g.site_title }}"
-          title="{{ g.site_title }}" height="30"/>
-      </a>
-      {% else %}
-      <a class="navbar-brand" href="{{ h.url_for('home.index') }}">
-        <img src="/img/Logo.svg" alt="{{ g.site_title }}"
-          title="{{ g.site_title }}" height="30"/>
-      </a>
-      {% endif %}
+    {% if g.site_logo %}
+    <a class="navbar-brand" href="{{ h.url_for('home.index') }}">
+      <img src="{{ h.url_for_static_or_external(g.site_logo) }}" alt="{{ g.site_title }}" title="{{ g.site_title }}"
+        height="30" />
+    </a>
+    {% else %}
+    <a class="navbar-brand" href="{{ h.url_for('home.index') }}">
+      <img src="/img/Logo.svg" alt="{{ g.site_title }}" title="{{ g.site_title }}" height="30" />
+    </a>
+    {% endif %}
     {% endblock %}
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       {% if url_for('home.index') == request.path %}
-        <!-- This is the index page -->
+      <!-- This is the index page -->
       {% else %}
-        <!-- This is not the index page -->
-        <ul class="nav navbar-nav">
+      <!-- This is not the index page -->
+      <ul class="nav navbar-nav">
         {% block header_site_navigation %}
         {% block header_site_navigation_tabs %}
-          {% set org_type = h.default_group_type('organization') %}
-          {% set group_type = h.default_group_type('group') %}
+        {% set org_type = h.default_group_type('organization') %}
+        {% set group_type = h.default_group_type('group') %}
 
-          {{ h.custom_build_nav_main(
-            (dataset_type ~ '.search', h.humanize_entity_type('package', dataset_type, 'main nav') or _('Datasets'), ["dataset", "resource"]),
-            (org_type ~ '.index',
-              h.humanize_entity_type('organization', org_type, 'main nav') or _('Organizations'), ['organization']),
-            (group_type ~ '.index',
-              h.humanize_entity_type('group', group_type, 'main nav') or _('Groups'), ['group']),
-            ('home.about', _('About')) ) }}
+        {{ h.custom_build_nav_main(
+        (dataset_type ~ '.search', h.humanize_entity_type('package', dataset_type, 'main nav') or _('Datasets'),
+        ["dataset", "resource"]),
+        (org_type ~ '.index',
+        h.humanize_entity_type('organization', org_type, 'main nav') or _('Organizations'), ['organization']),
+        (group_type ~ '.index',
+        h.humanize_entity_type('group', group_type, 'main nav') or _('Groups'), ['group']),
+        ('home.about', _('About')) ) }}
         {% endblock %}
         {% endblock %}
-        </ul>
-        {% block header_site_search %}
-        <form class="nav navbar-form navbar-left" action="{% url_for dataset_type ~ '.search' %}" method="get">
-          <div class="input-group">
-            <input id="search" class="form-control"  type="search" name="q" placeholder="{{ _('Search') }}" aria-label="{{ h.humanize_entity_type('package', dataset_type, 'search_placeholder') or _('Search datasets...') }}"/>
-            <button class="btn btn-secondary" type="submit"  aria-label="{{ _('Submit') }}"><i class="fa fa-search"></i></button>
-          </div>
-        </form>
-        {% endblock %}
+      </ul>
+      {% block header_site_search %}
+      <form class="nav navbar-form navbar-left" action="{% url_for dataset_type ~ '.search' %}" method="get">
+        <div class="input-group">
+          <input id="search" class="form-control" type="search" name="q" placeholder="{{ _('Search') }}"
+            aria-label="{{ h.humanize_entity_type('package', dataset_type, 'search_placeholder') or _('Search datasets...') }}" />
+          <button class="btn btn-secondary" type="submit" aria-label="{{ _('Submit') }}"><i
+              class="fa fa-search"></i></button>
+        </div>
+      </form>
+      {% endblock %}
       {% endif %}
-      
+
       {% block header_account_container_content %}
       <ul class="nav navbar-nav navbar-right ms-auto" data-module="me" data-me="{{ c.userobj.id }}">
-      {% if c.userobj %}
+        {% if c.userobj %}
         <li class="nav-item dropdown">
           {% block header_account_profile %}
-          <a href="#" class="image nav-link dropdown-toggle" title="{{ _('View profile') }}" href="#" id="navbarAccountDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                {{ h.user_image((c.user if c and  c.user else ''), size=22) }}
-                <span class="username text-light">{{ c.userobj.display_name }}</span>
+          <a href="#" class="image nav-link dropdown-toggle" title="{{ _('View profile') }}" href="#"
+            id="navbarAccountDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{ h.user_image((c.user if c and c.user else ''), size=22) }}
+            <span class="username">{{ c.userobj.display_name }}</span>
           </a>
           <!-- {{ h.url_for('user.read', id=c.userobj.name) }} -->
           {% endblock %}
           <ul class="dropdown-menu" aria-labelledby="navbarAccountDropdownMenuLink">
-          {% block header_account_logged %} 
+            {% block header_account_logged %}
             {% if c.userobj.sysadmin %}
             <li>
               <a class="dropdown-item" href="{{ h.url_for('admin.index') }}" title="{{ _('Sysadmin settings') }}">
@@ -78,23 +82,24 @@
             {% block header_account_settings_link %}
             {{ super() }}
             {% endblock %}
-            <li><hr class="dropdown-divider"></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
             {% block header_account_log_out_link %}
             {{ super() }}
-            {% endblock %} 
-          {% endblock %} 
+            {% endblock %}
+            {% endblock %}
           </ul>
         </li>
-      {% else %}
-      {% block header_account_notlogged %}
-      {{super()}}
-      {% endblock %}
+        {% else %}
+        {% block header_account_notlogged %}
+        {{super()}}
+        {% endblock %}
       </ul>
-      {% endif %} 
+      {% endif %}
       {% endblock %}
     </div>
   </div>
 </nav>
 {% endblock %}
 {% endblock %}
-
