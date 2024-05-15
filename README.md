@@ -60,10 +60,13 @@ To install ckanext-matolabtheme:
 
 ```bash
 CKANINI__CKANEXT__MATOLABTHEME__CONTACT_URL = <url to contact site>
+CKANINI__CKAN__FAVICON=/img/favicon.png
+
 ```
 or ckan.ini parameters.
 ```bash
 ckan.matolabtheme.contact_url = <url to contact site>
+ckan.favicon = /img/favicon.png
 ```
 If no contact_url is given, it will relate to the about page!
 
