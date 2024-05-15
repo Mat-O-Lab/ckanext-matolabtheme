@@ -46,6 +46,7 @@
   --bs-body-color: #212529;
   --bs-body-bg: #fff;
   --bs-lightgray: #cccccc;
+  --bs-table-bg: var(--bs-body-bg);
 
 }
 
@@ -63,6 +64,7 @@
     --bs-body-bg-rgb: 34, 34, 34;
     --bs-body-color: #a6bbc8;
     --bs-body-bg: #222;
+    --bs-table-bg: var(--bs-body-bg);
   }
 }
 
@@ -139,7 +141,7 @@ a:hover {
 }
 
 .banner {
-  background-size: 100%;
+  background-size: 100% 100%;
 }
 
 .navbar-nav li a {
@@ -214,6 +216,21 @@ aside {
   border-color: var(--bs-primary);
 }
 
+.form-select {
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
+}
+
+table.dataTable thead tr>.dtfc-fixed-left,
+table.dataTable thead tr>.dtfc-fixed-right {
+  background-color: inherit !important;
+}
+
+table.dataTable tbody tr>.dtfc-fixed-left,
+table.dataTable tbody tr>.dtfc-fixed-right {
+  background-color: inherit !important;
+}
+
 .module-heading {
   color: var(--bs-body-color);
   background-color: rgba(var(--bs-body-bg-rgb), 0.4);
@@ -248,6 +265,10 @@ aside {
   text-decoration: none;
 }
 
+.resource-item .heading {
+  color: var(--bs-body-color);
+}
+
 .resource-item:hover {
   background-color: rgba(var(--bs-primary-rgb), 0.2);
 }
@@ -265,7 +286,7 @@ aside {
 
 
 .site-footer {
-  background-size: 100%;
+  background-size: 100% 100%;
   /* mix-blend-mode: multiply; */
   padding: 20px 0;
   background-size: cover;
@@ -331,7 +352,10 @@ aside {
 }
 
 .form-control {
-  border: 1px solid var(--bs-secondary);
+  border: 1px solid var(--bs-body-color);
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg) !important;
+
 }
 
 .controls>.form-control,
@@ -342,7 +366,7 @@ aside {
 }
 
 .search-form .control-order-by .form-control {
-  color: var(--bs-light);
+  /* color: var(--bs-light); */
   background-color: var(--bs-body-bg);
 
 }
@@ -395,6 +419,16 @@ aside {
   background-color: var(--bs-body-bg);
   color: var(--bs-body-color);
 }
+
+.page-item.disabled .page-link {
+  color: var(--bs-body-color);
+  pointer-events: none;
+  background-color: var(--bs-body-bg);
+  border-color: var(--bs-body-color);
+
+/* .btn {
+  color: var(--bs-body-color);
+} */
 
 .btn-outline-light {
   color: var(--bs-light);
@@ -540,10 +574,8 @@ aside {
   }
 
   .btn {
-    color: var(--bs-light);
+    color: var(--bs-body-color);
   }
-
-
 }
 
 /*# sourceMappingURL=bootstrap-dark.css.map */
