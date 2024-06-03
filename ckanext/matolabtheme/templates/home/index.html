@@ -6,32 +6,35 @@
 {% block toolbar %}{% endblock %}
 
 {% block content %}
-  {% block promoted %}
-  {% snippet 'home/snippets/promoted.html' %}
-  {% endblock %}
-  <div class="main p-0  flex-grow-1">
-    <div id="content" class="row">
-      {{ self.flash() }}
-    </div>
-    {% block primary_content %}
-    <div class="row row-cols-1 row-cols-md-3 m-3 justify-content-center">
-        <div class="col-md-auto align-self-center">
-          <div class="bg-overlay" style="background-image: url('/img/voronoi_bg.png');"></div>
-            {% with items = h.get_facet_items_dict("tags", search_facets, 30) %}
-            {% if items or not hide_empty %}
-            {% for item in items %}
-            <a type="button" class="btn btn-primary position-relative rounded-pill m-3 popup" href="{{url_for('dataset.search')}}?tags={{item.name}}">
-              {{item.name}}
-              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info">
-                {{item.count}}
-                <span class="visually-hidden">unread messages</span>
-              </span>
-            </a>
-            {% endfor %}
-            {% endif %}
-            {% endwith %}
-        </div>
-    </div>
-    {% endblock %}
+{% block promoted %}
+{% snippet 'home/snippets/promoted.html' %}
+{% endblock %}
+<div class="main p-0  flex-grow-1">
+  <div id="content" class="row">
+    {{ self.flash() }}
   </div>
+  {% block primary_content %}
+  <div class="row row-cols-1 row-cols-md-3 m-3 justify-content-center">
+    <div class="col-md-auto align-self-center">
+      <div class="bg-overlay" style="background-image: url('/img/voronoi_bg.png');"></div>
+      {% block index_content %}
+      {% with items = h.get_facet_items_dict("tags", search_facets, 30) %}
+      {% if items or not hide_empty %}
+      {% for item in items %}
+      <a type="button" class="btn btn-primary position-relative rounded-pill m-3 popup"
+        href="{{url_for('dataset.search')}}?tags={{item.name}}">
+        {{item.name}}
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info">
+          {{item.count}}
+          <span class="visually-hidden">unread messages</span>
+        </span>
+      </a>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+      {% endblock %}
+    </div>
+  </div>
+  {% endblock %}
+</div>
 {% endblock %}
