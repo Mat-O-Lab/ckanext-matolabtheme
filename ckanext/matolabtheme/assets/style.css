@@ -16,19 +16,19 @@
 }
 
 :root {
-  --bs-primary: #005b7f;
-  --bs-secondary: #a6bbc8;
-  --bs-success: #179C7d;
-  --bs-info: #f58220;
-  --bs-warning: #b2d235;
+  --bs-primary: #27529c;
+  --bs-secondary: #869ab8;
+  --bs-success: #80a733;
+  --bs-info: #bdd34e;
+  --bs-warning: #f58220;
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
   --bs-dark: #212529;
-  --bs-primary-rgb: 0, 91, 127;
-  --bs-secondary-rgb: 166, 187, 200;
-  --bs-success-rgb: 23, 156, 125;
-  --bs-info-rgb: 245, 130, 32;
-  --bs-warning-rgb: 178, 210, 53;
+  --bs-primary-rgb: 39, 82, 156;
+  --bs-secondary-rgb: 134, 154, 184;
+  --bs-success-rgb: 128, 167, 51;
+  --bs-info-rgb: 189, 211, 78;
+  --bs-warning-rgb: 245, 130, 32;
   --bs-danger-rgb: 220, 53, 69;
   --bs-light-rgb: 248, 249, 250;
   --bs-dark-rgb: 33, 37, 41;
@@ -55,12 +55,12 @@
     --bs-white: #fafafa;
     --bs-black: #111;
     --bs-gray: #7e7e7e;
-    --bs-primary: #375a7f;
-    --bs-secondary: #4e6c7e;
-    --bs-light: #2a333c;
-    --bs-primary-rgb: 55, 90, 127;
-    --bs-secondary-rgb: 78, 108, 126;
-    --bs-light-rgb: 42, 51, 60;
+    --bs-primary: #193666;
+    --bs-secondary: #2f3c50;
+    --bs-light: #151a1e;
+    --bs-primary-rgb: 25, 54, 102;
+    --bs-secondary-rgb: 47, 60, 80;
+    --bs-light-rgb: 21, 26, 30;
     --bs-body-bg-rgb: 34, 34, 34;
     --bs-body-color: #a6bbc8;
     --bs-body-bg: #222;
@@ -130,6 +130,10 @@ a:hover {
 
 .dataset-heading a {
   color: inherit;
+}
+
+.navbar-dark .navbar-brand {
+  -webkit-filter: brightness(0) invert(1);
 }
 
 .homepage .module-promotion {
@@ -285,6 +289,8 @@ table.dataTable tbody tr>.dtfc-fixed-right {
   background-size: 100% 100%;
   /* mix-blend-mode: multiply; */
   padding: 20px 0;
+  background-size: cover;
+  background-position: bottom;
 }
 
 .site-footer a,
@@ -419,7 +425,6 @@ table.dataTable tbody tr>.dtfc-fixed-right {
   pointer-events: none;
   background-color: var(--bs-body-bg);
   border-color: var(--bs-body-color);
-}
 
 /* .btn {
   color: var(--bs-body-color);
@@ -571,7 +576,6 @@ table.dataTable tbody tr>.dtfc-fixed-right {
   .btn {
     color: var(--bs-body-color);
   }
-
 }
 
 /*# sourceMappingURL=bootstrap-dark.css.map */

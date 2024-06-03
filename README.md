@@ -62,12 +62,14 @@ To install ckanext-matolabtheme:
 CKANINI__CKANEXT__MATOLABTHEME__CONTACT_URL = <url to contact site>
 CKANINI__CKANEXT__MATOLABTHEME__LEGAL_PERSON_MD = <Legal Body Address in Markdown>
 CKANINI__CKANEXT__MATOLABTHEME__DSVGO_CONTACT_MD = <Contact to adress with dsvgo conflicts in markdown>
+CKANINI__CKAN__FAVICON=/img/favicon.png
 ```
 or ckan.ini parameters.
 ```bash
 ckan.matolabtheme.contact_url = <url to contact site>
 ckan.matolabtheme.legal_person_md = <Legal Body Address in Markdown>
 ckan.matolabtheme.dsvgo_contact_md = <Contact to adress with dsvgo conflicts in markdown>
+ckan.favicon = /img/favicon.png
 ```
 If no contact_url is given, it will relate to the about page!
 
