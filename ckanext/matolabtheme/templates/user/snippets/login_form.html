@@ -1,0 +1,8 @@
+{% ckan_extends %}
+
+{% block login_button %}
+{% if h.url_for('sso.sso') %}
+<a class="btn btn-default" href="{{ h.url_for('sso.sso') }}">{{ _('Sign in with SSO') }}</a>
+{% endif %}
+{{ super() }}
+{% endblock %}
