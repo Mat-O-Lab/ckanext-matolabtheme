@@ -1,0 +1,9 @@
+{% ckan_extends %}
+
+{% block form %}
+{{ super() }}
+{% if h.url_for('sso.sso') %}
+<a class="mt-3 btn btn-secondary col-12 d-inline-block" href="{{ h.url_for('sso.sso') }}">{{ _('Sign in with
+    SSO') }}</a>
+{% endif %}
+{% endblock %}
