@@ -1,21 +1,22 @@
 {% ckan_extends %}
 
 {% block meta %}
-  {{ super() }}
-  <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#111111" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#eeeeee" media="(prefers-color-scheme: dark)">
+{{ super() }}
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#111111" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#eeeeee" media="(prefers-color-scheme: dark)">
 {%- endblock -%}
 
 {%- block styles %}
-  {{ super() }}
-  {% asset 'matolabtheme/style' %}
+{{ super() }}
+{% asset 'matolabtheme/style' %}
 {% endblock %}
 
-{% block bodytag %} class="d-flex flex-column min-vh-100" data-site-root="{{ h.url_for('home.index', locale='default', qualified=true) }}" data-locale-root="{{ h.url_for('home.index', qualified=true) }}" {% endblock %}
+{% block bodytag %}
+{{ super() }}
+{% endblock %}
 
 {%- block scripts %}
-  {{ super() }}
-  {% asset 'matolabtheme/js' %}
+{{ super() }}
+{% asset 'matolabtheme/js' %}
 {% endblock %}
-
