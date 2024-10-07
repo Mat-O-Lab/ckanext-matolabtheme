@@ -19,7 +19,7 @@ file.
 {%- block content %}
 {% block maintag %}
 <div class="main  flex-grow-1">
-  <div class="bg-overlay" style="background-image: url('/img/voronoi_bg.png');"></div>
+  <div class="bg-overlay" style="background-image: url('{{ h.url_for_static('/static/voronoi_bg.png') }}');"></div>
   {% endblock %}
   <div id="content" class="container" style="z-index: 2;">
     {% block main_content %}
