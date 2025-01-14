@@ -29,37 +29,39 @@ ckan.module("matolabtheme-module", function ($, _) {
         requestAnimationFrame(animate);
       };
 
-      const fetchAndAnimateCounter = (counter) => {
+      const fetchAndAnimateCounter = async (counter) => {
         const apiUrl = counter.getAttribute("data-api-url");
         if (!apiUrl) {
           console.error("No API URL specified for counter:", counter);
           return;
         }
 
-        $.getJSON(apiUrl, function (data) {
+        try {
+          const response = await $.getJSON(apiUrl);
           let targetValue = 0;
 
           // Parse the count based on the API's response structure
           if (apiUrl.includes("package_search")) {
             // For datasets
-            targetValue = data.success && data.result.count !== undefined ? data.result.count : 0;
+            targetValue = response.success && response.result.count !== undefined ? response.result.count : 0;
           } else if (apiUrl.includes("resource_search")) {
             // For resources
-            targetValue = data.success && data.result.count !== undefined ? data.result.count : 0;
+            targetValue = response.success && response.result.count !== undefined ? response.result.count : 0;
           } else if (apiUrl.includes("organization_list")) {
             // For organizations
-            targetValue = data.success && Array.isArray(data.result) ? data.result.length : 0;
+            targetValue = response.success && Array.isArray(response.result) ? response.result.length : 0;
           } else {
             console.error("Unknown API response structure for URL:", apiUrl);
           }
 
+          // Update and animate the counter independently
           updateCounter(counter, targetValue);
-        }).fail(function (xhr, status, error) {
-          console.error(`API request to ${apiUrl} failed:`, status, error);
-        });
+        } catch (error) {
+          console.error(`API request to ${apiUrl} failed:`, error);
+        }
       };
 
-      // Fetch and animate all counters
+      // Fetch and animate all counters independently
       const counters = this.el.get(0).querySelectorAll(".theme-counter");
       counters.forEach(fetchAndAnimateCounter);
     },
