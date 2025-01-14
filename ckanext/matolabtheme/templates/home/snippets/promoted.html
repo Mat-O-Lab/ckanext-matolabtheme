@@ -39,16 +39,16 @@
     <a class="counter-link m-3" href="{{url_for('dataset.search')}}">
       <h1 class="fw-bold mb-0">
         <i class="fas fa-database"></i>
-        <div class="theme-counter" data-target="{{ h.all_datasets_count() }}" data-duration="0.5"></div>
+        <div id="dataset_counter" class="theme-counter" data-api-url="{{ url_for('api.action',logic_function='package_search') }}?q=" data-target="0" data-duration="0.5">0</div>
       </h1>
       <h3>{{ _("Datasets") }}</h3>
     </a>
   </div>
   <div class="col d-flex justify-content-center border-start border-light-5">
-    <a class="counter-link m-3" href="{{url_for('dataset.search')}}">
+    <a class="counter-link m-3" href="0">
       <h1 class="fw-bold mb-0">
         <i class="fas fa-file"></i>
-        <div class="theme-counter" data-target="{{ h.all_resource_count() }}" data-duration="0.5"></div>
+        <div id="resource_counter" class="theme-counter" data-api-url="{{ url_for('api.action',logic_function='resource_search') }}?query=name:" data-target="0" data-duration="0.5">0</div>
       </h1>
       <h3>{{ _("Resources") }}</h3>
     </a>
@@ -57,7 +57,7 @@
     <a class="counter-link m-3" href="{{url_for('organization.index')}}">
       <h1 class="fw-bold mb-0">
         <i class="fas fa-building"></i>
-        <div class="theme-counter" data-target="{{ h.all_organizations_count() }}" data-duration="0.5"></div>
+        <div id="orgs_counter" class="theme-counter" data-api-url="{{ url_for('api.action',logic_function='organization_list') }}" data-target="0" data-duration="0.5">0</div>
       </h1>
       <h3>{{ _("Organizations") }}</h3>
     </a>
