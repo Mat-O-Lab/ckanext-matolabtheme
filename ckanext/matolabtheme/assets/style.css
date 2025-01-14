@@ -178,6 +178,12 @@ aside {
 }
 
 
+.wrapper {
+  position: relative;
+  min-height: 300px;
+  background-color: var(--bs-body-bg);
+}
+
 .theme-counter {
   display: inline;
 }
@@ -304,7 +310,7 @@ table.dataTable tbody tr>.dtfc-fixed-right {
 
 .nav-link,
 .page-header .nav-tabs li a {
-  color: var(--bs-primary);
+  color: var(--bs-body-color);
 }
 
 .media-grid,
@@ -442,7 +448,7 @@ table.dataTable tbody tr>.dtfc-fixed-right {
 }
 
 .badge {
-  color: var(--bs-body-color);
+  color: var(--bs-light);
 }
 
 .tag-list {

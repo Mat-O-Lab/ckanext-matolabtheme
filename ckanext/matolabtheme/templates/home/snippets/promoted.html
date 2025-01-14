@@ -1,16 +1,37 @@
 {% set intro = g.site_intro_text %}
 
 {% block home_image %}
-<section class="bsb-hero-5 px-3 banner" style="background-image: url('{{ h.url_for_static('/static/banner.png') }}');">
+<section class="bsb-hero-5 px-3 banner position-relative min-vh-25" style="background-image: url('{{ h.url_for_static('/static/banner_top.png') }}');">
+  <a style="position: absolute; top: 0; left: 0; margin: 30px; height: 25%;" href="{{ h.url_for('home.index') }}">
+    {% if g.site_logo %}
+    <img src="{{ h.url_for_static_or_external(g.site_logo) }}" alt="{{ g.site_title }}" title="{{ g.site_title }}"
+    style="height: 100%; width: auto;" />
+    {% else %}
+    <img src="{{ h.url_for_static('/static/Logo.svg') }}" alt="{{ g.site_title }}" title="{{ g.site_title }}"
+    height="100" class="m-3" />
+    {% endif %}
+  </a>
+  {% if c.userobj %}
+  <a class="btn text-light fs-2" style="position: absolute; top: 0; right: 0; margin: 30px 10px 0 0;" data-module="me" data-me="{{ c.userobj.id }}"
+  href="{{ h.url_for('dashboard.datasets') }}">
+    {{ h.user_image((c.user if c and c.user else ''), size=22) }}
+    <span class="username">{{ c.userobj.display_name }}</span>
+  </a>
+  {% else %}
+  <a class="btn btn-outline-light fs-2" style="position: absolute; top: 0; right: 0; margin: 30px 10px 0 0;" data-module="me" data-me="{{ c.userobj.id }}"
+  href="{{ h.url_for('user.login') }}">
+      <span class="username">{{_("Log in")}}</span>
+  </a>
+  {% endif %}
   <div class="container">
-    <div class="row justify-content-md-center align-items-center text-white justify-content-center">
-      <div class="col-12 col-md-11 col-lg-9 col-xl-8 col-xxl-7 mb-3 text-center text-white pt-3">
+    <div class="row justify-content-md-center align-items-center text-light justify-content-center">
+      <div class="col-12 col-md-11 col-lg-9 col-xl-8 col-xxl-7 mb-3 text-center fs-1 pt-3">
         {% if intro %}
         {{ h.render_markdown(intro|replace('^[ \t]*|[ \t]*$', '')) }}
         {% else %}
         <h1 class="display-1 text-center fw-bold mb-4">{{ _("Welcome to CKAN") }}</h1>
         <p class="lead text-center mb-3 d-flex justify-content-sm-center">
-          <span class="col-12 col-sm-10 col-md-8 col-xxl-7">{% trans %}This is a nice introductory paragraph about CKAN
+          <span class="col-12 col-sm-10 col-md-8 col-xxl-7 fw-bold fs-2">{% trans %}This is a nice introductory paragraph about CKAN
             or the site
             in general. We don't have any copy to go here yet but soon we will
             {% endtrans %}

@@ -5,6 +5,10 @@
 {% block maintag %}{% endblock %}
 {% block toolbar %}{% endblock %}
 
+{%- block header %}
+{% endblock -%}
+
+
 {% block content %}
 {% block promoted %}
 {% snippet 'home/snippets/promoted.html' %}
@@ -21,10 +25,10 @@
       {% with items = h.get_facet_items_dict("tags", search_facets, 30) %}
       {% if items or not hide_empty %}
       {% for item in items %}
-      <a type="button" class="btn btn-primary position-relative rounded-pill m-3 popup"
+      <a type="button" class="btn btn-outline-primary text-primary bg-light position-relative rounded-pill m-3 popup"
         href="{{url_for('dataset.search')}}?tags={{item.name}}">
         {{item.name}}
-        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info">
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
           {{item.count}}
           <span class="visually-hidden">unread messages</span>
         </span>
