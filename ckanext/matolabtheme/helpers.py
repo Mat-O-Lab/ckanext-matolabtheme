@@ -22,18 +22,6 @@ def contact_url():
     return CONTACT_URL
 
 
-def all_datasets_count():
-    return toolkit.get_action("package_search")({}, {})["count"]
-
-
-def all_resource_count():
-    return toolkit.get_action("resource_search")({}, {"query": "name:"})["count"]
-
-
-def all_organizations_count():
-    return len(toolkit.get_action("organization_list")({}, {}))
-
-
 def custom_build_nav_main(
     *args: Union[
         tuple[str, str],
@@ -108,8 +96,5 @@ def get_helpers():
     return {
         "parent_site_url": parent_site_url,
         "custom_build_nav_main": custom_build_nav_main,
-        "all_datasets_count": all_datasets_count,
-        "all_resource_count": all_resource_count,
-        "all_organizations_count": all_organizations_count,
         "contact_url": contact_url,
     }
