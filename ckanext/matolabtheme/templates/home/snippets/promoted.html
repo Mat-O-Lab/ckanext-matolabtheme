@@ -4,7 +4,7 @@
 <section class="bsb-hero-5 p-3 banner position-relative min-vh-25" style="background-image: url('{{ h.url_for_static('/static/banner_top.png') }}');">
     <div class="row">
       <div class="col-6 col-sm-2  order-1 order-sm-1 d-flex justify-content-start align-items-start">
-        <a class="" href="{{ h.url_for('home.index') }}">
+        <a class="" style="min-width: 100%;" href="{{ h.url_for('home.index') }}">
           {% if g.site_logo %}
           <img class="img-fluid index-logo" src="{{ h.url_for_static_or_external(g.site_logo) }}" alt="{{ g.site_title }}" title="{{ g.site_title }}"
  />
