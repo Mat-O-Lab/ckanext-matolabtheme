@@ -29,41 +29,53 @@ ckan.module("matolabtheme-module", function ($, _) {
         requestAnimationFrame(animate);
       };
 
-      const fetchAndAnimateCounter = async (counter) => {
-        const apiUrl = counter.getAttribute("data-api-url");
+      const fetchAndAnimateCounter = async () => {
+        const apiUrl = this.el.get(0).getAttribute("data-api-url"); // Fetch the API URL from the parent element
         if (!apiUrl) {
-          console.error("No API URL specified for counter:", counter);
+          console.error("No API URL specified for counter:", this.el);
           return;
         }
 
         try {
           const response = await $.getJSON(apiUrl);
-          let targetValue = 0;
+          let datasetCount = 0; // Count of datasets
+          let totalResources = 0; // Sum of all resources
+          const organizations = new Set(); // To store unique organizations
 
-          // Parse the count based on the API's response structure
-          if (apiUrl.includes("package_search")) {
-            // For datasets
-            targetValue = response.success && response.result.count !== undefined ? response.result.count : 0;
-          } else if (apiUrl.includes("resource_search")) {
-            // For resources
-            targetValue = response.success && response.result.count !== undefined ? response.result.count : 0;
-          } else if (apiUrl.includes("organization_list")) {
-            // For organizations
-            targetValue = response.success && Array.isArray(response.result) ? response.result.length : 0;
+          // Check if the response is successful and contains results
+          if (response.success && Array.isArray(response.result)) {
+            datasetCount = response.result.length; // Count of datasets
+
+            // Sum up all resources and collect unique organizations
+            response.result.forEach(dataset => {
+              if (Array.isArray(dataset.resources)) {
+                totalResources += dataset.resources.length; // Count of resources
+              }
+              if (dataset.organization && dataset.organization.id) {
+                organizations.add(dataset.organization.id); // Collect unique organization IDs
+              }
+            });
           } else {
-            console.error("Unknown API response structure for URL:", apiUrl);
+            console.error("Invalid API response structure:", response);
           }
 
-          // Update and animate the counter independently
-          updateCounter(counter, targetValue);
+          // Update and animate the counters independently
+          updateCounter(document.getElementById("dataset_counter"), datasetCount); // For datasets
+          updateCounter(document.getElementById("resource_counter"), totalResources); // For resources
+          updateCounter(document.getElementById("orgs_counter"), organizations.size); // For unique organizations
         } catch (error) {
           console.error(`API request to ${apiUrl} failed:`, error);
         }
       };
 
-      // Fetch and animate all counters independently
+      // Fetch and animate the counters
+      fetchAndAnimateCounter(); // Call the function to fetch and animate counters
+
+      // Animate individual counters (if needed)
       const counters = this.el.get(0).querySelectorAll(".theme-counter");
-      counters.forEach(fetchAndAnimateCounter);
+      counters.forEach(counter => {
+        updateCounter(counter, 0); // Initialize counters to 0
+      });
     },
   };
 });
