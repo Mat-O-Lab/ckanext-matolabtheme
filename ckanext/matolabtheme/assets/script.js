@@ -46,15 +46,14 @@ ckan.module("matolabtheme-module", function ($, _) {
           if (response.success && Array.isArray(response.result)) {
             datasetCount = response.result.length; // Count of datasets
 
-            // Sum up all resources and collect unique organizations
+            // Calculate total resources using num_resources property
             response.result.forEach(dataset => {
-              if (Array.isArray(dataset.resources)) {
-                totalResources += dataset.resources.length; // Count of resources
-              }
+              totalResources += dataset.num_resources || 0; // Sum num_resources directly
               if (dataset.organization && dataset.organization.id) {
                 organizations.add(dataset.organization.id); // Collect unique organization IDs
               }
             });
+            
           } else {
             console.error("Invalid API response structure:", response);
           }
