@@ -41,19 +41,15 @@ ckan.module("matolabtheme-module", function ($, _) {
           let datasetCount = 0; // Count of datasets
           let totalResources = 0; // Sum of all resources
           const organizations = new Set(); // To store unique organizations
+          let orgCount = 0; // Sum of organisations
 
           // Check if the response is successful and contains results
-          if (response.success && Array.isArray(response.result)) {
-            datasetCount = response.result.length; // Count of datasets
+          if (response && typeof response === 'object'){
+            datasetCount = response.pkg_count; // Count of datasets
 
             // Calculate total resources using num_resources property
-            response.result.forEach(dataset => {
-              totalResources += dataset.num_resources || 0; // Sum num_resources directly
-              if (dataset.organization && dataset.organization.id) {
-                organizations.add(dataset.organization.id); // Collect unique organization IDs
-              }
-            });
-            
+            totalResources=response.res_count;
+            orgCount=response.org_count;
           } else {
             console.error("Invalid API response structure:", response);
           }
@@ -61,7 +57,7 @@ ckan.module("matolabtheme-module", function ($, _) {
           // Update and animate the counters independently
           updateCounter(document.getElementById("dataset_counter"), datasetCount); // For datasets
           updateCounter(document.getElementById("resource_counter"), totalResources); // For resources
-          updateCounter(document.getElementById("orgs_counter"), organizations.size); // For unique organizations
+          updateCounter(document.getElementById("orgs_counter"), orgCount); // For unique organizations
         } catch (error) {
           console.error(`API request to ${apiUrl} failed:`, error);
         }

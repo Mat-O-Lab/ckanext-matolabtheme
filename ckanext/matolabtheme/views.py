@@ -28,8 +28,21 @@ class DataProtectionView(MethodView):
         )
 
 
+from ckanext.matolabtheme.action import theme_stats
+
+
+def theme_stats_view():
+    return theme_stats({}, {})
+
+
 blueprint.add_url_rule(
     "/dataprotection", view_func=DataProtectionView.as_view(str("dataprotection"))
+)
+blueprint.add_url_rule(
+    "/theme/stats",
+    view_func=lambda: theme_stats_view(),
+    endpoint="stats",
+    methods=["GET"],
 )
 
 
