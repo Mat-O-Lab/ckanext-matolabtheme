@@ -42,3 +42,8 @@
   {% endblock %}
 </div>
 {% endblock %}
+
+{%- block scripts %}
+{{ super() }}
+{% asset 'matolabtheme/index-js' %}
+{% endblock %}

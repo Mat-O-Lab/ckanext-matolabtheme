@@ -6,7 +6,14 @@ js:
   extra:
     preload:
       - base/main
-
+index-js:
+  filters: rjsmin
+  output: matolabtheme/matolabtheme_index.js
+  contents:
+    - index.js
+  extra:
+    preload:
+      - base/main
 style:
   contents:
     - style.css
