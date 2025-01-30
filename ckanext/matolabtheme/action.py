@@ -23,9 +23,11 @@ def serialize_row(row):
     return {column: getattr(row, column) for column in row._mapping}
 
 
+@toolkit.side_effect_free
 def theme_stats(context: Context, data_dict: dict[str, Any]) -> dict[str, Any]:
     package = table("package")
     resource = table("resource")
+    session = model.Session
     s = (
         select(
             package.c["owner_org"],
@@ -42,7 +44,10 @@ def theme_stats(context: Context, data_dict: dict[str, Any]) -> dict[str, Any]:
         .order_by(func.count(package.c["id"]).desc())
         # .limit(limit)
     )
-    org_rows = model.Session.execute(s).fetchall()
+    conn: Any = model.Session.connection()
+    # cursor = conn.execute(q)
+
+    org_rows = conn.execute(s).fetchall()
     s = select(
         func.count(resource.c["id"]),
     ).where(
@@ -50,7 +55,7 @@ def theme_stats(context: Context, data_dict: dict[str, Any]) -> dict[str, Any]:
             resource.c["state"] != "deleted",
         )
     )
-    res_rows = model.Session.execute(s).fetchall()
+    res_rows = conn.execute(s).fetchall()
     orgs = [serialize_row(row) for row in org_rows]
     org_count = len(orgs)
     pkg_sum = sum([org.get("count", 0) for org in orgs])
@@ -65,5 +70,5 @@ def theme_stats(context: Context, data_dict: dict[str, Any]) -> dict[str, Any]:
 
 
 def get_actions():
-    actions = {"theme_stats": theme_stats}
+    actions = {"matolabtheme_stats": theme_stats}
     return actions

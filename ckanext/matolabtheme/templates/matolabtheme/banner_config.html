@@ -1,0 +1,61 @@
+{% import 'macros/autoform.html' as autoform %}
+
+{% extends "admin/base.html" %}
+
+{% import 'macros/form.html' as form %}
+{% import 'macros/form/image_upload_prefix.html' as iu %}
+
+{% block primary_content_inner %}
+
+  {{ form.errors(error_summary) }}
+
+  <form method='post' action="" id="admin-config-form" enctype="multipart/form-data">
+    {% block admin_form %}
+    {{ h.csrf_input() }}
+      {{data}}
+      {% set field1_url = 'ckanext.matolabtheme.banner_top' %}
+      {% set is_upload = data[field1_url] and not data[field1_url].startswith('http') %}
+      {% set is_url = data[field1_url] and data[field1_url].startswith('http') %}
+      {{ iu.image_upload_prefix(data, errors, prefix='banner_top', is_upload_enabled=h.uploads_enabled(), field_name='ckanext.matolabtheme.banner_top_url', is_url=is_url, is_upload=is_upload, upload_label = _('Banner Top'), url_label=_('Banner top'),  field_url=field1_url, field_upload='ckanext.matolabtheme.banner_top_upload', field_clear='ckanext.matolabtheme.clear_banner_top_upload' )}}
+      
+      {% set field2_url = 'ckanext.matolabtheme.banner_bottom' %}
+      {% set is_upload = data[field2_url] and not data[field2_url].startswith('http') %}
+      {% set is_url = data[field2_url] and data[field2_url].startswith('http') %}
+      {{ iu.image_upload_prefix(data, errors, prefix='banner_bottom', is_upload_enabled=h.uploads_enabled(), field_name='ckanext.matolabtheme.banner_bottom_url', is_url=is_url, is_upload=is_upload, upload_label = _('Banner Bottom'), url_label=_('Banner bottom'),  field_url=field2_url, field_upload='ckanext.matolabtheme.banner_bottom_upload', field_clear='ckanext.matolabtheme.clear_banner_bottom_upload' )}}
+      {% endblock %}
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary" name="save">{{ _('Update Config') }}</button>
+      </div>
+  </form>
+{% endblock %}
+
+{% block secondary_content %}
+  <div class="module module-narrow module-shallow">
+    <h2 class="module-heading">
+      <i class="fa fa-info-circle"></i>
+      {{ _('CKAN config options') }}
+    </h2>
+    <div class="module-content">
+      {% block admin_form_help %}
+        {% set about_url = h.url_for('home.about') %}
+        {% set home_url = h.url_for('home.index') %}
+        {% set docs_url = "http://docs.ckan.org/en/{0}/theming".format(g.ckan_doc_version) %}
+        {% trans %}
+          <p><strong>Site Title:</strong> This is the title of this CKAN instance
+            It appears in various places throughout CKAN.</p>
+          <p><strong>Custom Stylesheet:</strong> Define an alternative main CSS file.</p>
+          <p><strong>Site Tag Logo:</strong> This is the logo that appears in the
+            header of all the CKAN instance templates.</p>
+          <p><strong>About:</strong> This text will appear on this CKAN instances
+            <a href="{{ about_url }}">about page</a>.</p>
+          <p><strong>Intro Text:</strong> This text will appear on this CKAN instances
+            <a href="{{ home_url }}">home page</a> as a welcome to visitors.</p>
+          <p><strong>Custom CSS:</strong> This is a block of CSS that appears in
+            <code>&lt;head&gt;</code> tag of every page. If you wish to customize
+            the templates more fully we recommend
+            <a href="{{ docs_url }}" target="_blank" rel="noreferrer">reading the documentation</a>.</p>
+      {% endtrans %}
+    {% endblock %}
+    </div>
+  </div>
+{% endblock %}

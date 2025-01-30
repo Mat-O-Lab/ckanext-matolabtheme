@@ -1,4 +1,4 @@
-<footer class="site-footer bsb-overlay" style="background-image: url('{{ h.url_for_static('/static/banner_bottom.png') }}');">
+<footer class="site-footer bsb-overlay" style="background-image: url({{ h.url_for_static_or_external(config.get('ckanext.matolabtheme.banner_bottom')) }});">
   <div class="container">
     {% block footer_content %}
     <div class="row">

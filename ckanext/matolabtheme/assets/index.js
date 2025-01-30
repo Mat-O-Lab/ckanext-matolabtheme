@@ -1,76 +1,65 @@
-ckan.module("matolabtheme-module", function ($, _) {
-  "use strict";
-  return {
-    options: {
-      debug: false,
-    },
-    initialize: function () {
-      console.log("Initialized Counter Animation for element: ", this.el);
+'use strict';
 
-      const updateCounter = (counter, targetValue) => {
-        counter.innerText = "0"; // Start the counter from 0
-        counter.setAttribute("data-target", targetValue); // Update data-target attribute
+ckan.module('matolabtheme-module', function ($) {
+    return {
+        initialize: function () {
+            console.log('matolabtheme-module initialized!');
+            console.log('Element:', this.el);
 
-        const duration = +counter.getAttribute("data-duration") * 1000;
-        const increment = targetValue / (duration / 10);
-        let count = 0;
+            const updateCounter = (counter, targetValue) => {
+                counter.innerText = '0'; // Start the counter from 0
+                counter.setAttribute('data-target', targetValue); // Update data-target attribute
 
-        const animate = () => {
-          count += increment;
+                const duration = +counter.getAttribute('data-duration') * 1000;
+                const increment = targetValue / (duration / 10);
+                let count = 0;
 
-          if (count >= targetValue) {
-            counter.innerText = targetValue; // Final value
-          } else {
-            counter.innerText = Math.ceil(count); // Animated value
-            requestAnimationFrame(animate);
-          }
-        };
+                const animate = () => {
+                    count += increment;
 
-        requestAnimationFrame(animate);
-      };
+                    if (count >= targetValue) {
+                        counter.innerText = targetValue; // Final value
+                    } else {
+                        counter.innerText = Math.ceil(count); // Animated value
+                        requestAnimationFrame(animate);
+                    }
+                };
 
-      const fetchAndAnimateCounter = async () => {
-        const apiUrl = this.el.get(0).getAttribute("data-api-url"); // Fetch the API URL from the parent element
-        if (!apiUrl) {
-          console.error("No API URL specified for counter:", this.el);
-          return;
-        }
+                requestAnimationFrame(animate);
+            };
 
-        try {
-          const response = await $.getJSON(apiUrl);
-          let datasetCount = 0; // Count of datasets
-          let totalResources = 0; // Sum of all resources
-          const organizations = new Set(); // To store unique organizations
-          let orgCount = 0; // Sum of organisations
+            const fetchAndAnimateCounter = async () => {
+                const apiUrl = this.el.get(0).getAttribute('data-api-url');
+                if (!apiUrl) {
+                    console.error('No API URL specified for counter:', this.el);
+                    return;
+                }
 
-          // Check if the response is successful and contains results
-          if (response && typeof response === 'object'){
-            datasetCount = response.pkg_count; // Count of datasets
+                try {
+                    const response = await $.getJSON(apiUrl);
+                    let datasetCount = 0;
+                    let totalResources = 0;
+                    let orgCount = 0;
 
-            // Calculate total resources using num_resources property
-            totalResources=response.res_count;
-            orgCount=response.org_count;
-          } else {
-            console.error("Invalid API response structure:", response);
-          }
+                    if (response && response.success && response.result) {
+                      const result = response.result;
+                      // Count datasets, resources, and organizations
+                      datasetCount = result.pkg_count || 0; // `pkg_count` for datasets
+                      totalResources = result.res_count || 0; // `res_count` for resources
+                      orgCount = result.org_count || 0; // `org_count` for organizations
+                    } else {
+                        console.error('Invalid API response structure:', response);
+                    }
 
-          // Update and animate the counters independently
-          updateCounter(document.getElementById("dataset_counter"), datasetCount); // For datasets
-          updateCounter(document.getElementById("resource_counter"), totalResources); // For resources
-          updateCounter(document.getElementById("orgs_counter"), orgCount); // For unique organizations
-        } catch (error) {
-          console.error(`API request to ${apiUrl} failed:`, error);
-        }
-      };
+                    updateCounter(document.getElementById('dataset_counter'), datasetCount);
+                    updateCounter(document.getElementById('resource_counter'), totalResources);
+                    updateCounter(document.getElementById('orgs_counter'), orgCount);
+                } catch (error) {
+                    console.error(`API request to ${apiUrl} failed:`, error);
+                }
+            };
 
-      // Fetch and animate the counters
-      fetchAndAnimateCounter(); // Call the function to fetch and animate counters
-
-      // Animate individual counters (if needed)
-      const counters = this.el.get(0).querySelectorAll(".theme-counter");
-      counters.forEach(counter => {
-        updateCounter(counter, 0); // Initialize counters to 0
-      });
-    },
-  };
+            fetchAndAnimateCounter();
+        },
+    };
 });

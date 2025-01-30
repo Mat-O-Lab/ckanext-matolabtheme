@@ -1,7 +1,7 @@
 {% set intro = g.site_intro_text %}
 
 {% block home_image %}
-<section class="bsb-hero-5 p-3 banner position-relative min-vh-25" style="background-image: url('{{ h.url_for_static('/static/banner_top.png') }}');">
+<section class="bsb-hero-5 p-3 banner position-relative min-vh-25" style="background-image: url({{ h.url_for_static_or_external(config.get('ckanext.matolabtheme.banner_top')) }});">
     <div class="row">
       <div class="col-6 col-sm-2  order-1 order-sm-1 d-flex justify-content-start align-items-start">
         <a class="" style="min-width: 100%;" href="{{ h.url_for('home.index') }}">
@@ -22,7 +22,7 @@
             {% else %}
             <h1 class="display-1 text-center fw-bold mb-4">{{ _("Welcome to CKAN") }}</h1>
             <p class="lead text-center mb-3 d-flex justify-content-sm-center">
-              <span class="col-12 fw-bold fs-2">{% trans %}This is a nice introductory paragraph about CKAN
+              <span class="col-12 fw-bold fs-3">{% trans %}This is a nice introductory paragraph about CKAN
                 or the site
                 in general. We don't have any copy to go here yet but soon we will
                 {% endtrans %}
@@ -34,7 +34,7 @@
                 <div class="input-group">
                   <input id="search" class="form-control" type="search" name="q"
                     placeholder="{{ _('Search our database...') }}" aria-label="{{ _('Search') }}" />
-                  <button class="btn btn-secondary" type="submit" aria-label="{{ _('Submit') }}"><i
+                  <button class="btn btn-primary" type="submit" aria-label="{{ _('Submit') }}"><i
                       class="fa fa-search"></i></button>
                 </div>
               </form>
@@ -61,9 +61,9 @@
       </div>
     </div>
 </section>
-<div class="counter-row m-0 row g-4 py-1 row-cols-1 row-cols-md-3" data-module="matolabtheme-module" data-api-url="{{ url_for('matolabtheme.stats') }}">
+<div class="counter-row m-0 row g-4 py-1 row-cols-1 row-cols-md-3" data-module="matolabtheme-module" data-api-url="{{ h.url_for('api.action', ver=3, logic_function='matolabtheme_stats')}}">
   <div class="col d-flex align-items-start justify-content-center border-light-5 ">
-    <a class="counter-link m-3" href="{{url_for('dataset.search')}}">
+    <a class="counter-link m-3" href="{{ h.url_for('dataset.search')}}">
       <h1 class="fw-bold mb-0">
         <i class="fas fa-database"></i>
         <div id="dataset_counter" class="theme-counter" data-target="0" data-duration="0.5">0</div>
@@ -72,7 +72,7 @@
     </a>
   </div>
   <div class="col d-flex justify-content-center border-start border-light-5">
-    <a class="counter-link m-3" href="{{url_for('dataset.search')}}">
+    <a class="counter-link m-3" href="{{ h.url_for('dataset.search')}}">
       <h1 class="fw-bold mb-0">
         <i class="fas fa-file"></i>
         <div id="resource_counter" class="theme-counter" data-target="0" data-duration="0.5">0</div>
@@ -81,7 +81,7 @@
     </a>
   </div>
   <div class="col d-flex justify-content-center border-start border-light-5">
-    <a class="counter-link m-3" href="{{url_for('organization.index')}}">
+    <a class="counter-link m-3" href="{h.{url_for('organization.index')}}">
       <h1 class="fw-bold mb-0">
         <i class="fas fa-building"></i>
         <div id="orgs_counter" class="theme-counter" data-target="0" data-duration="0.5">0</div>

@@ -1,0 +1,52 @@
+{% from 'macros/form/input.html' import input %}
+{% from 'macros/form/checkbox.html' import checkbox %}
+
+{#
+Builds a file upload for input
+
+Example
+{% import 'macros/form.html' as form %}
+{{ form.image_upload_prefix(data, errors, is_upload_enabled=true) }}
+
+#}
+{% macro image_upload_prefix(data, errors, prefix='', field_url='image_url', field_upload='image_upload', field_clear='clear_upload',
+                    is_url=false, is_upload=false, is_upload_enabled=false, placeholder=false,
+                    url_label='', upload_label='', field_name='image_url')  %}
+{% set placeholder = placeholder if placeholder else _('http://example.com/my-image.jpg') %}
+{% set url_label = url_label or _('Image URL')  %}
+{% set upload_label = upload_label or _('Image')  %}
+{% set previous_upload = data['previous_upload'] %}
+
+{% if field_url == 'url' and field_upload == 'upload' %}
+    {# backwards compatibility for old resource forms that still call the `forms.image_upload()` macro, eg ckanext-scheming #}
+    {% snippet 'package/snippets/resource_upload_field.html',
+    data=data,
+    errors=errors,
+    is_url=is_url,
+    is_upload=is_upload,
+    is_upload_enabled=is_upload_enabled,
+    url_label=url_label,
+    upload_label=upload_label,
+    placeholder=placeholder %}
+{% else %}
+    <div class="mb-3">
+        <label for="{{ prefix ~ 'field-image-url'}}" class="form-label">{{url_label}}</label>
+        <input class="form-control" type="text" id="{{ prefix ~ 'field-image-url'}}" name="{{ field_url }}" value="{{data.get(field_url)}}">
+    </div>
+    {% if is_upload_enabled %}
+    or upload file:
+    <div class="mb-3">
+        <input class="form-control" type="file" id="{{ prefix ~ 'field-image-upload'}}" name="{{ field_upload }}">
+    </div>
+    {% if is_upload %}
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="true" id="{{ prefix ~ 'field-clear-upload'}}" name="{{ field_clear }}">
+        <label class="form-check-label" for="{{ prefix ~ 'field-clear-upload'}}">
+        "{{_('Clear Upload')}}"
+        </label>
+    </div>
+    {% endif %}
+    {% endif %}
+{% endif %}
+
+{% endmacro %}
