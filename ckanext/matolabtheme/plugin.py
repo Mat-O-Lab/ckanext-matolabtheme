@@ -63,10 +63,10 @@ class MatolabthemePlugin(plugins.SingletonPlugin):
 
         declaration.annotate("matolabtheme")
         group = key.ckanext.matolabtheme
-        declaration.declare(group.banner_top, "/static/banner-top.png")
+        declaration.declare(group.banner_top, "/static/banner_top.png")
         declaration.declare(group.banner_top_upload, "")
         declaration.declare(group.clear_banner_top_upload, "")
-        declaration.declare(group.banner_bottom, "/static/banner-bottom.png")
+        declaration.declare(group.banner_bottom, "/static/banner_bottom.png")
         declaration.declare(group.banner_bottom_upload, "")
         declaration.declare(group.clear_banner_bottom_upload, "")
 
