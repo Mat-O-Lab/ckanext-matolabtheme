@@ -1,7 +1,6 @@
 {% ckan_extends %}
 {% block admin_form_help %}
 {{super()}}
-{{data}}
 <p><strong>Banner Config:</strong> You can change the banners for top and bottom here </p>
 {% link_for _('Banner Config'), named_route='matolabtheme.banner_config', class_='btn btn-secondary', icon='upload' %}
 {% endblock %}
