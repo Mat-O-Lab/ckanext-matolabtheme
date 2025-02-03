@@ -52,6 +52,18 @@ class MatolabthemePlugin(plugins.SingletonPlugin):
                     ignore_missing,
                     unicode_safe,
                 ],
+                "ckanext.matolabtheme.attribution_logo": [
+                    ignore_missing,
+                    unicode_safe,
+                ],
+                "ckanext.matolabtheme.attribution_logo_upload": [
+                    ignore_missing,
+                    unicode_safe,
+                ],
+                "ckanext.matolabtheme.clear_attribution_logo_upload": [
+                    ignore_missing,
+                    unicode_safe,
+                ],
             }
         )
 
@@ -69,6 +81,9 @@ class MatolabthemePlugin(plugins.SingletonPlugin):
         declaration.declare(group.banner_bottom, "/static/banner_bottom.png")
         declaration.declare(group.banner_bottom_upload, "")
         declaration.declare(group.clear_banner_bottom_upload, "")
+        declaration.declare(group.attribution_logo, "/static/favicon.png")
+        declaration.declare(group.attribution_logo_upload, "")
+        declaration.declare(group.clear_attribution_logo_upload, "")
 
     # ITemplateHelpers
 

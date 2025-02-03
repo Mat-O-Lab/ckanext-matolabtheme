@@ -12,7 +12,6 @@
   <form method='post' action="" id="admin-config-form" enctype="multipart/form-data">
     {% block admin_form %}
     {{ h.csrf_input() }}
-      {{data}}
       {% set field1_url = 'ckanext.matolabtheme.banner_top' %}
       {% set is_upload = data[field1_url] and not data[field1_url].startswith('http') %}
       {% set is_url = data[field1_url] and data[field1_url].startswith('http') %}
@@ -22,6 +21,12 @@
       {% set is_upload = data[field2_url] and not data[field2_url].startswith('http') %}
       {% set is_url = data[field2_url] and data[field2_url].startswith('http') %}
       {{ iu.image_upload_prefix(data, errors, prefix='banner_bottom', is_upload_enabled=h.uploads_enabled(), field_name='ckanext.matolabtheme.banner_bottom_url', is_url=is_url, is_upload=is_upload, upload_label = _('Banner Bottom'), url_label=_('Banner bottom'),  field_url=field2_url, field_upload='ckanext.matolabtheme.banner_bottom_upload', field_clear='ckanext.matolabtheme.clear_banner_bottom_upload' )}}
+
+      {% set field3_url = 'ckanext.matolabtheme.attribution_logo' %}
+      {% set is_upload = data[field3_url] and not data[field2_url].startswith('http') %}
+      {% set is_url = data[field3_url] and data[field3_url].startswith('http') %}
+      {{ iu.image_upload_prefix(data, errors, prefix='attribution_logo', is_upload_enabled=h.uploads_enabled(), field_name='ckanext.matolabtheme.attribution_logo_url', is_url=is_url, is_upload=is_upload, upload_label = _('Attribution Logo'), url_label=_('Attribution logo'),  field_url=field3_url, field_upload='ckanext.matolabtheme.attribution_logo_upload', field_clear='ckanext.matolabtheme.clear_attribution_logo_upload' )}}
+      
       {% endblock %}
       <div class="form-actions">
         <button type="submit" class="btn btn-primary" name="save">{{ _('Update Config') }}</button>

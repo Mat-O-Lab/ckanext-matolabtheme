@@ -147,6 +147,12 @@ a:hover {
   max-height: 200px;
 }
 
+
+.site-footer .attribution .row .col {
+  color: var(--bs-light);
+}
+
+
 .navbar-nav li a {
   display: block;
   width: 100%;

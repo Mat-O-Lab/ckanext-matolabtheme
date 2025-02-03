@@ -80,6 +80,20 @@ class BannerConfigView(MethodView):
                         value = h.url_for_static(static_url)
                     model.set_system_info(key, value)
                     config[key] = value
+                elif key == "ckanext.matolabtheme.attribution_logo":
+                    upload.update_data_dict(
+                        data_dict,
+                        "ckanext.matolabtheme.attribution_logo",
+                        "ckanext.matolabtheme.attribution_logo_upload",
+                        "ckanext.matolabtheme.clear_attribution_logo_upload",
+                    )
+                    upload.upload(uploader.get_max_image_size())
+                    value = data_dict[key]
+                    if upload.filepath:
+                        static_url = upload.filepath.split("storage", 1)[-1]
+                        value = h.url_for_static(static_url)
+                    model.set_system_info(key, value)
+                    config[key] = value
 
         except logic.ValidationError as e:
             data = request.form
