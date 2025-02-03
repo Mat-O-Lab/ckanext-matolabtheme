@@ -2,9 +2,9 @@
 
 {% block home_image %}
 <section class="bsb-hero-5 p-3 banner position-relative min-vh-25" style="background-image: url({{ h.url_for_static_or_external(config.get('ckanext.matolabtheme.banner_top')) }});">
-    <div class="row">
+    <div class="row mt-3">
       <div class="col-6 col-sm-2  order-1 order-sm-1 d-flex justify-content-start align-items-start">
-        <a class="" style="min-width: 100%;" href="{{ h.url_for('home.index') }}">
+        <a class="d-flex justify-content-center" style="min-width: 100%;" href="{{ h.url_for('home.index') }}">
           {% if g.site_logo %}
           <img class="img-fluid index-logo" src="{{ h.url_for_static_or_external(g.site_logo) }}" alt="{{ g.site_title }}" title="{{ g.site_title }}"
  />
@@ -16,7 +16,7 @@
       </div>
       <div class="col-12 col-sm-8 order-3 order-sm-2">
         <div class="row justify-content-md-center align-items-center text-light justify-content-center">
-          <div class="col-12 text-center fs-1 pt-3">
+          <div class="col-12 text-center pt-3">
             {% if intro %}
             {{ h.render_markdown(intro|replace('^[ \t]*|[ \t]*$', '')) }}
             {% else %}
