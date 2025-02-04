@@ -122,9 +122,19 @@ a {
 }
 
 a:hover {
-  color: var(--bs-primary) !important;
+  color: var(--bs-primary);
   text-decoration: underline;
 }
+
+.nav-link:hover {
+  color: var(--bs-light) !important;
+}
+
+.counter-link:hover {
+  color: var(--bs-dark);
+  text-decoration: none;
+}
+
 
 .module-narrow .nav-item>a,
 .module-narrow .nav-aside li a {

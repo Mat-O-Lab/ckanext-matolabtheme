@@ -21,14 +21,19 @@
         </ul>
         {% endblock %}
       </div>
-      <div class="col-md-4 attribution d-flex flex-column justify-content-end">
+      <div class="col-md-4 attribution d-flex flex-column justify-content-end gx-5">
         {% block footer_attribution %}
         <div class="row mb-2">
         {% if config.get('ckanext.matolabtheme.attribution_logo') %}
-        <div class="col" style="height: 50px;">{{_('Provided by')}}: <a class="hide-text" href="{{ h.contact_url() }}"><img class="img-fluid" src="{{ h.url_for_static_or_external(config.get('ckanext.matolabtheme.attribution_logo')) }}" style="height: 21px;" /></a></div>
+          <div class="col">
+            <div class="w-100">{{_('Provided by')}}:</div>
+            <a class="hide-text" href="{{ h.contact_url() }}"><img class="img-fluid" src="{{ h.url_for_static_or_external(config.get('ckanext.matolabtheme.attribution_logo')) }}" style="height: 21px;" /></a>
+          </div>
         {% endif %}
-        <div  class="col" >{{_('Powered by')}}: <a class="hide-text"
-          href="http://ckan.org">CKAN</a><img class="img-fluid" src="{{ h.url_for_static_or_external('/base/images/ckan-logo-footer.png') }}" style="height: 21px;" /></div>
+          <div class="col">
+            <div class="w-100">{{_('Powered by')}}:</div>
+            <a class="hide-text" href="http://ckan.org"><img class="img-fluid" src="{{ h.url_for_static_or_external('/base/images/ckan-logo-footer.png') }}" style="height: 21px;" /></a>
+          </div>
         {% endblock %}
         </div>
         <div class="row ">
