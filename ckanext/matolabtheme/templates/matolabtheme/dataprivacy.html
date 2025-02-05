@@ -1,0 +1,154 @@
+{% extends "page.html" %}
+
+{% block subtitle %}{{ _("Data Protection") }}{% endblock %}
+
+{% block breadcrumb_content_selected %} class="active"
+{% endblock %}
+
+{% block breadcrumb_content %}
+<li{{ self.breadcrumb_content_selected()}}>
+    {% link_for _("Data Protection"), named_route=matolabtheme ~'.dataprotection'%}</li>
+{% endblock %}
+
+{% block primary %}
+<article class="module" role="main">
+    <div class="module-content">
+        <h1 class="page-heading text-center">{{ _("Datenschutzerklärung und allgemeine Informationen zur Umsetzung der datenschutzrechtlichen Vorgaben der Artikel 12 bis 14 der Datenschutz-Grundverordnung auf") }} {{host}}</h1>
+
+        <p>{{ _("Die Nutzung von") }} {{host}} {{ _("ist so ausgestaltet, dass möglichst wenig personenbezogene Daten erhoben und verarbeitet werden. Im Folgenden informieren wir Sie darüber, welche personenbezogenen Daten wir erheben, bei wem wir sie erheben und was wir mit diesen Daten machen. Außerdem informieren wir Sie über Ihre Rechte in Datenschutzfragen und an wen Sie sich diesbezüglich wenden können.") }}</p>
+
+        <h2 id="toc-heading">{{ _("Inhaltsverzeichnis") }}</h2>
+        <ol id="toc"></ol>
+
+        <h2 id="verantwortlicher">{{ _("Verantwortlicher und Datenschutzbeauftragter") }}</h2>
+        <section>
+        {{ _("Verantwortlich für die Verarbeitung Ihrer personenbezogenen Daten ist die:")}}
+        <address class="m-3">
+            {{ h.render_markdown(legal_person_address_md,allow_html=True) }}
+        </address>
+        </section>
+        
+        <h2 id="aufruf">{{ _("Aufruf der Webseite und Server-Logfiles (Besuch des Portals)") }}</h2>
+        <p>{{ _("Beim Besuch des Portals speichern die Webserver des Betreibers temporär jeden Zugriff in einer Protokolldatei. Hierbei können folgende Daten ohne Zutun des Nutzers erfasst werden:")}}
+        <ul>
+            <li>{{ _("Die anonymisierte IP-Adresse") }}</li>
+            <li>{{ _("Das Datum und die Uhrzeit des Zugriffs") }}</li>
+            <li>{{ _("Die URL der abgerufenen Datei") }}</li>
+            <li>{{ _("Die übertragene Datenmenge") }}</li>
+            <li>{{ _("Die Meldung, ob der Abruf erfolgreich war") }}</li>
+            <li>{{ _("Die Informationen zum verwendeten Browser und Betriebssystem") }}</li>
+            <li>{{ _("Die URL der Webseite, von der aus der Aufruf erfolgt ist") }}</li>
+            <li>{{ _("Der Name des Internetzugangs-Providers") }}</li>
+        </ul>
+        <p>{{ _("Umfang und Zweck: Die Daten dienen der technischen Optimierung der Webseite und zur Sicherstellung der Sicherheit unserer informationstechnischen Systeme. Die IP-Adresse ist für den Betrieb bzw. der Auslieferung der Webseite notwendig, wird verkürzt in die Logfiles geschrieben und ist nach dem Request nicht mehr als Ganzes verfügbar. Ein direkter Rückschluss auf einzelne Personen ist uns anhand dieser Daten nicht möglich. Ein Abgleich mit anderen Datenbeständen findet nicht statt. 
+        Wir behalten uns vor, diese Daten nachträglich zu prüfen, wenn uns konkrete Anhaltspunkte für eine rechtswidrige Nutzung bekannt werden.")}}</p>
+        <p>{{ _("Empfänger: Eine Weitergabe der Daten an Dritte findet nicht statt.")}}</p>
+        <p>{{ _("Rechtsgrundlage: Die Rechtsgrundlage für die vorübergehende Speicherung der Daten ist Art. 6 Abs. 1 lit. f DS-GVO. Da die Erhebung und Speicherung dieser Daten zwingend erforderlich sind, besteht hiergegen keine Widerspruchsmöglichkeit. In o.g. Zwecken liegt auch das berechtigte Interesse des Betreibers an der Datenverarbeitung nach Art. 6 Abs. 1 lit. f DS-GVO.")}}</p>
+        <p>{{ _("Speicherdauer: Die personenbezogenen Daten werden so lange gespeichert, wie es für die Erreichung des Zwecks ihrer Erhebung erforderlich ist. Nach spätestens sieben Tagen werden die Daten gelöscht.") }}</p> 
+
+        <p>{{ _("Beispiel zur Verarbeitung:")}}</p>
+        <ul>
+            <li>{{ _("Die Erhebung und Verarbeitung dieser Daten erfolgt zum Zweck der Bereitstellung der Plattform (Verbindungsaufbau), zur dauerhaften Gewährleistung der Systemsicherheit und -stabilität, zur technischen Administration der Netzinfrastruktur, zur Optimierung des Internetangebots sowie zur allgemeinen, statistischen Auswertung. Ein Personenbezug ist auf Grund der Anonymisierung der IP-Adresse nicht möglich.") }}</li>
+            <li>{{ _("Der Betreiber erhebt und speichert diese Daten, um die Verwaltung der Nutzer und die Abwicklung der mit ihren Rollen verbundenen Prozesse sicherzustellen.") }}</li>
+            <li>{{ _("Wendet sich ein Nutzer mittels der im Impressum angegebenen Kontaktdaten an den Betreiber, erfolgt eine Verarbeitung personenbezogener Daten.") }}</li>
+        </ul>
+
+        <h2 id="cookies">{{ _("Cookies") }}</h2>
+        <p>{{ _("Das Portal macht Gebrauch von Cookies, um Daten lokal zwischenzuspeichern. Eine Nutzung ist jedoch auch ohne Cookies möglich. Mit dem Gebrauch von Cookies werden durch das Portal erweiterte Funktionen bereitgestellt. Die Deaktivierung von Cookies kann dazu führen, dass der Nutzer nicht alle Funktionen des Portals nutzen kann.")}}</p>
+        <p>{{ _("Umfang und Zweck: Zusätzlich zu den zuvor genannten Daten werden bei der Nutzung unserer Webseite Cookies auf Ihrem Rechner gespeichert. Cookies sind kleine Textdateien, die von dem von Ihnen verwendeten Browser bei Ihnen gespeichert werden und durch welche uns (dem Server unserer Webseite) bestimmte Informationen zufließen. Wir nutzen sogenannte Session-Cookies (transiente Cookies), die technisch erforderlich sind, um die Webseite funktionsfähig zu gestalten. In den von uns eingesetzten Cookies werden dabei folgende Daten zu folgenden Zwecken gespeichert und übermittelt:")}}</p>
+        <ul>
+            <li>{{ _("Anonyme User-Id als UUID") }}</li>
+        </ul>
+        <p>{{ _("Empfänger: Eine Weitergabe der Daten an Dritte findet nicht statt.")}}</p>
+        <p>{{ _("Rechtsgrundlage: Die Rechtsgrundlage für die Verarbeitung personenbezogener Daten unter Verwendung von technisch erforderlichen Cookies i.S.d. § 25 Abs. 2 TDDDG ist Art. 6 Abs. 1 lit. f DS-GVO. In o.g. Zwecken liegt auch das berechtigte Interesse des Betreibers an der Datenverarbeitung nach Art. 6 Abs. 1 lit. f DS-GVO.")}}</p>
+        <p>{{ _("Speicherdauer: Die Session-Cookies werden spätestens dann gelöscht, wenn Sie den Browser schließen.")}}</p>
+
+        <h2 id="kontaktaufnahme">{{ _("Kontaktaufnahme (E-Mail, Telefon, Formulare)") }}</h2>
+        <p>{{ _("Wendet sich ein Nutzer mittels der im Impressum angegebenen Kontaktdaten an den Betreiber, erfolgt eine Verarbeitung personenbezogener Daten. In diesem Fall speichert der Betreiber die vom Nutzer zur Kontaktaufnahme angegebenen personenbezogenen Daten, wie beispielsweise den Namen und die E-Mail-Adresse für die Verwendung zur weiteren Korrespondenz mit diesem.")}}</p>
+        <p>{{ _("Umfang und Zweck: Bei Kontaktaufnahme per E-Mail, Telefon oder über ein Formular werden die von Ihnen übermittelten Kontaktdaten wie E-Mail-Adresse, Telefonnummer und ggf. Name zum Zwecke der Bearbeitung und Beantwortung Ihrer Anfrage gespeichert.
+            Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.
+            ")}}</p>
+        <p>{{ _("Empfänger: Sofern es für die Beantwortung Ihrer Kontaktaufnahme erforderlich ist, können personenbezogene Daten an zuständige Stellen innerhalb des Betreibers weitergeleitet werden. Die jeweils zuständigen Beschäftigten des Betreibers verwenden Ihre personenbezogenen Daten ausschließlich zur Bearbeitung Ihrer Anfrage. Eine Weitergabe der Daten an Dritte findet nicht statt.")}}</p>
+        <p>{{ _("Rechtsgrundlage: Die Rechtsgrundlage für die Verarbeitung dieser Daten ist Art. 6 Abs. 1 lit. e DS-GVO i.V.m. § 4 LDSG, § 12 LHG bzw. weitere in Frage kommende Rechtsvorschriften.")}}</p>
+        <p>{{ _("Speicherdauer: Die personenbezogenen Daten werden so lange gespeichert, wie es für die Erfüllung des o.g. Zwecks erforderlich ist, d.h. die Daten werden dann gelöscht, wenn davon auszugehen ist, dass ein Austausch nicht mehr erwünscht ist.")}}</p>
+
+        <h2 id="registrierung">{{ _("Registrierungsvorgang als Nutzer/Nutzerin") }}</h2>
+        <p>{{ _("Im Rahmen eines Registrierungsvorgangs als Nutzer speichert der Betreiber folgende vom Nutzer angegebene Daten:")}}
+            <ul>
+                <li>{{ _("Name (Nachname, Vorname)") }}</li>
+                <li>{{ _("E-Mail-Adresse") }}</li>
+                <li>{{ _("Login-Name (Nutzerkennung)") }}</li>
+                <li>{{ _("Passwort") }}</li>
+                <li>{{ _("Affiliierung (Forschungsinstitutionen oder Projektkonsortien)") }}</li>
+            </ul>
+        </p>
+        <p>{{ _("Umfang und Zweck: Der Betreiber erhebt und speichert diese Daten, um die Verwaltung der Nutzer und die Abwicklung der mit ihren Rollen verbundenen Prozesse sicherzustellen. Ein Abgleich mit anderen Datenbeständen findet nicht statt. 
+        Wir behalten uns vor, diese Daten nachträglich zu prüfen, wenn uns konkrete Anhaltspunkte für eine rechtswidrige Nutzung bekannt werden.")}}</p>
+        <p>{{ _("Empfänger: Name und Login-Name sind sichtbar für Mitglieder der gleichen Organisation, die ihnen anhand ihrer Affiliierung zugewiesen werden. Eine Weitergabe der Daten an Dritte findet nicht statt.")}}</p>
+        <p>{{ _("Rechtsgrundlage: Die Rechtsgrundlage für die vorübergehende Speicherung der Daten ist Art. 6 Abs. 1 lit. f DS-GVO. Da die Erhebung und Speicherung dieser Daten zwingend erforderlich sind, besteht hiergegen keine Widerspruchsmöglichkeit. In o.g. Zwecken liegt auch das berechtigte Interesse des Betreibers an der Datenverarbeitung nach Art. 6 Abs. 1 lit. f DS-GVO.")}}</p>
+        <p>{{ _("Speicherdauer: Die personenbezogenen Daten werden so lange gespeichert, wie es für die Erreichung des Zweckes ihrer Erhebung erforderlich ist. Sie werden bei Löschung des Benutzerkontos permanent entfernt.") }}</p> 
+
+        <h2 id="links">{{ _("Links auf andere Webseiten") }}</h2>
+        <p>{{ _("Wenn wir auf Webseiten außerhalb von {{host}} verlinken, gelten die dortigen Datenschutzhinweise und -erklärungen.")}}</p>
+
+        <h2 id="tls">{{ _("TLS-Verschlüsselung") }}</h2>
+        <p>{{ _("Diese Seite nutzt aus Gründen der Sicherheit und zum Schutz der Übertragung vertraulicher Inhalte, wie z.B. der Anfragen, die Sie an uns als Seitenbetreiber senden, eine TLS-Verschlüsselung.")}}</p>
+        
+        <h2 id="data-use">{{ _("Wie verarbeiten wir diese Daten?") }}</h2>
+        <p>{{_("Ihre personenbezogenen Daten werden bei uns gespeichert.
+            Jegliche Nutzung der personenbezogenen Daten erfolgt nur zu den vorstehend genannten Zwecken und nur in dem zur Erreichung dieser Zwecke erforderlichen Umfang. Wir setzen dabei technische und organisatorische Sicherheitsmaßnahmen ein, um Ihre personenbezogenen Daten gegen unbeabsichtigte oder unrechtmäßige Vernichtung, Verlust oder Veränderung sowie gegen unbefugte Offenlegung oder unbefugten Zugang zu schützen. Unsere Sicherheitsstandards entsprechen stets den aktuellsten technologischen Entwicklungen.")}}</p>
+
+        <h2 id="third-party">{{ _("Unter welchen Voraussetzungen dürfen wir Ihre Daten an Dritte weitergeben?") }}</h2>
+        <ul>
+            <li>{{ _("Ohne die ausdrückliche Zustimmung des Nutzers wird der Betreiber dessen personenbezogene Daten nicht an Dritte weitergeben.") }}</li>
+            <li>{{ _("Etwas anderes gilt, soweit die Übermittlung an staatliche Einrichtungen oder Behörden durch eine zwingende nationale Rechtsvorschrift geboten ist oder wenn die Weitergabe im Fall von Angriffen auf die Netzinfrastruktur des Betreibers zur Rechts- oder Strafverfolgung erforderlich ist.") }}</li>
+        </ul>
+        <h2 id="rechte">{{ _("Ihre Rechte") }}</h2>
+        <p>{{ _("Hinsichtlich der Sie betreffenden personenbezogenen Daten haben Sie gegenüber uns folgende Rechte:") }}</p>
+        <ul>
+            <li>{{ _("Recht auf Widerruf Ihrer Einwilligung mit Wirkung für die Zukunft, sofern die Verarbeitung auf einer Einwilligung gemäß Artikel 6 Absatz 1 Unterabsatz 1 Buchstabe a DS-GVO beruht (Artikel 7 Absatz 3 DS-GVO)") }}</li>
+            <li>{{ _("Recht auf Bestätigung, ob Sie betreffende Daten verarbeitet werden und auf Auskunft über die verarbeiteten Daten, auf weitere Informationen über die Datenverarbeitung sowie auf Kopien der Daten (Artikel 15 DS-GVO)") }}</li>
+            <li>{{ _("Recht auf Berichtigung oder Vervollständigung unrichtiger bzw. unvollständiger Daten (Artikel 16 DS-GVO)") }}</li>
+            <li>{{ _("Recht auf unverzügliche Löschung der Sie betreffenden Daten (Artikel 17 DS-GVO)") }}</li>
+            <li>{{ _("Recht auf Einschränkung der Verarbeitung (Artikel 18 DS-GVO)") }}</li>
+            <li>{{ _("Recht auf Erhalt der Daten in einem strukturierten, gängigen und maschinenlesbaren Format, sofern die Verarbeitung auf einer Einwilligung gemäß Artikel 6 Absatz 1 Unterabsatz 1 Buchstabe a oder Artikel 9 Absatz 2 Buchstabe a oder auf einem Vertrag gemäß Artikel 6 Absatz 1 Unterabsatz 1 Buchstabe b beruht (Artikel 20 DS-GVO)") }}</li>
+            <li>{{ _("Recht auf Widerspruch gegen die künftige Verarbeitung der Sie betreffenden Daten, sofern die Daten nach Maßgabe von Artikel 6 Absatz 1 Buchstabe e oder f DS-GVO verarbeitet werden (Artikel 21 DS-GVO)") }}</li>
+            <li>{{ _("Recht auf Beschwerde") }}
+                <p>{{ _("Sie haben zudem das Recht, sich bei der Aufsichtsbehörde über die Verarbeitung der Sie betreffenden personenbezogenen Daten durch den Betreiber zu beschweren (Artikel 77 DS-GVO). Aufsichtsbehörde im Sinne des Artikels 51 Absatz 1 DS-GVO über den Betreiber ist gemäß § 25 Absatz 1 LDSG:") }}</p>
+                <section>
+                    <address class="m-3">
+                        {{ h.render_markdown(dsvgo_contact_md,allow_html=True) }}
+                    </address>
+                </section>        
+            </li>
+        </ul>
+
+        <p class="text-end">{{ _("Stand:") }} 02.2025</p>
+    </div>
+</article>
+
+<script>
+    // Function to populate the Table of Contents
+    document.addEventListener("DOMContentLoaded", function() {
+        const toc = document.getElementById('toc');
+        const headings = document.querySelectorAll('h2');
+
+        headings.forEach((heading, index) => {
+            if (heading.id === "toc-heading") {
+                return; // Skips this iteration and continues to the next
+            }
+            const id = heading.id || `heading-${index}`;
+            heading.id = id; // Assign an ID if not already present
+
+            const listItem = document.createElement('li');
+            const link = document.createElement('a');
+            link.href = `#${id}`;
+            link.innerText = heading.innerText;
+            listItem.appendChild(link);
+            toc.appendChild(listItem);
+        });
+    });
+</script>
+{% endblock %}
+
+{% block secondary %}{% endblock %}

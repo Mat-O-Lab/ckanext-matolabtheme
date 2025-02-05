@@ -75,6 +75,14 @@ class MatolabthemePlugin(plugins.SingletonPlugin):
 
         declaration.annotate("matolabtheme")
         group = key.ckanext.matolabtheme
+        declaration.declare(group.contact_url, "https://github.com/Mat-O-Lab")
+        declaration.declare(
+            group.legal_person_md, "legal person name, street number, Zip city, country"
+        )
+        declaration.declare(
+            group.dsvgo_contact_md,
+            "legal person name, street number, Zip city, country",
+        )
         declaration.declare(group.banner_top, "/static/banner_top.png")
         declaration.declare(group.banner_top_upload, "")
         declaration.declare(group.clear_banner_top_upload, "")

@@ -1,0 +1,320 @@
+# Translations template for ckanext-matolabtheme.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the ckanext-matolabtheme
+# project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ckanext-matolabtheme 0.0.1\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-02-04 14:01+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ckanext/matolabtheme/templates/footer.html:9
+msgid "About {0}"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/footer.html:15
+msgid "Data Privacy"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/footer.html:16
+msgid "CKAN API"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/footer.html:17
+msgid "CKAN Association"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/footer.html:29
+msgid "Provided by"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/footer.html:34
+msgid "Powered by"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/header.html:36
+#: ckanext/matolabtheme/templates/home/snippets/promoted.html:71
+msgid "Datasets"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/header.html:39
+#: ckanext/matolabtheme/templates/home/snippets/promoted.html:89
+msgid "Organizations"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/header.html:41
+msgid "Groups"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/header.html:42
+msgid "About"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/header.html:49
+#: ckanext/matolabtheme/templates/home/snippets/promoted.html:36
+msgid "Search"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/header.html:50
+msgid "Search datasets..."
+msgstr ""
+
+#: ckanext/matolabtheme/templates/header.html:51
+#: ckanext/matolabtheme/templates/home/snippets/promoted.html:37
+msgid "Submit"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/header.html:63
+msgid "View profile"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/header.html:74
+msgid "Sysadmin settings"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/header.html:76
+msgid "Admin"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/admin/config.html:5
+msgid "Banner Config"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/home/index.html:3
+msgid "Welcome"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/home/snippets/promoted.html:23
+msgid "Welcome to CKAN"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/home/snippets/promoted.html:25
+msgid ""
+"This is a nice introductory paragraph about CKAN or the site in general. We "
+"don't have any copy to go here yet but soon we will"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/home/snippets/promoted.html:36
+msgid "Search our database..."
+msgstr ""
+
+#: ckanext/matolabtheme/templates/home/snippets/promoted.html:58
+msgid "Log in"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/home/snippets/promoted.html:80
+msgid "Resources"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/macros/form/image_upload_prefix.html:15
+msgid "http://example.com/my-image.jpg"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/macros/form/image_upload_prefix.html:16
+msgid "Image URL"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/macros/form/image_upload_prefix.html:17
+msgid "Image"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/macros/form/image_upload_prefix.html:45
+msgid "Clear Upload"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/banner_config.html:18
+msgid "Banner Top"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/banner_config.html:18
+msgid "Banner top"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/banner_config.html:23
+msgid "Banner Bottom"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/banner_config.html:23
+msgid "Banner bottom"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/banner_config.html:28
+msgid "Attribution Logo"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/banner_config.html:28
+msgid "Attribution logo"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/banner_config.html:32
+msgid "Update Config"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/banner_config.html:41
+msgid "CKAN config options"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/banner_config.html:48
+#, python-format
+msgid ""
+"<p><strong>Site Title:</strong> This is the title of this CKAN instance It "
+"appears in various places throughout CKAN.</p> <p><strong>Custom "
+"Stylesheet:</strong> Define an alternative main CSS file.</p> <p><strong>Site"
+" Tag Logo:</strong> This is the logo that appears in the header of all the "
+"CKAN instance templates.</p> <p><strong>About:</strong> This text will appear"
+" on this CKAN instances <a href=\"%(about_url)s\">about page</a>.</p> "
+"<p><strong>Intro Text:</strong> This text will appear on this CKAN instances "
+"<a href=\"%(home_url)s\">home page</a> as a welcome to visitors.</p> "
+"<p><strong>Custom CSS:</strong> This is a block of CSS that appears in "
+"<code>&lt;head&gt;</code> tag of every page. If you wish to customize the "
+"templates more fully we recommend <a href=\"%(docs_url)s\" target=\"_blank\" "
+"rel=\"noreferrer\">reading the documentation</a>.</p>"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/dataprotection.html:3
+#: ckanext/matolabtheme/templates/matolabtheme/dataprotection.html:10
+msgid "Data Protection"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/dataprotection.html:18
+msgid ""
+"Datenschutzerklärung und\n"
+"                allgemeine Informationen zur Umsetzung der "
+"datenschutzrechtlichen Vorgaben der Artikel 12 bis 14 der\n"
+"                Datenschutz-Grundverordnung auf"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/dataprotection.html:23
+msgid "Einleitung"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/dataprotection.html:25
+msgid "Die Nutzung von"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/dataprotection.html:25
+msgid ""
+"ist so ausgestaltet, dass möglichst wenig personenbezogene\n"
+"                    Daten\n"
+"                    erhoben\n"
+"                    und\n"
+"                    verarbeitet\n"
+"                    werden.\n"
+"                    Im Folgenden informieren wir Sie darüber, welche "
+"personenbezogenen Daten wir erheben, bei wem wir\n"
+"                    sie\n"
+"                    erheben\n"
+"                    und\n"
+"                    was wir mit diesen Daten machen. Außerdem informieren wir"
+" Sie über Ihre Rechte in Datenschutzfragen\n"
+"                    und an\n"
+"                    wen\n"
+"                    Sie\n"
+"                    sich diesbezüglich wenden können."
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/dataprotection.html:42
+msgid "Wer sind wir?"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/dataprotection.html:47
+msgid "Zu welchem Zweck verarbeiten wir Ihre personenbezogenen Daten?"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/dataprotection.html:48
+msgid "Daten werden verarbeitet für die folgenden Zwecke:"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/dataprotection.html:50
+msgid "Besuch des Portals"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/dataprotection.html:51
+msgid "Im Rahmen eines Registrierungsvorgangs als Nutzer"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/dataprotection.html:52
+msgid "Nutzung des Kontaktformulars"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/dataprotection.html:57
+msgid ""
+"Die Erhebung und Verarbeitung dieser Daten erfolgt zum Zwecke der "
+"Bereitstellung der\n"
+"                            Plattform\n"
+"                            (Verbindungsaufbau), zur dauerhaften "
+"Gewährleistung der Systemsicherheit und -stabilität,\n"
+"                            zur\n"
+"                            technischen\n"
+"                            Administration der Netzinfrastruktur, zur "
+"Optimierung des Internetangebots sowie zur\n"
+"                            allgemeinen,\n"
+"                            statistischen Auswertung. Ein Personenbezug ist "
+"auf Grund der Anonymisierung der IP-Adresse\n"
+"                            nicht\n"
+"                            möglich."
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/dataprotection.html:67
+msgid ""
+"Der Betreiber erhebt und speichert diese Daten, um die Verwaltung der Nutzer "
+"und die\n"
+"                            Abwicklung\n"
+"                            der\n"
+"                            mit ihren Rollen verbundenen Prozesse "
+"sicherzustellen."
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/dataprotection.html:71
+msgid ""
+"Wendet sich ein Nutzer mittels der im Impressum angegebenen Kontaktdaten an "
+"den\n"
+"                            Betreiber,\n"
+"                            erfolgt\n"
+"                            eine Verarbeitung personenbezogener Daten."
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/dataprotection.html:79
+msgid "Welche personenbezogenen Daten verarbeiten wir?"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/dataprotection.html:142
+msgid "Wie verarbeiten wir diese Daten?"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/dataprotection.html:158
+msgid "Welchen Voraussetzungen dürfen wir Ihre Daten an Dritte weitergeben?"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/dataprotection.html:188
+msgid "Cookies"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/dataprotection.html:201
+msgid "Wie lange speichern wir Ihre Daten?"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/dataprotection.html:217
+msgid "Welche Rechte (Auskunftsrecht, Widerspruchsrecht usw.) haben Sie?"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/dataprotection.html:297
+msgid "Stand:"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/user/login.html:6
+msgid ""
+"Sign in with\n"
+"    SSO"
+msgstr ""
+

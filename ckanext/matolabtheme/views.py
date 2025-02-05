@@ -8,14 +8,6 @@ log = __import__("logging").getLogger(__name__)
 
 blueprint = Blueprint("matolabtheme", __name__)
 
-HOST = os.environ.get("CKAN_HOST", "CKAN")
-LEGAL_PERSON = os.environ.get(
-    "CKANINI__CKANEXT__MATOLABTHEME__LEGAL_PERSON_MD", "NAME LEGAL PERSON RESPONSIBLE"
-)
-DSVGO_CONTACT = os.environ.get(
-    "CKANINI__CKANEXT__MATOLABTHEME__DSVGO_CONTACT_MD", "CONTACT FOR DSVGO CONFLICTS"
-)
-
 import ckan.logic.schema
 from ckan.common import config, request, current_user
 import ckan.lib.navl.dictization_functions as dict_fns
@@ -113,20 +105,24 @@ class BannerConfigView(MethodView):
         return base.render("matolabtheme/banner_config.html", extra_vars=vars)
 
 
-class DataProtectionView(MethodView):
+class DataPrivacyView(MethodView):
     def get(self):
         return base.render(
-            "matolabtheme/dataprotection.html",
+            "matolabtheme/dataprivacy.html",
             extra_vars={
-                "host": HOST,
-                "legal_person_address_md": LEGAL_PERSON,
-                "dsvgo_contact_md": DSVGO_CONTACT,
+                "host": h.get_site_protocol_and_host()[-1],
+                "legal_person_address_md": toolkit.config.get(
+                    "ckanext.matolabtheme.legal_person_md"
+                ),
+                "dsvgo_contact_md": toolkit.config.get(
+                    "ckanext.matolabtheme.dsvgo_contact_md"
+                ),
             },
         )
 
 
 blueprint.add_url_rule(
-    "/dataprotection", view_func=DataProtectionView.as_view(str("dataprotection"))
+    "/dataprotection", view_func=DataPrivacyView.as_view(str("dataprotection"))
 )
 blueprint.add_url_rule(
     "/admin/banner_config", view_func=BannerConfigView.as_view(str("banner_config"))
