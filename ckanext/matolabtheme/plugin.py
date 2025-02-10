@@ -2,9 +2,10 @@ import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 from ckan.config.declaration import Declaration, Key
 from ckanext.matolabtheme import helpers, views, action, auth
+from ckan.lib.plugins import DefaultTranslation
 
 
-class MatolabthemePlugin(plugins.SingletonPlugin):
+class MatolabthemePlugin(plugins.SingletonPlugin, DefaultTranslation):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.IConfigDeclaration)
     plugins.implements(plugins.ITemplateHelpers)
