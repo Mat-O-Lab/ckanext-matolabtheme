@@ -441,9 +441,9 @@ table.dataTable tbody tr>.dtfc-fixed-right {
   border-color: var(--bs-body-color);
 }
 
-.btn {
+/* .btn {
   color: var(--bs-body-color);
-}
+} */
 
 .btn-outline-light {
   color: var(--bs-light) !important;
