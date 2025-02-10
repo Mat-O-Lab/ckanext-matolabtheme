@@ -23,20 +23,28 @@
       </div>
       <div class="col-md-4 attribution d-flex flex-column justify-content-end gx-5">
         {% block footer_attribution %}
-        <div class="row mb-2">
-        {% if config.get('ckanext.matolabtheme.attribution_logo') %}
-          <div class="col">
+        <div class="row mb-2 justify-content-end">
+          <div class="col text-end">
+            <div class="w-100">{{_('Powered by')}}:</div>
+            <a class="hide-text" href="http://ckan.org"><img class="img-fluid" src="{{ h.url_for_static_or_external('/base/images/ckan-logo-footer.png') }}" style="height: 21px;" /></a>
+          </div>
+          {% if config.get('ckanext.matolabtheme.attribution_logo') %}
+          <div class="col text-end">
             <div class="w-100">{{_('Provided by')}}:</div>
             <a class="hide-text" href="{{ h.contact_url() }}"><img class="img-fluid" src="{{ h.url_for_static_or_external(config.get('ckanext.matolabtheme.attribution_logo')) }}" style="height: 21px;" /></a>
           </div>
         {% endif %}
-          <div class="col">
-            <div class="w-100">{{_('Powered by')}}:</div>
-            <a class="hide-text" href="http://ckan.org"><img class="img-fluid" src="{{ h.url_for_static_or_external('/base/images/ckan-logo-footer.png') }}" style="height: 21px;" /></a>
-          </div>
         {% endblock %}
         </div>
-        <div class="row ">
+        <div class="row mtb-2 justify-content-end">
+            <div class="col text-end">
+              <a class="btn bsb-btn-2xl btn-outline-light" href="{{ h.contact_url() }}" role="button">Contact Us</a>
+            </div>
+        </div>
+        <!-- <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+              
+        </div> -->
+        <div class="row justify-content-end">
         {% block footer_lang %}
         {% snippet "snippets/language_selector.html" %}
         {% endblock %}
