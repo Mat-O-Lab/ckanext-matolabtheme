@@ -442,7 +442,7 @@ table.dataTable tbody tr>.dtfc-fixed-right {
 }
 
 .btn {
-  color: var(--bs-light);
+  color: var(--bs-body-color);
 }
 
 .btn-outline-light {
