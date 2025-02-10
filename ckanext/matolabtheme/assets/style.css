@@ -446,15 +446,25 @@ table.dataTable tbody tr>.dtfc-fixed-right {
 }
 
 .btn-outline-light {
+  color: var(--bs-light) !important;
+  border-color: var(--bs-light);
+}
+
+.btn-outline-light {
   color: var(--bs-light);
   border-color: var(--bs-light);
 }
 
+.btn-outline-light:hover {
+  color: var(--bs-light);
+  border-color: var(--bs-dark);
+  background-color: var(--bs-light);
+}
 
 .btn-light, .btn-default {
   color: var(--bs-body-color);
   background-color: var(--bs-light);
-  border-color: var(--bs-secondary);
+  border-color: var(--bs-light);
 }
 
 .btn-primary {
