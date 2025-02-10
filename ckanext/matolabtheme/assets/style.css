@@ -458,7 +458,7 @@ table.dataTable tbody tr>.dtfc-fixed-right {
 .btn-outline-light:hover {
   color: var(--bs-light);
   border-color: var(--bs-dark);
-  background-color: var(--bs-light);
+  background-color: var(--bs-dark);
 }
 
 .btn-light, .btn-default {
