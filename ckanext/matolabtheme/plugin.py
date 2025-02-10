@@ -11,6 +11,7 @@ class MatolabthemePlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IActions)
     plugins.implements(plugins.IBlueprint)
     plugins.implements(plugins.IAuthFunctions)
+    plugins.implements(plugins.ITranslation)
 
     # IConfigurer
 
