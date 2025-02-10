@@ -13,108 +13,103 @@
 {% block primary %}
 <article class="module" role="main">
     <div class="module-content">
-        <h1 class="page-heading text-center">{{ _("Datenschutzerklärung und allgemeine Informationen zur Umsetzung der datenschutzrechtlichen Vorgaben der Artikel 12 bis 14 der Datenschutz-Grundverordnung auf") }} {{host}}</h1>
+        <h1 class="page-heading text-center">{{ _("Privacy policy and general information on the implementation of the data protection legal requirements of Articles 12 to 14 of the General Data Protection Regulation on") }} {{host}}</h1>
 
-        <p>{{ _("Die Nutzung von") }} {{host}} {{ _("ist so ausgestaltet, dass möglichst wenig personenbezogene Daten erhoben und verarbeitet werden. Im Folgenden informieren wir Sie darüber, welche personenbezogenen Daten wir erheben, bei wem wir sie erheben und was wir mit diesen Daten machen. Außerdem informieren wir Sie über Ihre Rechte in Datenschutzfragen und an wen Sie sich diesbezüglich wenden können.") }}</p>
+        <p>{{ _("The use of") }} {{host}} {{ _("is designed to collect and process as little personal data as possible. Below we inform you about which personal data we collect, from whom we collect them, and what we do with this data. We also inform you about your rights regarding data protection and whom you can contact in this regard.") }}</p>
 
-        <h2 id="toc-heading">{{ _("Inhaltsverzeichnis") }}</h2>
+        <h2 id="toc-heading">{{ _("Table of Contents") }}</h2>
         <ol id="toc"></ol>
 
-        <h2 id="verantwortlicher">{{ _("Verantwortlicher und Datenschutzbeauftragter") }}</h2>
+        <h2 id="verantwortlicher">{{ _("Responsible party and data protection officer") }}</h2>
         <section>
-        {{ _("Verantwortlich für die Verarbeitung Ihrer personenbezogenen Daten ist die:")}}
+        {{ _("Responsible for the processing of your personal data is the:")}}
         <address class="m-3">
             {{ h.render_markdown(legal_person_address_md,allow_html=True) }}
         </address>
         </section>
         
-        <h2 id="aufruf">{{ _("Aufruf der Webseite und Server-Logfiles (Besuch des Portals)") }}</h2>
-        <p>{{ _("Beim Besuch des Portals speichern die Webserver des Betreibers temporär jeden Zugriff in einer Protokolldatei. Hierbei können folgende Daten ohne Zutun des Nutzers erfasst werden:")}}
+        <h2 id="aufruf">{{ _("Accessing the website and server log files (visiting the portal)") }}</h2>
+        <p>{{ _("When visiting the portal, the operator's web servers temporarily store each access in a log file. The following data may be collected without the user's intervention:")}}
         <ul>
-            <li>{{ _("Die anonymisierte IP-Adresse") }}</li>
-            <li>{{ _("Das Datum und die Uhrzeit des Zugriffs") }}</li>
-            <li>{{ _("Die URL der abgerufenen Datei") }}</li>
-            <li>{{ _("Die übertragene Datenmenge") }}</li>
-            <li>{{ _("Die Meldung, ob der Abruf erfolgreich war") }}</li>
-            <li>{{ _("Die Informationen zum verwendeten Browser und Betriebssystem") }}</li>
-            <li>{{ _("Die URL der Webseite, von der aus der Aufruf erfolgt ist") }}</li>
-            <li>{{ _("Der Name des Internetzugangs-Providers") }}</li>
+            <li>{{ _("The anonymized IP address") }}</li>
+            <li>{{ _("The date and time of access") }}</li>
+            <li>{{ _("The URL of the retrieved file") }}</li>
+            <li>{{ _("The amount of data transferred") }}</li>
+            <li>{{ _("The message indicating whether the retrieval was successful") }}</li>
+            <li>{{ _("The information about the browser and operating system used") }}</li>
+            <li>{{ _("The URL of the website from which the access occurred") }}</li>
+            <li>{{ _("The name of the internet service provider") }}</li>
         </ul>
-        <p>{{ _("Umfang und Zweck: Die Daten dienen der technischen Optimierung der Webseite und zur Sicherstellung der Sicherheit unserer informationstechnischen Systeme. Die IP-Adresse ist für den Betrieb bzw. der Auslieferung der Webseite notwendig, wird verkürzt in die Logfiles geschrieben und ist nach dem Request nicht mehr als Ganzes verfügbar. Ein direkter Rückschluss auf einzelne Personen ist uns anhand dieser Daten nicht möglich. Ein Abgleich mit anderen Datenbeständen findet nicht statt. 
-        Wir behalten uns vor, diese Daten nachträglich zu prüfen, wenn uns konkrete Anhaltspunkte für eine rechtswidrige Nutzung bekannt werden.")}}</p>
-        <p>{{ _("Empfänger: Eine Weitergabe der Daten an Dritte findet nicht statt.")}}</p>
-        <p>{{ _("Rechtsgrundlage: Die Rechtsgrundlage für die vorübergehende Speicherung der Daten ist Art. 6 Abs. 1 lit. f DS-GVO. Da die Erhebung und Speicherung dieser Daten zwingend erforderlich sind, besteht hiergegen keine Widerspruchsmöglichkeit. In o.g. Zwecken liegt auch das berechtigte Interesse des Betreibers an der Datenverarbeitung nach Art. 6 Abs. 1 lit. f DS-GVO.")}}</p>
-        <p>{{ _("Speicherdauer: Die personenbezogenen Daten werden so lange gespeichert, wie es für die Erreichung des Zwecks ihrer Erhebung erforderlich ist. Nach spätestens sieben Tagen werden die Daten gelöscht.") }}</p> 
+        <p>{{ _("Scope and purpose: The data serves the technical optimization of the website and to ensure the security of our information technology systems. The IP address is necessary for the operation or delivery of the website, is shortened in the log files, and is no longer available as a whole after the request. A direct conclusion about individual persons is not possible based on this data. A matching with other data records does not take place. We reserve the right to review this data retrospectively if we become aware of specific indications of illegal use.")}}</p>
+        <p>{{ _("Recipient: There is no transfer of data to third parties.")}}</p>
+        <p>{{ _("Legal basis: The legal basis for the temporary storage of the data is Article 6(1)(f) of the GDPR. Since the collection and storage of this data is absolutely necessary, there is no possibility of objection. The legitimate interest of the operator in data processing according to Article 6(1)(f) of the GDPR is also present in the aforementioned purposes.")}}</p>
+        <p>{{ _("Storage duration: The personal data will be stored as long as it is necessary to achieve the purpose for which it was collected. The data will be deleted after a maximum of seven days.") }}</p> 
 
-        <p>{{ _("Beispiel zur Verarbeitung:")}}</p>
+        <p>{{ _("Example of processing:")}}</p>
         <ul>
-            <li>{{ _("Die Erhebung und Verarbeitung dieser Daten erfolgt zum Zweck der Bereitstellung der Plattform (Verbindungsaufbau), zur dauerhaften Gewährleistung der Systemsicherheit und -stabilität, zur technischen Administration der Netzinfrastruktur, zur Optimierung des Internetangebots sowie zur allgemeinen, statistischen Auswertung. Ein Personenbezug ist auf Grund der Anonymisierung der IP-Adresse nicht möglich.") }}</li>
-            <li>{{ _("Der Betreiber erhebt und speichert diese Daten, um die Verwaltung der Nutzer und die Abwicklung der mit ihren Rollen verbundenen Prozesse sicherzustellen.") }}</li>
-            <li>{{ _("Wendet sich ein Nutzer mittels der im Impressum angegebenen Kontaktdaten an den Betreiber, erfolgt eine Verarbeitung personenbezogener Daten.") }}</li>
+            <li>{{ _("The collection and processing of this data is carried out for the purpose of providing the platform (establishing a connection), permanently ensuring system security and stability, technical administration of the network infrastructure, optimizing the internet offering, and general statistical evaluation. A personal reference is not possible due to the anonymization of the IP address.") }}</li>
+            <li>{{ _("The operator collects and stores this data to ensure the management of users and the processing of processes associated with their roles.") }}</li>
+            <li>{{ _("If a user contacts the operator using the contact details provided in the imprint, personal data will be processed.") }}</li>
         </ul>
 
         <h2 id="cookies">{{ _("Cookies") }}</h2>
-        <p>{{ _("Das Portal macht Gebrauch von Cookies, um Daten lokal zwischenzuspeichern. Eine Nutzung ist jedoch auch ohne Cookies möglich. Mit dem Gebrauch von Cookies werden durch das Portal erweiterte Funktionen bereitgestellt. Die Deaktivierung von Cookies kann dazu führen, dass der Nutzer nicht alle Funktionen des Portals nutzen kann.")}}</p>
-        <p>{{ _("Umfang und Zweck: Zusätzlich zu den zuvor genannten Daten werden bei der Nutzung unserer Webseite Cookies auf Ihrem Rechner gespeichert. Cookies sind kleine Textdateien, die von dem von Ihnen verwendeten Browser bei Ihnen gespeichert werden und durch welche uns (dem Server unserer Webseite) bestimmte Informationen zufließen. Wir nutzen sogenannte Session-Cookies (transiente Cookies), die technisch erforderlich sind, um die Webseite funktionsfähig zu gestalten. In den von uns eingesetzten Cookies werden dabei folgende Daten zu folgenden Zwecken gespeichert und übermittelt:")}}</p>
+        <p>{{ _("The portal uses cookies to store data locally. However, it is also possible to use it without cookies. The use of cookies provides extended functions through the portal. Disabling cookies may result in the user being unable to use all functions of the portal.")}}</p>
+        <p>{{ _("Scope and purpose: In addition to the previously mentioned data, cookies are stored on your computer when using our website. Cookies are small text files that your browser saves and through which certain information flows to us (the server of our website). We use so-called session cookies (transient cookies) that are technically necessary to make the website functional. The following data is stored and transmitted in the cookies we use for the following purposes:")}}</p>
         <ul>
-            <li>{{ _("Anonyme User-Id als UUID") }}</li>
+            <li>{{ _("Anonymous user ID as UUID") }}</li>
         </ul>
-        <p>{{ _("Empfänger: Eine Weitergabe der Daten an Dritte findet nicht statt.")}}</p>
-        <p>{{ _("Rechtsgrundlage: Die Rechtsgrundlage für die Verarbeitung personenbezogener Daten unter Verwendung von technisch erforderlichen Cookies i.S.d. § 25 Abs. 2 TDDDG ist Art. 6 Abs. 1 lit. f DS-GVO. In o.g. Zwecken liegt auch das berechtigte Interesse des Betreibers an der Datenverarbeitung nach Art. 6 Abs. 1 lit. f DS-GVO.")}}</p>
-        <p>{{ _("Speicherdauer: Die Session-Cookies werden spätestens dann gelöscht, wenn Sie den Browser schließen.")}}</p>
+        <p>{{ _("Recipient: There is no transfer of data to third parties.")}}</p>
+        <p>{{ _("Legal basis: The legal basis for the processing of personal data using technically necessary cookies in accordance with § 25 (2) TDDDG is Article 6(1)(f) of the GDPR. The legitimate interest of the operator in data processing according to Article 6(1)(f) of the GDPR is also present in the aforementioned purposes.")}}</p>
+        <p>{{ _("Storage duration: The session cookies will be deleted at the latest when you close the browser.")}}</p>
 
-        <h2 id="kontaktaufnahme">{{ _("Kontaktaufnahme (E-Mail, Telefon, Formulare)") }}</h2>
-        <p>{{ _("Wendet sich ein Nutzer mittels der im Impressum angegebenen Kontaktdaten an den Betreiber, erfolgt eine Verarbeitung personenbezogener Daten. In diesem Fall speichert der Betreiber die vom Nutzer zur Kontaktaufnahme angegebenen personenbezogenen Daten, wie beispielsweise den Namen und die E-Mail-Adresse für die Verwendung zur weiteren Korrespondenz mit diesem.")}}</p>
-        <p>{{ _("Umfang und Zweck: Bei Kontaktaufnahme per E-Mail, Telefon oder über ein Formular werden die von Ihnen übermittelten Kontaktdaten wie E-Mail-Adresse, Telefonnummer und ggf. Name zum Zwecke der Bearbeitung und Beantwortung Ihrer Anfrage gespeichert.
-            Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.
-            ")}}</p>
-        <p>{{ _("Empfänger: Sofern es für die Beantwortung Ihrer Kontaktaufnahme erforderlich ist, können personenbezogene Daten an zuständige Stellen innerhalb des Betreibers weitergeleitet werden. Die jeweils zuständigen Beschäftigten des Betreibers verwenden Ihre personenbezogenen Daten ausschließlich zur Bearbeitung Ihrer Anfrage. Eine Weitergabe der Daten an Dritte findet nicht statt.")}}</p>
-        <p>{{ _("Rechtsgrundlage: Die Rechtsgrundlage für die Verarbeitung dieser Daten ist Art. 6 Abs. 1 lit. e DS-GVO i.V.m. § 4 LDSG, § 12 LHG bzw. weitere in Frage kommende Rechtsvorschriften.")}}</p>
-        <p>{{ _("Speicherdauer: Die personenbezogenen Daten werden so lange gespeichert, wie es für die Erfüllung des o.g. Zwecks erforderlich ist, d.h. die Daten werden dann gelöscht, wenn davon auszugehen ist, dass ein Austausch nicht mehr erwünscht ist.")}}</p>
+        <h2 id="kontaktaufnahme">{{ _("Contact (Email, Phone, Forms)") }}</h2>
+        <p>{{ _("If a user contacts the operator using the contact details provided in the imprint, personal data will be processed. In this case, the operator stores the personal data provided by the user for contact, such as the name and email address, for further correspondence.")}}</p>
+        <p>{{ _("Scope and purpose: When contacting us via email, phone, or through a form, the contact details you provide, such as email address, phone number, and possibly name, will be stored for the purpose of processing and responding to your request. We would like to point out that data transmission over the internet (e.g., when communicating via email) may have security gaps. A complete protection of the data against access by third parties is not possible.")}}</p>
+        <p>{{ _("Recipient: If necessary for the response to your contact, personal data may be forwarded to responsible parties within the operator. The respective responsible employees of the operator use your personal data solely for processing your inquiry. There is no transfer of data to third parties.")}}</p>
+        <p>{{ _("Legal basis: The legal basis for the processing of this data is Article 6(1)(e) of the GDPR in conjunction with § 4 LDSG, § 12 LHG, or other applicable legal regulations.")}}</p>
+        <p>{{ _("Storage duration: The personal data will be stored as long as it is necessary to fulfill the aforementioned purpose, meaning the data will be deleted when it can be assumed that further communication is no longer desired.")}}</p>
 
-        <h2 id="registrierung">{{ _("Registrierungsvorgang als Nutzer/Nutzerin") }}</h2>
-        <p>{{ _("Im Rahmen eines Registrierungsvorgangs als Nutzer speichert der Betreiber folgende vom Nutzer angegebene Daten:")}}
+        <h2 id="registrierung">{{ _("Registration process as a user") }}</h2>
+        <p>{{ _("As part of a registration process as a user, the operator stores the following data provided by the user:")}}
             <ul>
-                <li>{{ _("Name (Nachname, Vorname)") }}</li>
-                <li>{{ _("E-Mail-Adresse") }}</li>
-                <li>{{ _("Login-Name (Nutzerkennung)") }}</li>
-                <li>{{ _("Passwort") }}</li>
-                <li>{{ _("Affiliierung (Forschungsinstitutionen oder Projektkonsortien)") }}</li>
+                <li>{{ _("Name (last name, first name)") }}</li>
+                <li>{{ _("Email address") }}</li>
+                <li>{{ _("Login name (user ID)") }}</li>
+                <li>{{ _("Password") }}</li>
+                <li>{{ _("Affiliation (research institutions or project consortia)") }}</li>
             </ul>
         </p>
-        <p>{{ _("Umfang und Zweck: Der Betreiber erhebt und speichert diese Daten, um die Verwaltung der Nutzer und die Abwicklung der mit ihren Rollen verbundenen Prozesse sicherzustellen. Ein Abgleich mit anderen Datenbeständen findet nicht statt. 
-        Wir behalten uns vor, diese Daten nachträglich zu prüfen, wenn uns konkrete Anhaltspunkte für eine rechtswidrige Nutzung bekannt werden.")}}</p>
-        <p>{{ _("Empfänger: Name und Login-Name sind sichtbar für Mitglieder der gleichen Organisation, die ihnen anhand ihrer Affiliierung zugewiesen werden. Eine Weitergabe der Daten an Dritte findet nicht statt.")}}</p>
-        <p>{{ _("Rechtsgrundlage: Die Rechtsgrundlage für die vorübergehende Speicherung der Daten ist Art. 6 Abs. 1 lit. f DS-GVO. Da die Erhebung und Speicherung dieser Daten zwingend erforderlich sind, besteht hiergegen keine Widerspruchsmöglichkeit. In o.g. Zwecken liegt auch das berechtigte Interesse des Betreibers an der Datenverarbeitung nach Art. 6 Abs. 1 lit. f DS-GVO.")}}</p>
-        <p>{{ _("Speicherdauer: Die personenbezogenen Daten werden so lange gespeichert, wie es für die Erreichung des Zweckes ihrer Erhebung erforderlich ist. Sie werden bei Löschung des Benutzerkontos permanent entfernt.") }}</p> 
+        <p>{{ _("Scope and purpose: The operator collects and stores this data to ensure the management of users and the processing of processes associated with their roles. A matching with other data records does not take place. We reserve the right to review this data retrospectively if we become aware of specific indications of illegal use.")}}</p>
+        <p>{{ _("Recipient: Name and login name are visible to members of the same organization assigned to them based on their affiliation. There is no transfer of data to third parties.")}}</p>
+        <p>{{ _("Legal basis: The legal basis for the temporary storage of the data is Article 6(1)(f) of the GDPR. Since the collection and storage of this data is absolutely necessary, there is no possibility of objection. The legitimate interest of the operator in data processing according to Article 6(1)(f) of the GDPR is also present in the aforementioned purposes.")}}</p>
+        <p>{{ _("Storage duration: The personal data will be stored as long as it is necessary to achieve the purpose of its collection. They will be permanently removed upon deletion of the user account.") }}</p> 
 
-        <h2 id="links">{{ _("Links auf andere Webseiten") }}</h2>
-        <p>{{ _("Wenn wir auf Webseiten außerhalb von {{host}} verlinken, gelten die dortigen Datenschutzhinweise und -erklärungen.")}}</p>
+        <h2 id="links">{{ _("Links to other websites") }}</h2>
+        <p>{{ _("If we link to websites outside of") }} {{host}} {{ _(", the data protection notices and statements there apply.")}}</p>
 
-        <h2 id="tls">{{ _("TLS-Verschlüsselung") }}</h2>
-        <p>{{ _("Diese Seite nutzt aus Gründen der Sicherheit und zum Schutz der Übertragung vertraulicher Inhalte, wie z.B. der Anfragen, die Sie an uns als Seitenbetreiber senden, eine TLS-Verschlüsselung.")}}</p>
+        <h2 id="tls">{{ _("TLS encryption") }}</h2>
+        <p>{{ _("This site uses TLS encryption for security reasons and to protect the transmission of confidential content, such as the inquiries you send to us as the site operator.")}}</p>
         
-        <h2 id="data-use">{{ _("Wie verarbeiten wir diese Daten?") }}</h2>
-        <p>{{_("Ihre personenbezogenen Daten werden bei uns gespeichert.
-            Jegliche Nutzung der personenbezogenen Daten erfolgt nur zu den vorstehend genannten Zwecken und nur in dem zur Erreichung dieser Zwecke erforderlichen Umfang. Wir setzen dabei technische und organisatorische Sicherheitsmaßnahmen ein, um Ihre personenbezogenen Daten gegen unbeabsichtigte oder unrechtmäßige Vernichtung, Verlust oder Veränderung sowie gegen unbefugte Offenlegung oder unbefugten Zugang zu schützen. Unsere Sicherheitsstandards entsprechen stets den aktuellsten technologischen Entwicklungen.")}}</p>
+        <h2 id="data-use">{{ _("How do we process this data?") }}</h2>
+        <p>{{_("Your personal data is stored with us. Any use of personal data occurs only for the purposes mentioned above and only to the extent necessary to achieve these purposes. We employ technical and organizational security measures to protect your personal data against accidental or unlawful destruction, loss, or alteration, as well as against unauthorized disclosure or access. Our security standards are always in line with the latest technological developments.")}}</p>
 
-        <h2 id="third-party">{{ _("Unter welchen Voraussetzungen dürfen wir Ihre Daten an Dritte weitergeben?") }}</h2>
+        <h2 id="third-party">{{ _("Under what conditions can we pass your data on to third parties?") }}</h2>
         <ul>
-            <li>{{ _("Ohne die ausdrückliche Zustimmung des Nutzers wird der Betreiber dessen personenbezogene Daten nicht an Dritte weitergeben.") }}</li>
-            <li>{{ _("Etwas anderes gilt, soweit die Übermittlung an staatliche Einrichtungen oder Behörden durch eine zwingende nationale Rechtsvorschrift geboten ist oder wenn die Weitergabe im Fall von Angriffen auf die Netzinfrastruktur des Betreibers zur Rechts- oder Strafverfolgung erforderlich ist.") }}</li>
+            <li>{{ _("Without the user's explicit consent, the operator will not pass on personal data to third parties.") }}</li>
+            <li>{{ _("The exception applies insofar as the transmission to state authorities or agencies is required by a mandatory national legal provision or if the transfer is necessary in the event of attacks on the operator's network infrastructure for legal or criminal prosecution.") }}</li>
         </ul>
-        <h2 id="rechte">{{ _("Ihre Rechte") }}</h2>
-        <p>{{ _("Hinsichtlich der Sie betreffenden personenbezogenen Daten haben Sie gegenüber uns folgende Rechte:") }}</p>
+        <h2 id="rechte">{{ _("Your rights") }}</h2>
+        <p>{{ _("Regarding your personal data, you have the following rights against us:") }}</p>
         <ul>
-            <li>{{ _("Recht auf Widerruf Ihrer Einwilligung mit Wirkung für die Zukunft, sofern die Verarbeitung auf einer Einwilligung gemäß Artikel 6 Absatz 1 Unterabsatz 1 Buchstabe a DS-GVO beruht (Artikel 7 Absatz 3 DS-GVO)") }}</li>
-            <li>{{ _("Recht auf Bestätigung, ob Sie betreffende Daten verarbeitet werden und auf Auskunft über die verarbeiteten Daten, auf weitere Informationen über die Datenverarbeitung sowie auf Kopien der Daten (Artikel 15 DS-GVO)") }}</li>
-            <li>{{ _("Recht auf Berichtigung oder Vervollständigung unrichtiger bzw. unvollständiger Daten (Artikel 16 DS-GVO)") }}</li>
-            <li>{{ _("Recht auf unverzügliche Löschung der Sie betreffenden Daten (Artikel 17 DS-GVO)") }}</li>
-            <li>{{ _("Recht auf Einschränkung der Verarbeitung (Artikel 18 DS-GVO)") }}</li>
-            <li>{{ _("Recht auf Erhalt der Daten in einem strukturierten, gängigen und maschinenlesbaren Format, sofern die Verarbeitung auf einer Einwilligung gemäß Artikel 6 Absatz 1 Unterabsatz 1 Buchstabe a oder Artikel 9 Absatz 2 Buchstabe a oder auf einem Vertrag gemäß Artikel 6 Absatz 1 Unterabsatz 1 Buchstabe b beruht (Artikel 20 DS-GVO)") }}</li>
-            <li>{{ _("Recht auf Widerspruch gegen die künftige Verarbeitung der Sie betreffenden Daten, sofern die Daten nach Maßgabe von Artikel 6 Absatz 1 Buchstabe e oder f DS-GVO verarbeitet werden (Artikel 21 DS-GVO)") }}</li>
-            <li>{{ _("Recht auf Beschwerde") }}
-                <p>{{ _("Sie haben zudem das Recht, sich bei der Aufsichtsbehörde über die Verarbeitung der Sie betreffenden personenbezogenen Daten durch den Betreiber zu beschweren (Artikel 77 DS-GVO). Aufsichtsbehörde im Sinne des Artikels 51 Absatz 1 DS-GVO über den Betreiber ist gemäß § 25 Absatz 1 LDSG:") }}</p>
+            <li>{{ _("Right to revoke your consent with effect for the future, provided that the processing is based on consent according to Article 6(1)(a) of the GDPR (Article 7(3) of the GDPR)") }}</li>
+            <li>{{ _("Right to confirmation of whether your data is being processed and to information about the processed data, as well as to further information about data processing and copies of the data (Article 15 of the GDPR)") }}</li>
+            <li>{{ _("Right to correction or completion of incorrect or incomplete data (Article 16 of the GDPR)") }}</li>
+            <li>{{ _("Right to immediate deletion of your data (Article 17 of the GDPR)") }}</li>
+            <li>{{ _("Right to restriction of processing (Article 18 of the GDPR)") }}</li>
+            <li>{{ _("Right to receive the data in a structured, commonly used, and machine-readable format, provided that the processing is based on consent according to Article 6(1)(a) or Article 9(2)(a) or on a contract according to Article 6(1)(b) (Article 20 of the GDPR)") }}</li>
+            <li>{{ _("Right to object to the future processing of your data, provided that the data is processed pursuant to Article 6(1)(e) or (f) of the GDPR (Article 21 of the GDPR)") }}</li>
+            <li>{{ _("Right to complain") }}
+                <p>{{ _("You also have the right to lodge a complaint with the supervisory authority regarding the processing of your personal data by the operator (Article 77 of the GDPR). The supervisory authority in the sense of Article 51(1) of the GDPR regarding the operator is according to § 25(1) LDSG:") }}</p>
                 <section>
                     <address class="m-3">
                         {{ h.render_markdown(dsvgo_contact_md,allow_html=True) }}
@@ -123,7 +118,7 @@
             </li>
         </ul>
 
-        <p class="text-end">{{ _("Stand:") }} 02.2025</p>
+        <p class="text-end">{{ _("As of:") }} 02.2025</p>
     </div>
 </article>
 

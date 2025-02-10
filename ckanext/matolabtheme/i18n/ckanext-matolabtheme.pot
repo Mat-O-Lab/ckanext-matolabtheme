@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ckanext-matolabtheme 0.0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-02-06 07:36+0000\n"
+"POT-Creation-Date: 2025-02-10 09:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,12 +34,12 @@ msgstr ""
 msgid "CKAN Association"
 msgstr ""
 
-#: ckanext/matolabtheme/templates/footer.html:29
-msgid "Provided by"
+#: ckanext/matolabtheme/templates/footer.html:28
+msgid "Powered by"
 msgstr ""
 
-#: ckanext/matolabtheme/templates/footer.html:34
-msgid "Powered by"
+#: ckanext/matolabtheme/templates/footer.html:33
+msgid "Provided by"
 msgstr ""
 
 #: ckanext/matolabtheme/templates/header.html:36
@@ -188,415 +188,399 @@ msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:16
 msgid ""
-"Datenschutzerklärung und allgemeine Informationen zur Umsetzung der "
-"datenschutzrechtlichen Vorgaben der Artikel 12 bis 14 der Datenschutz-"
-"Grundverordnung auf"
+"Privacy policy and general information on the implementation of the data "
+"protection legal requirements of Articles 12 to 14 of the General Data "
+"Protection Regulation on"
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:18
-msgid "Die Nutzung von"
+msgid "The use of"
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:18
 msgid ""
-"ist so ausgestaltet, dass möglichst wenig personenbezogene Daten erhoben und "
-"verarbeitet werden. Im Folgenden informieren wir Sie darüber, welche "
-"personenbezogenen Daten wir erheben, bei wem wir sie erheben und was wir mit "
-"diesen Daten machen. Außerdem informieren wir Sie über Ihre Rechte in "
-"Datenschutzfragen und an wen Sie sich diesbezüglich wenden können."
+"is designed to collect and process as little personal data as possible. Below"
+" we inform you about which personal data we collect, from whom we collect "
+"them, and what we do with this data. We also inform you about your rights "
+"regarding data protection and whom you can contact in this regard."
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:20
-msgid "Inhaltsverzeichnis"
+msgid "Table of Contents"
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:23
-msgid "Verantwortlicher und Datenschutzbeauftragter"
+msgid "Responsible party and data protection officer"
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:25
-msgid "Verantwortlich für die Verarbeitung Ihrer personenbezogenen Daten ist die:"
+msgid "Responsible for the processing of your personal data is the:"
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:31
-msgid "Aufruf der Webseite und Server-Logfiles (Besuch des Portals)"
+msgid "Accessing the website and server log files (visiting the portal)"
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:32
 msgid ""
-"Beim Besuch des Portals speichern die Webserver des Betreibers temporär jeden"
-" Zugriff in einer Protokolldatei. Hierbei können folgende Daten ohne Zutun "
-"des Nutzers erfasst werden:"
+"When visiting the portal, the operator's web servers temporarily store each "
+"access in a log file. The following data may be collected without the user's "
+"intervention:"
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:34
-msgid "Die anonymisierte IP-Adresse"
+msgid "The anonymized IP address"
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:35
-msgid "Das Datum und die Uhrzeit des Zugriffs"
+msgid "The date and time of access"
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:36
-msgid "Die URL der abgerufenen Datei"
+msgid "The URL of the retrieved file"
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:37
-msgid "Die übertragene Datenmenge"
+msgid "The amount of data transferred"
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:38
-msgid "Die Meldung, ob der Abruf erfolgreich war"
+msgid "The message indicating whether the retrieval was successful"
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:39
-msgid "Die Informationen zum verwendeten Browser und Betriebssystem"
+msgid "The information about the browser and operating system used"
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:40
-msgid "Die URL der Webseite, von der aus der Aufruf erfolgt ist"
+msgid "The URL of the website from which the access occurred"
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:41
-msgid "Der Name des Internetzugangs-Providers"
+msgid "The name of the internet service provider"
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:43
 msgid ""
-"Umfang und Zweck: Die Daten dienen der technischen Optimierung der Webseite "
-"und zur Sicherstellung der Sicherheit unserer informationstechnischen "
-"Systeme. Die IP-Adresse ist für den Betrieb bzw. der Auslieferung der "
-"Webseite notwendig, wird verkürzt in die Logfiles geschrieben und ist nach "
-"dem Request nicht mehr als Ganzes verfügbar. Ein direkter Rückschluss auf "
-"einzelne Personen ist uns anhand dieser Daten nicht möglich. Ein Abgleich mit"
-" anderen Datenbeständen findet nicht statt. \n"
-"        Wir behalten uns vor, diese Daten nachträglich zu prüfen, wenn uns "
-"konkrete Anhaltspunkte für eine rechtswidrige Nutzung bekannt werden."
+"Scope and purpose: The data serves the technical optimization of the website "
+"and to ensure the security of our information technology systems. The IP "
+"address is necessary for the operation or delivery of the website, is "
+"shortened in the log files, and is no longer available as a whole after the "
+"request. A direct conclusion about individual persons is not possible based "
+"on this data. A matching with other data records does not take place. We "
+"reserve the right to review this data retrospectively if we become aware of "
+"specific indications of illegal use."
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:44
+#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:61
+msgid "Recipient: There is no transfer of data to third parties."
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:45
-#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:62
-msgid "Empfänger: Eine Weitergabe der Daten an Dritte findet nicht statt."
+#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:84
+msgid ""
+"Legal basis: The legal basis for the temporary storage of the data is Article"
+" 6(1)(f) of the GDPR. Since the collection and storage of this data is "
+"absolutely necessary, there is no possibility of objection. The legitimate "
+"interest of the operator in data processing according to Article 6(1)(f) of "
+"the GDPR is also present in the aforementioned purposes."
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:46
-#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:88
 msgid ""
-"Rechtsgrundlage: Die Rechtsgrundlage für die vorübergehende Speicherung der "
-"Daten ist Art. 6 Abs. 1 lit. f DS-GVO. Da die Erhebung und Speicherung dieser"
-" Daten zwingend erforderlich sind, besteht hiergegen keine "
-"Widerspruchsmöglichkeit. In o.g. Zwecken liegt auch das berechtigte Interesse"
-" des Betreibers an der Datenverarbeitung nach Art. 6 Abs. 1 lit. f DS-GVO."
+"Storage duration: The personal data will be stored as long as it is necessary"
+" to achieve the purpose for which it was collected. The data will be deleted "
+"after a maximum of seven days."
 msgstr ""
 
-#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:47
-msgid ""
-"Speicherdauer: Die personenbezogenen Daten werden so lange gespeichert, wie "
-"es für die Erreichung des Zwecks ihrer Erhebung erforderlich ist. Nach "
-"spätestens sieben Tagen werden die Daten gelöscht."
+#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:48
+msgid "Example of processing:"
 msgstr ""
 
-#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:49
-msgid "Beispiel zur Verarbeitung:"
+#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:50
+msgid ""
+"The collection and processing of this data is carried out for the purpose of "
+"providing the platform (establishing a connection), permanently ensuring "
+"system security and stability, technical administration of the network "
+"infrastructure, optimizing the internet offering, and general statistical "
+"evaluation. A personal reference is not possible due to the anonymization of "
+"the IP address."
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:51
 msgid ""
-"Die Erhebung und Verarbeitung dieser Daten erfolgt zum Zweck der "
-"Bereitstellung der Plattform (Verbindungsaufbau), zur dauerhaften "
-"Gewährleistung der Systemsicherheit und -stabilität, zur technischen "
-"Administration der Netzinfrastruktur, zur Optimierung des Internetangebots "
-"sowie zur allgemeinen, statistischen Auswertung. Ein Personenbezug ist auf "
-"Grund der Anonymisierung der IP-Adresse nicht möglich."
+"The operator collects and stores this data to ensure the management of users "
+"and the processing of processes associated with their roles."
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:52
 msgid ""
-"Der Betreiber erhebt und speichert diese Daten, um die Verwaltung der Nutzer "
-"und die Abwicklung der mit ihren Rollen verbundenen Prozesse sicherzustellen."
+"If a user contacts the operator using the contact details provided in the "
+"imprint, personal data will be processed."
 msgstr ""
 
-#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:53
-msgid ""
-"Wendet sich ein Nutzer mittels der im Impressum angegebenen Kontaktdaten an "
-"den Betreiber, erfolgt eine Verarbeitung personenbezogener Daten."
+#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:55
+msgid "Cookies"
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:56
-msgid "Cookies"
+msgid ""
+"The portal uses cookies to store data locally. However, it is also possible "
+"to use it without cookies. The use of cookies provides extended functions "
+"through the portal. Disabling cookies may result in the user being unable to "
+"use all functions of the portal."
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:57
 msgid ""
-"Das Portal macht Gebrauch von Cookies, um Daten lokal zwischenzuspeichern. "
-"Eine Nutzung ist jedoch auch ohne Cookies möglich. Mit dem Gebrauch von "
-"Cookies werden durch das Portal erweiterte Funktionen bereitgestellt. Die "
-"Deaktivierung von Cookies kann dazu führen, dass der Nutzer nicht alle "
-"Funktionen des Portals nutzen kann."
+"Scope and purpose: In addition to the previously mentioned data, cookies are "
+"stored on your computer when using our website. Cookies are small text files "
+"that your browser saves and through which certain information flows to us "
+"(the server of our website). We use so-called session cookies (transient "
+"cookies) that are technically necessary to make the website functional. The "
+"following data is stored and transmitted in the cookies we use for the "
+"following purposes:"
 msgstr ""
 
-#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:58
+#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:59
+msgid "Anonymous user ID as UUID"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:62
 msgid ""
-"Umfang und Zweck: Zusätzlich zu den zuvor genannten Daten werden bei der "
-"Nutzung unserer Webseite Cookies auf Ihrem Rechner gespeichert. Cookies sind "
-"kleine Textdateien, die von dem von Ihnen verwendeten Browser bei Ihnen "
-"gespeichert werden und durch welche uns (dem Server unserer Webseite) "
-"bestimmte Informationen zufließen. Wir nutzen sogenannte Session-Cookies "
-"(transiente Cookies), die technisch erforderlich sind, um die Webseite "
-"funktionsfähig zu gestalten. In den von uns eingesetzten Cookies werden dabei"
-" folgende Daten zu folgenden Zwecken gespeichert und übermittelt:"
-msgstr ""
-
-#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:60
-msgid "Anonyme User-Id als UUID"
+"Legal basis: The legal basis for the processing of personal data using "
+"technically necessary cookies in accordance with § 25 (2) TDDDG is Article "
+"6(1)(f) of the GDPR. The legitimate interest of the operator in data "
+"processing according to Article 6(1)(f) of the GDPR is also present in the "
+"aforementioned purposes."
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:63
 msgid ""
-"Rechtsgrundlage: Die Rechtsgrundlage für die Verarbeitung personenbezogener "
-"Daten unter Verwendung von technisch erforderlichen Cookies i.S.d. § 25 Abs. "
-"2 TDDDG ist Art. 6 Abs. 1 lit. f DS-GVO. In o.g. Zwecken liegt auch das "
-"berechtigte Interesse des Betreibers an der Datenverarbeitung nach Art. 6 "
-"Abs. 1 lit. f DS-GVO."
+"Storage duration: The session cookies will be deleted at the latest when you "
+"close the browser."
 msgstr ""
 
-#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:64
-msgid ""
-"Speicherdauer: Die Session-Cookies werden spätestens dann gelöscht, wenn Sie "
-"den Browser schließen."
+#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:65
+msgid "Contact (Email, Phone, Forms)"
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:66
-msgid "Kontaktaufnahme (E-Mail, Telefon, Formulare)"
+msgid ""
+"If a user contacts the operator using the contact details provided in the "
+"imprint, personal data will be processed. In this case, the operator stores "
+"the personal data provided by the user for contact, such as the name and "
+"email address, for further correspondence."
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:67
 msgid ""
-"Wendet sich ein Nutzer mittels der im Impressum angegebenen Kontaktdaten an "
-"den Betreiber, erfolgt eine Verarbeitung personenbezogener Daten. In diesem "
-"Fall speichert der Betreiber die vom Nutzer zur Kontaktaufnahme angegebenen "
-"personenbezogenen Daten, wie beispielsweise den Namen und die E-Mail-Adresse "
-"für die Verwendung zur weiteren Korrespondenz mit diesem."
+"Scope and purpose: When contacting us via email, phone, or through a form, "
+"the contact details you provide, such as email address, phone number, and "
+"possibly name, will be stored for the purpose of processing and responding to"
+" your request. We would like to point out that data transmission over the "
+"internet (e.g., when communicating via email) may have security gaps. A "
+"complete protection of the data against access by third parties is not "
+"possible."
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:68
 msgid ""
-"Umfang und Zweck: Bei Kontaktaufnahme per E-Mail, Telefon oder über ein "
-"Formular werden die von Ihnen übermittelten Kontaktdaten wie E-Mail-Adresse, "
-"Telefonnummer und ggf. Name zum Zwecke der Bearbeitung und Beantwortung Ihrer"
-" Anfrage gespeichert.\n"
-"            Wir weisen darauf hin, dass die Datenübertragung im Internet "
-"(z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein"
-" lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich."
-"\n"
-"            "
+"Recipient: If necessary for the response to your contact, personal data may "
+"be forwarded to responsible parties within the operator. The respective "
+"responsible employees of the operator use your personal data solely for "
+"processing your inquiry. There is no transfer of data to third parties."
 msgstr ""
 
-#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:71
+#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:69
 msgid ""
-"Empfänger: Sofern es für die Beantwortung Ihrer Kontaktaufnahme erforderlich "
-"ist, können personenbezogene Daten an zuständige Stellen innerhalb des "
-"Betreibers weitergeleitet werden. Die jeweils zuständigen Beschäftigten des "
-"Betreibers verwenden Ihre personenbezogenen Daten ausschließlich zur "
-"Bearbeitung Ihrer Anfrage. Eine Weitergabe der Daten an Dritte findet nicht "
-"statt."
+"Legal basis: The legal basis for the processing of this data is Article "
+"6(1)(e) of the GDPR in conjunction with § 4 LDSG, § 12 LHG, or other "
+"applicable legal regulations."
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:70
+msgid ""
+"Storage duration: The personal data will be stored as long as it is necessary"
+" to fulfill the aforementioned purpose, meaning the data will be deleted when"
+" it can be assumed that further communication is no longer desired."
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:72
-msgid ""
-"Rechtsgrundlage: Die Rechtsgrundlage für die Verarbeitung dieser Daten ist "
-"Art. 6 Abs. 1 lit. e DS-GVO i.V.m. § 4 LDSG, § 12 LHG bzw. weitere in Frage "
-"kommende Rechtsvorschriften."
+msgid "Registration process as a user"
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:73
 msgid ""
-"Speicherdauer: Die personenbezogenen Daten werden so lange gespeichert, wie "
-"es für die Erfüllung des o.g. Zwecks erforderlich ist, d.h. die Daten werden "
-"dann gelöscht, wenn davon auszugehen ist, dass ein Austausch nicht mehr "
-"erwünscht ist."
+"As part of a registration process as a user, the operator stores the "
+"following data provided by the user:"
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:75
-msgid "Registrierungsvorgang als Nutzer/Nutzerin"
+msgid "Name (last name, first name)"
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:76
-msgid ""
-"Im Rahmen eines Registrierungsvorgangs als Nutzer speichert der Betreiber "
-"folgende vom Nutzer angegebene Daten:"
+msgid "Email address"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:77
+msgid "Login name (user ID)"
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:78
-msgid "Name (Nachname, Vorname)"
+msgid "Password"
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:79
-msgid "E-Mail-Adresse"
-msgstr ""
-
-#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:80
-msgid "Login-Name (Nutzerkennung)"
-msgstr ""
-
-#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:81
-msgid "Passwort"
+msgid "Affiliation (research institutions or project consortia)"
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:82
-msgid "Affiliierung (Forschungsinstitutionen oder Projektkonsortien)"
+msgid ""
+"Scope and purpose: The operator collects and stores this data to ensure the "
+"management of users and the processing of processes associated with their "
+"roles. A matching with other data records does not take place. We reserve the"
+" right to review this data retrospectively if we become aware of specific "
+"indications of illegal use."
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:83
+msgid ""
+"Recipient: Name and login name are visible to members of the same "
+"organization assigned to them based on their affiliation. There is no "
+"transfer of data to third parties."
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:85
 msgid ""
-"Umfang und Zweck: Der Betreiber erhebt und speichert diese Daten, um die "
-"Verwaltung der Nutzer und die Abwicklung der mit ihren Rollen verbundenen "
-"Prozesse sicherzustellen. Ein Abgleich mit anderen Datenbeständen findet "
-"nicht statt. \n"
-"        Wir behalten uns vor, diese Daten nachträglich zu prüfen, wenn uns "
-"konkrete Anhaltspunkte für eine rechtswidrige Nutzung bekannt werden."
+"Storage duration: The personal data will be stored as long as it is necessary"
+" to achieve the purpose of its collection. They will be permanently removed "
+"upon deletion of the user account."
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:87
-msgid ""
-"Empfänger: Name und Login-Name sind sichtbar für Mitglieder der gleichen "
-"Organisation, die ihnen anhand ihrer Affiliierung zugewiesen werden. Eine "
-"Weitergabe der Daten an Dritte findet nicht statt."
+msgid "Links to other websites"
 msgstr ""
 
-#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:89
-msgid ""
-"Speicherdauer: Die personenbezogenen Daten werden so lange gespeichert, wie "
-"es für die Erreichung des Zweckes ihrer Erhebung erforderlich ist. Sie werden"
-" bei Löschung des Benutzerkontos permanent entfernt."
+#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:88
+msgid "If we link to websites outside of"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:88
+msgid ", the data protection notices and statements there apply."
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:90
+msgid "TLS encryption"
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:91
-msgid "Links auf andere Webseiten"
+msgid ""
+"This site uses TLS encryption for security reasons and to protect the "
+"transmission of confidential content, such as the inquiries you send to us as"
+" the site operator."
 msgstr ""
 
-#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:92
-msgid ""
-"Wenn wir auf Webseiten außerhalb von {{host}} verlinken, gelten die dortigen "
-"Datenschutzhinweise und -erklärungen."
+#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:93
+msgid "How do we process this data?"
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:94
-msgid "TLS-Verschlüsselung"
-msgstr ""
-
-#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:95
 msgid ""
-"Diese Seite nutzt aus Gründen der Sicherheit und zum Schutz der Übertragung "
-"vertraulicher Inhalte, wie z.B. der Anfragen, die Sie an uns als "
-"Seitenbetreiber senden, eine TLS-Verschlüsselung."
+"Your personal data is stored with us. Any use of personal data occurs only "
+"for the purposes mentioned above and only to the extent necessary to achieve "
+"these purposes. We employ technical and organizational security measures to "
+"protect your personal data against accidental or unlawful destruction, loss, "
+"or alteration, as well as against unauthorized disclosure or access. Our "
+"security standards are always in line with the latest technological "
+"developments."
 msgstr ""
 
-#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:97
-msgid "Wie verarbeiten wir diese Daten?"
+#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:96
+msgid "Under what conditions can we pass your data on to third parties?"
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:98
 msgid ""
-"Ihre personenbezogenen Daten werden bei uns gespeichert.\n"
-"            Jegliche Nutzung der personenbezogenen Daten erfolgt nur zu den "
-"vorstehend genannten Zwecken und nur in dem zur Erreichung dieser Zwecke "
-"erforderlichen Umfang. Wir setzen dabei technische und organisatorische "
-"Sicherheitsmaßnahmen ein, um Ihre personenbezogenen Daten gegen "
-"unbeabsichtigte oder unrechtmäßige Vernichtung, Verlust oder Veränderung "
-"sowie gegen unbefugte Offenlegung oder unbefugten Zugang zu schützen. Unsere "
-"Sicherheitsstandards entsprechen stets den aktuellsten technologischen "
-"Entwicklungen."
+"Without the user's explicit consent, the operator will not pass on personal "
+"data to third parties."
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:99
+msgid ""
+"The exception applies insofar as the transmission to state authorities or "
+"agencies is required by a mandatory national legal provision or if the "
+"transfer is necessary in the event of attacks on the operator's network "
+"infrastructure for legal or criminal prosecution."
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:101
-msgid "Unter welchen Voraussetzungen dürfen wir Ihre Daten an Dritte weitergeben?"
+msgid "Your rights"
 msgstr ""
 
-#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:103
-msgid ""
-"Ohne die ausdrückliche Zustimmung des Nutzers wird der Betreiber dessen "
-"personenbezogene Daten nicht an Dritte weitergeben."
+#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:102
+msgid "Regarding your personal data, you have the following rights against us:"
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:104
 msgid ""
-"Etwas anderes gilt, soweit die Übermittlung an staatliche Einrichtungen oder "
-"Behörden durch eine zwingende nationale Rechtsvorschrift geboten ist oder "
-"wenn die Weitergabe im Fall von Angriffen auf die Netzinfrastruktur des "
-"Betreibers zur Rechts- oder Strafverfolgung erforderlich ist."
+"Right to revoke your consent with effect for the future, provided that the "
+"processing is based on consent according to Article 6(1)(a) of the GDPR "
+"(Article 7(3) of the GDPR)"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:105
+msgid ""
+"Right to confirmation of whether your data is being processed and to "
+"information about the processed data, as well as to further information about"
+" data processing and copies of the data (Article 15 of the GDPR)"
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:106
-msgid "Ihre Rechte"
+msgid ""
+"Right to correction or completion of incorrect or incomplete data (Article 16"
+" of the GDPR)"
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:107
-msgid ""
-"Hinsichtlich der Sie betreffenden personenbezogenen Daten haben Sie gegenüber"
-" uns folgende Rechte:"
+msgid "Right to immediate deletion of your data (Article 17 of the GDPR)"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:108
+msgid "Right to restriction of processing (Article 18 of the GDPR)"
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:109
 msgid ""
-"Recht auf Widerruf Ihrer Einwilligung mit Wirkung für die Zukunft, sofern die"
-" Verarbeitung auf einer Einwilligung gemäß Artikel 6 Absatz 1 Unterabsatz 1 "
-"Buchstabe a DS-GVO beruht (Artikel 7 Absatz 3 DS-GVO)"
+"Right to receive the data in a structured, commonly used, and machine-"
+"readable format, provided that the processing is based on consent according "
+"to Article 6(1)(a) or Article 9(2)(a) or on a contract according to Article "
+"6(1)(b) (Article 20 of the GDPR)"
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:110
 msgid ""
-"Recht auf Bestätigung, ob Sie betreffende Daten verarbeitet werden und auf "
-"Auskunft über die verarbeiteten Daten, auf weitere Informationen über die "
-"Datenverarbeitung sowie auf Kopien der Daten (Artikel 15 DS-GVO)"
+"Right to object to the future processing of your data, provided that the data"
+" is processed pursuant to Article 6(1)(e) or (f) of the GDPR (Article 21 of "
+"the GDPR)"
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:111
-msgid ""
-"Recht auf Berichtigung oder Vervollständigung unrichtiger bzw. "
-"unvollständiger Daten (Artikel 16 DS-GVO)"
+msgid "Right to complain"
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:112
 msgid ""
-"Recht auf unverzügliche Löschung der Sie betreffenden Daten (Artikel 17 DS-"
-"GVO)"
+"You also have the right to lodge a complaint with the supervisory authority "
+"regarding the processing of your personal data by the operator (Article 77 of"
+" the GDPR). The supervisory authority in the sense of Article 51(1) of the "
+"GDPR regarding the operator is according to § 25(1) LDSG:"
 msgstr ""
 
-#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:113
-msgid "Recht auf Einschränkung der Verarbeitung (Artikel 18 DS-GVO)"
-msgstr ""
-
-#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:114
-msgid ""
-"Recht auf Erhalt der Daten in einem strukturierten, gängigen und "
-"maschinenlesbaren Format, sofern die Verarbeitung auf einer Einwilligung "
-"gemäß Artikel 6 Absatz 1 Unterabsatz 1 Buchstabe a oder Artikel 9 Absatz 2 "
-"Buchstabe a oder auf einem Vertrag gemäß Artikel 6 Absatz 1 Unterabsatz 1 "
-"Buchstabe b beruht (Artikel 20 DS-GVO)"
-msgstr ""
-
-#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:115
-msgid ""
-"Recht auf Widerspruch gegen die künftige Verarbeitung der Sie betreffenden "
-"Daten, sofern die Daten nach Maßgabe von Artikel 6 Absatz 1 Buchstabe e oder "
-"f DS-GVO verarbeitet werden (Artikel 21 DS-GVO)"
-msgstr ""
-
-#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:116
-msgid "Recht auf Beschwerde"
-msgstr ""
-
-#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:117
-msgid ""
-"Sie haben zudem das Recht, sich bei der Aufsichtsbehörde über die "
-"Verarbeitung der Sie betreffenden personenbezogenen Daten durch den Betreiber"
-" zu beschweren (Artikel 77 DS-GVO). Aufsichtsbehörde im Sinne des Artikels 51"
-" Absatz 1 DS-GVO über den Betreiber ist gemäß § 25 Absatz 1 LDSG:"
-msgstr ""
-
-#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:126
-msgid "Stand:"
+#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:121
+msgid "As of:"
 msgstr ""
 
 #: ckanext/matolabtheme/templates/user/login.html:6
