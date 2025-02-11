@@ -26,6 +26,14 @@ import ckan.lib.uploader as uploader
 class BannerConfigView(MethodView):
     def post(self) -> Union[str, Response]:
         try:
+            context: Context = {
+                "user": current_user.name,
+                "auth_user_obj": current_user
+            }
+            logic.check_access(u'sysadmin', context)
+        except logic.NotAuthorized:
+            base.abort(403, _(u'Need to be system administrator to administer'))
+        try:
             req = request.form.copy()
             req.update(request.files.to_dict())
             data_dict = logic.clean_dict(
@@ -97,6 +105,14 @@ class BannerConfigView(MethodView):
         return h.redirect_to("matolabtheme.banner_config")
 
     def get(self) -> str:
+        try:
+            context: Context = {
+                "user": current_user.name,
+                "auth_user_obj": current_user
+            }
+            logic.check_access(u'sysadmin', context)
+        except logic.NotAuthorized:
+            base.abort(403, _(u'Need to be system administrator to administer'))
         schema = ckan.logic.schema.update_configuration_schema()
         data = {}
         for key in schema:
