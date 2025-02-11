@@ -9,7 +9,7 @@ log = __import__("logging").getLogger(__name__)
 blueprint = Blueprint("matolabtheme", __name__)
 
 import ckan.logic.schema
-from ckan.common import config, request, current_user
+from ckan.common import _, config, request, current_user
 import ckan.lib.navl.dictization_functions as dict_fns
 from ckan.views.home import CACHE_PARAMETERS
 import ckan.logic as logic
