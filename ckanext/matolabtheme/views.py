@@ -9,7 +9,7 @@ log = __import__("logging").getLogger(__name__)
 blueprint = Blueprint("matolabtheme", __name__)
 
 import ckan.logic.schema
-from ckan.common import config, request, current_user
+from ckan.common import _, config, request, current_user
 import ckan.lib.navl.dictization_functions as dict_fns
 from ckan.views.home import CACHE_PARAMETERS
 import ckan.logic as logic
@@ -25,6 +25,14 @@ import ckan.lib.uploader as uploader
 
 class BannerConfigView(MethodView):
     def post(self) -> Union[str, Response]:
+        try:
+            context: Context = {
+                "user": current_user.name,
+                "auth_user_obj": current_user
+            }
+            logic.check_access(u'sysadmin', context)
+        except logic.NotAuthorized:
+            base.abort(403, _(u'Need to be system administrator to administer'))
         try:
             req = request.form.copy()
             req.update(request.files.to_dict())
@@ -97,6 +105,14 @@ class BannerConfigView(MethodView):
         return h.redirect_to("matolabtheme.banner_config")
 
     def get(self) -> str:
+        try:
+            context: Context = {
+                "user": current_user.name,
+                "auth_user_obj": current_user
+            }
+            logic.check_access(u'sysadmin', context)
+        except logic.NotAuthorized:
+            base.abort(403, _(u'Need to be system administrator to administer'))
         schema = ckan.logic.schema.update_configuration_schema()
         data = {}
         for key in schema:
