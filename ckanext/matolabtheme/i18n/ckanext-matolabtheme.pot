@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ckanext-matolabtheme 0.0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-02-10 09:27+0000\n"
+"POT-Creation-Date: 2025-02-12 08:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,6 +40,10 @@ msgstr ""
 
 #: ckanext/matolabtheme/templates/footer.html:33
 msgid "Provided by"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/footer.html:41
+msgid "Contact Us"
 msgstr ""
 
 #: ckanext/matolabtheme/templates/header.html:36
