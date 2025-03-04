@@ -28,11 +28,11 @@ class BannerConfigView(MethodView):
         try:
             context: Context = {
                 "user": current_user.name,
-                "auth_user_obj": current_user
+                "auth_user_obj": current_user,
             }
-            logic.check_access(u'sysadmin', context)
+            logic.check_access("sysadmin", context)
         except logic.NotAuthorized:
-            base.abort(403, _(u'Need to be system administrator to administer'))
+            base.abort(403, _("Need to be system administrator to administer"))
         try:
             req = request.form.copy()
             req.update(request.files.to_dict())
@@ -108,11 +108,11 @@ class BannerConfigView(MethodView):
         try:
             context: Context = {
                 "user": current_user.name,
-                "auth_user_obj": current_user
+                "auth_user_obj": current_user,
             }
-            logic.check_access(u'sysadmin', context)
+            logic.check_access("sysadmin", context)
         except logic.NotAuthorized:
-            base.abort(403, _(u'Need to be system administrator to administer'))
+            base.abort(403, _("Need to be system administrator to administer"))
         schema = ckan.logic.schema.update_configuration_schema()
         data = {}
         for key in schema:
@@ -132,6 +132,9 @@ class DataPrivacyView(MethodView):
                 ),
                 "dsvgo_contact_md": toolkit.config.get(
                     "ckanext.matolabtheme.dsvgo_contact_md"
+                ),
+                "contact_dp_commissioner_email_md": toolkit.config.get(
+                    "ckanext.matolabtheme.contact_dp_commissioner_email_md"
                 ),
             },
         )

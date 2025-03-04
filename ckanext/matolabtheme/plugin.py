@@ -82,6 +82,10 @@ class MatolabthemePlugin(plugins.SingletonPlugin, DefaultTranslation):
             group.legal_person_md, "legal person name, street number, Zip city, country"
         )
         declaration.declare(
+            group.contact_dp_commissioner_email_md,
+            "[datenprotection_commissioner@example.de](mailto:datenschutzbeauftragte@example.de?subject=dataprotection CKAN)",
+        )
+        declaration.declare(
             group.dsvgo_contact_md,
             "legal person name, street number, Zip city, country",
         )

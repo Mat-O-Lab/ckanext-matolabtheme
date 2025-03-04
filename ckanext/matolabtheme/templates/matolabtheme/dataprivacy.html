@@ -6,30 +6,30 @@
 {% endblock %}
 
 {% block breadcrumb_content %}
-<li{{ self.breadcrumb_content_selected()}}>
+<li {{ self.breadcrumb_content_selected()}}>
     {% link_for _("Data Protection"), named_route=matolabtheme ~'.dataprotection'%}</li>
 {% endblock %}
 
 {% block primary %}
 <article class="module" role="main">
     <div class="module-content">
-        <h1 class="page-heading text-center">{{ _("Privacy policy and general information on the implementation of the data protection legal requirements of Articles 12 to 14 of the General Data Protection Regulation on") }} {{host}}</h1>
+        <h1 class="page-heading text-center">{{ _("Information on data protection in accordance with Art. 13 of the General Data Protection Regulation (GDPR) on") }} {{host}}</h1>
 
-        <p>{{ _("The use of") }} {{host}} {{ _("is designed to collect and process as little personal data as possible. Below we inform you about which personal data we collect, from whom we collect them, and what we do with this data. We also inform you about your rights regarding data protection and whom you can contact in this regard.") }}</p>
+        <p>{{ _("The following information provides you with an overview of the processing of your personal data on ") }} {{host}} {{ _("and your rights under data protection law. According to Art. 4 No. 1 of the EU General Data Protection Regulation (GDPR), personal data is any information relating to an identified or identifiable natural person.") }}</p>
 
         <h2 id="toc-heading">{{ _("Table of Contents") }}</h2>
         <ol id="toc"></ol>
 
-        <h2 id="verantwortlicher">{{ _("Responsible party and data protection officer") }}</h2>
+        <h2 id="verantwortlicher">{{ _("Controller and Data Protection Commissioner ") }}</h2>
         <section>
-        {{ _("Responsible for the processing of your personal data is the:")}}
+        {{ _("According to the GDPR (Article 4, No. 7) and other data protection regulations, the controller is:")}}
         <address class="m-3">
             {{ h.render_markdown(legal_person_address_md,allow_html=True) }}
         </address>
+        {{_("The controller is a public corporation represented by its President.")}}
         </section>
-        
+        <p> {{ _("The Data Protection Commissioner can be contacted by email at:")}} {{ h.render_markdown(contact_dp_commissioner_email_md,allow_html=True) }}</p>
         <h2 id="aufruf">{{ _("Accessing the website and server log files (visiting the portal)") }}</h2>
-        <p>{{ _("When visiting the portal, the operator's web servers temporarily store each access in a log file. The following data may be collected without the user's intervention:")}}
         <ul>
             <li>{{ _("The anonymized IP address") }}</li>
             <li>{{ _("The date and time of access") }}</li>
@@ -40,9 +40,9 @@
             <li>{{ _("The URL of the website from which the access occurred") }}</li>
             <li>{{ _("The name of the internet service provider") }}</li>
         </ul>
-        <p>{{ _("Scope and purpose: The data serves the technical optimization of the website and to ensure the security of our information technology systems. The IP address is necessary for the operation or delivery of the website, is shortened in the log files, and is no longer available as a whole after the request. A direct conclusion about individual persons is not possible based on this data. A matching with other data records does not take place. We reserve the right to review this data retrospectively if we become aware of specific indications of illegal use.")}}</p>
+        <p>{{ _("Scope and Purpose: When using the website for information purposes only, i.e. when you do not register or transmit other information, we will only collect the personal data that are transmitted by your browser to our server according to the settings made by you. The data serves the technical optimization of the website and to ensure the security of our information technology systems. The IP address is necessary for the operation or delivery of the website, is shortened in the log files, and is no longer available as a whole after the request. A direct conclusion about individual persons is not possible based on this data. A matching with other data records does not take place. We reserve the right to review this data retrospectively if we become aware of specific indications of illegal use.")}}</p>
         <p>{{ _("Recipient: There is no transfer of data to third parties.")}}</p>
-        <p>{{ _("Legal basis: The legal basis for the temporary storage of the data is Article 6(1)(f) of the GDPR. Since the collection and storage of this data is absolutely necessary, there is no possibility of objection. The legitimate interest of the operator in data processing according to Article 6(1)(f) of the GDPR is also present in the aforementioned purposes.")}}</p>
+        <p>{{ _("Legal basis: The legal basis for processing is Art. 6 par. 1 (b), par. 3 (b) GDPR in conjunction with Art. 4 LDSG respectively Art. 20 par. 1 KITG in conjunction with Art. 12 par. 1 LHG.")}}</p>
         <p>{{ _("Storage duration: The personal data will be stored as long as it is necessary to achieve the purpose for which it was collected. The data will be deleted after a maximum of seven days.") }}</p> 
 
         <p>{{ _("Example of processing:")}}</p>
@@ -53,8 +53,7 @@
         </ul>
 
         <h2 id="cookies">{{ _("Cookies") }}</h2>
-        <p>{{ _("The portal uses cookies to store data locally. However, it is also possible to use it without cookies. The use of cookies provides extended functions through the portal. Disabling cookies may result in the user being unable to use all functions of the portal.")}}</p>
-        <p>{{ _("Scope and purpose: In addition to the previously mentioned data, cookies are stored on your computer when using our website. Cookies are small text files that your browser saves and through which certain information flows to us (the server of our website). We use so-called session cookies (transient cookies) that are technically necessary to make the website functional. The following data is stored and transmitted in the cookies we use for the following purposes:")}}</p>
+        <p>{{ _("Scope and Purpose: In addition to the above data, cookies will be stored on your computer when using our website. Cookies are small text files stored by the browser you use. From these cookies, we (the server of our website) obtain certain information. We use so-called session cookies (transient cookies) that are technically required to make the website work. The following data is stored and transmitted in the cookies we use:")}}</p>
         <ul>
             <li>{{ _("Anonymous user ID as UUID") }}</li>
         </ul>
@@ -63,14 +62,14 @@
         <p>{{ _("Storage duration: The session cookies will be deleted at the latest when you close the browser.")}}</p>
 
         <h2 id="kontaktaufnahme">{{ _("Contact (Email, Phone, Forms)") }}</h2>
-        <p>{{ _("If a user contacts the operator using the contact details provided in the imprint, personal data will be processed. In this case, the operator stores the personal data provided by the user for contact, such as the name and email address, for further correspondence.")}}</p>
-        <p>{{ _("Scope and purpose: When contacting us via email, phone, or through a form, the contact details you provide, such as email address, phone number, and possibly name, will be stored for the purpose of processing and responding to your request. We would like to point out that data transmission over the internet (e.g., when communicating via email) may have security gaps. A complete protection of the data against access by third parties is not possible.")}}</p>
+        <p>{{ _("Scope and purpose: If you contact us by e-mail, telephone or via a form, the contact details you provide, such as your e-mail address, telephone number and, if applicable, your name, will be stored for the purpose of processing and responding to your request.
+            We would like to point out that data transmission (e.g. when communicating by e-mail) may be subject to security vulnerabilities. Complete protection of data against access by third parties is not possible.")}}</p>
         <p>{{ _("Recipient: If necessary for the response to your contact, personal data may be forwarded to responsible parties within the operator. The respective responsible employees of the operator use your personal data solely for processing your inquiry. There is no transfer of data to third parties.")}}</p>
-        <p>{{ _("Legal basis: The legal basis for the processing of this data is Article 6(1)(e) of the GDPR in conjunction with § 4 LDSG, § 12 LHG, or other applicable legal regulations.")}}</p>
+        <!-- <p>{{ _("Legal basis: The legal basis for the processing of this data is Art. 6 para. 1 lit. e GDPR in conjunction with § 4 LDSG, § 20 para. 1 KITG in conjunction with § 12 para. 1 LHG. § Section 4 LDSG, Section 20 (1) KITG in conjunction with Section 12 (1) LHG or other relevant legal provisions.")}}</p> -->
         <p>{{ _("Storage duration: The personal data will be stored as long as it is necessary to fulfill the aforementioned purpose, meaning the data will be deleted when it can be assumed that further communication is no longer desired.")}}</p>
 
         <h2 id="registrierung">{{ _("Registration process as a user") }}</h2>
-        <p>{{ _("As part of a registration process as a user, the operator stores the following data provided by the user:")}}
+        <p>{{ _("Scope and purpose: The operator collects and stores this data to ensure the management of users and the processing of processes associated with their roles. A matching with other data records does not take place. We reserve the right to review this data retrospectively if we become aware of specific indications of illegal use. As part of a registration process as a user, the operator stores the following data provided by the user:")}}
             <ul>
                 <li>{{ _("Name (last name, first name)") }}</li>
                 <li>{{ _("Email address") }}</li>
@@ -79,16 +78,15 @@
                 <li>{{ _("Affiliation (research institutions or project consortia)") }}</li>
             </ul>
         </p>
-        <p>{{ _("Scope and purpose: The operator collects and stores this data to ensure the management of users and the processing of processes associated with their roles. A matching with other data records does not take place. We reserve the right to review this data retrospectively if we become aware of specific indications of illegal use.")}}</p>
         <p>{{ _("Recipient: Name and login name are visible to members of the same organization assigned to them based on their affiliation. There is no transfer of data to third parties.")}}</p>
-        <p>{{ _("Legal basis: The legal basis for the temporary storage of the data is Article 6(1)(f) of the GDPR. Since the collection and storage of this data is absolutely necessary, there is no possibility of objection. The legitimate interest of the operator in data processing according to Article 6(1)(f) of the GDPR is also present in the aforementioned purposes.")}}</p>
+        <p>{{ _("Legal basis: The The legal basis for data processing is Art. 6 para. 1 lit. b GDPR.")}}</p>
         <p>{{ _("Storage duration: The personal data will be stored as long as it is necessary to achieve the purpose of its collection. They will be permanently removed upon deletion of the user account.") }}</p> 
 
         <h2 id="links">{{ _("Links to other websites") }}</h2>
         <p>{{ _("If we link to websites outside of") }} {{host}} {{ _(", the data protection notices and statements there apply.")}}</p>
 
-        <h2 id="tls">{{ _("TLS encryption") }}</h2>
-        <p>{{ _("This site uses TLS encryption for security reasons and to protect the transmission of confidential content, such as the inquiries you send to us as the site operator.")}}</p>
+        <h2 id="tls">{{ _("Encrypted transmission (TLS encryption)") }}</h2>
+        <p>{{ _("This site uses TLS encryption to protect the transmission of all content, including the requests you send to us as the site operator. With TLS encryption, the data you transmit to us cannot generally be read by third parties. Please note, however, that when data is transmitted over the Internet, it is never possible to guarantee complete protection against access by third parties.")}}</p>
         
         <h2 id="data-use">{{ _("How do we process this data?") }}</h2>
         <p>{{_("Your personal data is stored with us. Any use of personal data occurs only for the purposes mentioned above and only to the extent necessary to achieve these purposes. We employ technical and organizational security measures to protect your personal data against accidental or unlawful destruction, loss, or alteration, as well as against unauthorized disclosure or access. Our security standards are always in line with the latest technological developments.")}}</p>
@@ -99,17 +97,17 @@
             <li>{{ _("The exception applies insofar as the transmission to state authorities or agencies is required by a mandatory national legal provision or if the transfer is necessary in the event of attacks on the operator's network infrastructure for legal or criminal prosecution.") }}</li>
         </ul>
         <h2 id="rechte">{{ _("Your rights") }}</h2>
-        <p>{{ _("Regarding your personal data, you have the following rights against us:") }}</p>
+        <p>{{ _("As far as your personal data are concerned, you have the following rights:") }}</p>
         <ul>
-            <li>{{ _("Right to revoke your consent with effect for the future, provided that the processing is based on consent according to Article 6(1)(a) of the GDPR (Article 7(3) of the GDPR)") }}</li>
-            <li>{{ _("Right to confirmation of whether your data is being processed and to information about the processed data, as well as to further information about data processing and copies of the data (Article 15 of the GDPR)") }}</li>
-            <li>{{ _("Right to correction or completion of incorrect or incomplete data (Article 16 of the GDPR)") }}</li>
-            <li>{{ _("Right to immediate deletion of your data (Article 17 of the GDPR)") }}</li>
-            <li>{{ _("Right to restriction of processing (Article 18 of the GDPR)") }}</li>
-            <li>{{ _("Right to receive the data in a structured, commonly used, and machine-readable format, provided that the processing is based on consent according to Article 6(1)(a) or Article 9(2)(a) or on a contract according to Article 6(1)(b) (Article 20 of the GDPR)") }}</li>
-            <li>{{ _("Right to object to the future processing of your data, provided that the data is processed pursuant to Article 6(1)(e) or (f) of the GDPR (Article 21 of the GDPR)") }}</li>
+            <li>{{ _("Right to revoke your consent with effect for the future, provided that processing is based on a consent according to Article 6, par. 1, sub-par. 1, a GDPR (Article 7, par. 3 GDPR).") }}</li>
+            <li>{{ _("Right to confirmation whether data about you are processed and right to information about the data processed and about data processing as well as right to obtain copies of the data (Article 15 GDPR).") }}</li>
+            <li>{{ _("Right to rectification or completion of incorrect or incomplete data (Article 16 GDPR).") }}</li>
+            <li>{{ _("Right to immediate erasure of your personal data (Article 17 GDPR).") }}</li>
+            <li>{{ _("Right to restriction of processing (Article 18 GDPR).") }}</li>
+            <li>{{ _("Right to data portability in a structured, standard, and machine-readable format, if processing is based on a consent according to Article 6, par. 1, sub-par. 1, a or Article 9, par. 2, a or on an agreement according to Article 6, par. 1, sub-par. 1, b (Article 20 GDPR).") }}</li>
+            <li>{{ _("Right to object to the future processing of your personal data, if the data are processed accord-ing to Article 6, par. 1, e or f GDPR (Article 21 GDPR).") }}</li>
             <li>{{ _("Right to complain") }}
-                <p>{{ _("You also have the right to lodge a complaint with the supervisory authority regarding the processing of your personal data by the operator (Article 77 of the GDPR). The supervisory authority in the sense of Article 51(1) of the GDPR regarding the operator is according to § 25(1) LDSG:") }}</p>
+                <p>{{ _("In addition, you have the right to complain about the processing of your personal data by the controller of this website with its super-visory authority (Article 77 GDPR). According to Article 25, par. 1, LDSG (State Data Protection Act), the su-pervisory authority of the controller of this website according to Article 51, par. 1 GDPR is:") }}</p>
                 <section>
                     <address class="m-3">
                         {{ h.render_markdown(dsvgo_contact_md,allow_html=True) }}
