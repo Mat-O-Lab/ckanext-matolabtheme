@@ -151,7 +151,7 @@ blueprint.add_url_rule(
     "/dataprotection", view_func=DataPrivacyView.as_view(str("dataprotection"))
 )
 blueprint.add_url_rule(
-    "/admin/banner_config", view_func=ThemeConfigView.as_view(str("theme_config"))
+    "/admin/theme_config", view_func=ThemeConfigView.as_view(str("theme_config"))
 )
 
 
