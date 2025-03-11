@@ -31,7 +31,7 @@
         {% block header_site_navigation_tabs %}
         {% set org_type = h.default_group_type('organization') %}
         {% set group_type = h.default_group_type('group') %}
-        {{ super() }}
+        {{super()}}
         {% endblock %}
         {% endblock %}
       </ul>
@@ -50,46 +50,27 @@
       {% block header_account_container_content %}
       <ul class="nav navbar-nav navbar-right ms-auto" data-module="me" data-me="{{ c.userobj.id }}">
         {% if c.userobj %}
-        <li class="nav-item dropdown">
-          {% block header_account_profile %}
-          <a href="#" class="image nav-link dropdown-toggle" title="{{ _('View profile') }}" href="#"
-            id="navbarAccountDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            {{ h.user_image((c.user if c and c.user else ''), size=22) }}
-            <span class="username">{{ c.userobj.display_name }}</span>
-          </a>
-          <!-- {{ h.url_for('user.read', id=c.userobj.name) }} -->
-          {% endblock %}
-          <ul class="dropdown-menu" aria-labelledby="navbarAccountDropdownMenuLink">
-            {% block header_account_logged %}
-            {% if c.userobj.sysadmin %}
-            <li>
-              <a class="dropdown-item" href="{{ h.url_for('admin.index') }}" title="{{ _('Sysadmin settings') }}">
-                <i class="fa fa-gavel" aria-hidden="true"></i>
-                <span class="text">{{ _('Admin') }}</span>
-              </a>
-            </li>
-            {% endif %}
-            {% block header_dashboard %}
-            {{ super() }}
-            {% endblock %}
-            {% block header_account_settings_link %}
-            {{ super() }}
-            {% endblock %}
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-            {% block header_account_log_out_link %}
-            {{ super() }}
-            {% endblock %}
-            {% endblock %}
-          </ul>
-        </li>
+          <li class="nav-item dropdown">
+            <a href="#" class="image nav-link dropdown-toggle" title="{{ _('View profile') }}" href="#"
+              id="navbarAccountDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {{ h.user_image((c.user if c and c.user else ''), size=22) }}
+              <span class="username">{{ c.userobj.display_name }}</span>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarAccountDropdownMenuLink">
+              {% block header_account_logged %}
+              {{super()}}
+              {% block header_account_profile %}
+              {% endblock %}
+
+              {% endblock %}
+            </ul>
+          </li>
         {% else %}
-        {% block header_account_notlogged %}
-        {{super()}}
-        {% endblock %}
+          {% block header_account_notlogged %}
+          {{super()}}
+          {% endblock %}
+        {% endif %}
       </ul>
-      {% endif %}
       {% endblock %}
     </div>
   </div>

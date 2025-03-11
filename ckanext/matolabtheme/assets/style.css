@@ -57,11 +57,12 @@
   .d-light-flex { display: flex !important; }
   .d-light-inline-flex { display: inline-flex !important; }
   .d-light-none { display: none !important; }
-  .site-footer .attribution .row .col { color: var(--bs-light); }
+}
+.site-footer .attribution .row .col,
   .site-footer a,
+  .site-footer .text-end,
   .site-footer .attribution p,
   .site-footer label { color: var(--bs-light) !important; }
-}
 
 /* Common Styles */
 *,

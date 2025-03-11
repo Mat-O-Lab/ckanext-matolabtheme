@@ -4,7 +4,8 @@
  */
 
 /* Dark Mode Variable Overrides */
-:root {
+@media (prefers-color-scheme: dark) {
+  :root {
     --bs-white: #fafafa;
     --bs-black: #111;
     --bs-gray: #7e7e7e;
@@ -46,11 +47,12 @@
   .text-light {
     color: var(--bs-body-color) !important;
   }
+  .site-footer .attribution .row .col,
   .site-footer a,
+  .site-footer .text-end,
   .site-footer .attribution p,
-  .site-footer label {
-    color: var(--bs-body-color) !important;
-  }
+  .site-footer label { color: var(--bs-body-color) !important; }
+
   
   .checkbox input[type=checkbox], .form-check-input {
     background-color: var(--bs-body-bg);
@@ -61,6 +63,14 @@
   .accordion-button, .accordion-button:not(.collapsed){
     background-color: var(--bs-body-color);
   }
-  
+  .navbar-nav li a {
+    color: var(--bs-body-color);
+  }
+  .nav-tabs .nav-link.active,
+  .nav-tabs .nav-item.show .nav-link {
+    color: var(--bs-body-color);
+  }
+
+}
   /* End of dark.css */
   
