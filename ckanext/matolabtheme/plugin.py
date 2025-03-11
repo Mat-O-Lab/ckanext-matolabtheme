@@ -30,6 +30,9 @@ class MatolabthemePlugin(plugins.SingletonPlugin, DefaultTranslation):
             {
                 # This is an existing CKAN core configuration option, we are just
                 # making it available to be editable at runtime
+                "ckanext.matolabtheme.dark_mode": [
+                    ignore_missing,
+                ],
                 "ckanext.matolabtheme.banner_top": [
                     ignore_missing,
                     unicode_safe,
@@ -89,6 +92,7 @@ class MatolabthemePlugin(plugins.SingletonPlugin, DefaultTranslation):
             group.dsvgo_contact_md,
             "legal person name, street number, Zip city, country",
         )
+        declaration.declare_bool(group.dark_mode, False)
         declaration.declare(group.banner_top, "/static/banner_top.png")
         declaration.declare(group.banner_top_upload, "")
         declaration.declare(group.clear_banner_top_upload, "")

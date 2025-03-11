@@ -2,14 +2,14 @@
 
 {% block meta %}
 {{ super() }}
-<meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#111111" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#eeeeee" media="(prefers-color-scheme: dark)">
 {%- endblock -%}
 
 {%- block styles %}
 {{ super() }}
 {% asset 'matolabtheme/style' %}
+{% if config.get('ckanext.matolabtheme.dark_mode') %}
+{% asset 'matolabtheme/dark' %}
+{% endif %}
 {% endblock %}
 
 {% block bodytag %}

@@ -18,3 +18,8 @@ style:
   contents:
     - style.css
   output: matolabtheme/matolabtheme.css
+
+dark:
+  contents:
+    - dark.css
+  output: matolabtheme/matolabtheme_dark.css

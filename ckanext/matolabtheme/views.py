@@ -23,7 +23,7 @@ from ckan.common import request
 import ckan.lib.uploader as uploader
 
 
-class BannerConfigView(MethodView):
+class ThemeConfigView(MethodView):
     def post(self) -> Union[str, Response]:
         try:
             context: Context = {
@@ -43,11 +43,13 @@ class BannerConfigView(MethodView):
                     )
                 )
             )
+            # Set dark_mode based on whether the checkbox was checked
+            data_dict['ckanext.matolabtheme.dark_mode'] = 'ckanext.matolabtheme.dark_mode' in req
             del data_dict["save"]
             # data = logic.get_action("config_option_update")(
             #     {"user": current_user.name}, data_dict
             # )
-
+            log.debug(data_dict)
             # Handle banner uploads AFTER calling CKAN’s function
             upload = uploader.get_uploader("admin")
             for key in list(data_dict.keys()):
@@ -94,15 +96,20 @@ class BannerConfigView(MethodView):
                         value = h.url_for_static(static_url)
                     model.set_system_info(key, value)
                     config[key] = value
-
+                elif key == "ckanext.matolabtheme.dark_mode":
+                    log.debug(f"dark_mode: {data_dict[key]}")
+                    value = data_dict[key]
+                    model.set_system_info(key, value)
+                    config[key] = value
+                    
         except logic.ValidationError as e:
             data = request.form
             errors = e.error_dict
             error_summary = e.error_summary
             vars = dict(data=data, errors=errors, error_summary=error_summary)
-            return base.render("matolabtheme/banner_config.html", extra_vars=vars)
+            return base.render("matolabtheme/theme_config.html", extra_vars=vars)
 
-        return h.redirect_to("matolabtheme.banner_config")
+        return h.redirect_to("matolabtheme.theme_config")
 
     def get(self) -> str:
         try:
@@ -118,7 +125,7 @@ class BannerConfigView(MethodView):
         for key in schema:
             data[key] = config.get(key)
         vars: dict[str, Any] = dict(data=data, errors={})
-        return base.render("matolabtheme/banner_config.html", extra_vars=vars)
+        return base.render("matolabtheme/theme_config.html", extra_vars=vars)
 
 
 class DataPrivacyView(MethodView):
@@ -144,7 +151,7 @@ blueprint.add_url_rule(
     "/dataprotection", view_func=DataPrivacyView.as_view(str("dataprotection"))
 )
 blueprint.add_url_rule(
-    "/admin/banner_config", view_func=BannerConfigView.as_view(str("banner_config"))
+    "/admin/banner_config", view_func=ThemeConfigView.as_view(str("theme_config"))
 )
 
 

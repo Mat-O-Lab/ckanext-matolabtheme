@@ -1,0 +1,66 @@
+/*!
+ * Dark Mode Overrides for Bootstrap-Dark
+ * Include this file after light.css to enable dark mode.
+ */
+
+/* Dark Mode Variable Overrides */
+:root {
+    --bs-white: #fafafa;
+    --bs-black: #111;
+    --bs-gray: #7e7e7e;
+    --bs-primary: #375a7f;
+    --bs-secondary: #4e6c7e;
+    --bs-light: #2a333c;
+    --bs-primary-rgb: 55, 90, 127;
+    --bs-secondary-rgb: 78, 108, 126;
+    --bs-light-rgb: 42, 51, 60;
+    --bs-body-bg-rgb: 34, 34, 34;
+    --bs-body-color: #a6bbc8;
+    --bs-body-bg: #222;
+    --bs-table-bg: var(--bs-body-bg);
+  }
+  
+  /* Dark Mode Utility Classes */
+  .d-dark-inline { display: inline !important; }
+  .d-dark-inline-block { display: inline-block !important; }
+  .d-dark-block { display: block !important; }
+  .d-dark-grid { display: grid !important; }
+  .d-dark-table { display: table !important; }
+  .d-dark-table-row { display: table-row !important; }
+  .d-dark-table-cell { display: table-cell !important; }
+  .d-dark-flex { display: flex !important; }
+  .d-dark-inline-flex { display: inline-flex !important; }
+  .d-dark-none { display: none !important; }
+  
+  /* Additional Dark-Specific Overrides */
+  .tag {
+    color: var(--bs-body-color);
+  }
+  .btn {
+    color: var(--bs-body-color);
+  }
+  .counter-link:hover {
+    color: var(--bs-body-color);
+    text-decoration: none;
+  }
+  .text-light {
+    color: var(--bs-body-color) !important;
+  }
+  .site-footer a,
+  .site-footer .attribution p,
+  .site-footer label {
+    color: var(--bs-body-color) !important;
+  }
+  
+  .checkbox input[type=checkbox], .form-check-input {
+    background-color: var(--bs-body-bg);
+  }
+  .accordion-item {
+    background-color: var(--bs-body-bg);
+  }
+  .accordion-button, .accordion-button:not(.collapsed){
+    background-color: var(--bs-body-color);
+  }
+  
+  /* End of dark.css */
+  
