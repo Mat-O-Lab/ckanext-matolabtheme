@@ -58,7 +58,15 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarAccountDropdownMenuLink">
               {% block header_account_logged %}
+              <li>
+                <a href="{{ h.url_for('user.read', id=c.userobj.name) }}" class="image" aria-label="{{ _('View profile') }}" data-bs-title="{{ _('View profile') }}" data-bs-toggle="tooltip">
+                  <i class="fa fa-id-card" aria-hidden="true"></i>
+                  <span class="text">{{ _('View profile') }}</span>
+                </a>
+              </li>
               {{super()}}
+              {% block header_account_profile %}
+              {% endblock %}
               {% endblock %}
             </ul>
           </li>
