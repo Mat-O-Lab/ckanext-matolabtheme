@@ -48,8 +48,8 @@
       {% endif %}
 
       {% block header_account_container_content %}
+      {% if c.userobj %}
       <ul class="nav navbar-nav navbar-right ms-auto" data-module="me" data-me="{{ c.userobj.id }}">
-        {% if c.userobj %}
           <li class="nav-item dropdown">
             <a href="#" class="image nav-link dropdown-toggle" title="{{ _('View profile') }}" href="#"
               id="navbarAccountDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -65,12 +65,17 @@
               {% endblock %}
             </ul>
           </li>
-        {% else %}
+      </ul>
+      {% else %}
+      <ul class="nav navbar-nav navbar-right ms-auto">
+        <li class="nav-item dropdown">
           {% block header_account_notlogged %}
           {{super()}}
           {% endblock %}
-        {% endif %}
+        </li>
       </ul>
+      {% endif %}
+
       {% endblock %}
     </div>
   </div>
