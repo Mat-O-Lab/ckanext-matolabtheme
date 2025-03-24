@@ -22,6 +22,12 @@ import ckan.model as model
 from ckan.common import request
 import ckan.lib.uploader as uploader
 
+if toolkit.check_ckan_version(min_version="2.10"):
+    from ckan.types import Context
+else:
+    class Context(dict):
+        def __init__(self, **kwargs):
+            super().__init__(**kwargs)
 
 class ThemeConfigView(MethodView):
     def post(self) -> Union[str, Response]:
