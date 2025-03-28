@@ -13,7 +13,7 @@
     {% block admin_form %}
     {{ h.csrf_input() }}
       <!-- Dark Mode Toggle Switch -->
-      {{ form.checkbox('ckanext.matolabtheme.dark_mode', id='field-matolabthem-darkmode', label= _('Enable Dark Mode'), checked=((true if data['ckanext.matolabtheme.dark_mode'] else false)), error=error, classes=['control-medium']) }}
+      <!-- {{ form.checkbox('ckanext.matolabtheme.dark_mode', id='field-matolabthem-darkmode', label= _('Enable Dark Mode'), checked=((true if data['ckanext.matolabtheme.dark_mode'] else false)), error=error, classes=['control-medium']) }} -->
       
       {% set field1_url = 'ckanext.matolabtheme.banner_top' %}
       {% set is_upload = data[field1_url] and not data[field1_url].startswith('http') %}
