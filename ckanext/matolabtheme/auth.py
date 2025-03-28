@@ -1,6 +1,7 @@
 # import ckanext.datastore.logic.auth as auth
-import ckan.plugins.toolkit as toolkit
 from typing import Any
+
+import ckan.plugins.toolkit as toolkit
 
 if toolkit.check_ckan_version("2.10"):
     from ckan.types import Context

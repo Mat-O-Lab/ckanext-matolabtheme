@@ -1,12 +1,9 @@
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 from ckan.config.declaration import Declaration, Key
-from ckanext.matolabtheme import helpers, views, action, auth
 from ckan.lib.plugins import DefaultTranslation
 
-
-log = __import__("logging").getLogger(__name__)
-
+from ckanext.matolabtheme import action, auth, helpers, views
 
 
 class MatolabthemePlugin(plugins.SingletonPlugin, DefaultTranslation):
@@ -43,7 +40,7 @@ class MatolabthemePlugin(plugins.SingletonPlugin, DefaultTranslation):
             group.dsvgo_contact_md,
             "legal person name, street number, Zip city, country",
         )
-        option=declaration.declare_bool(group.dark_mode, False)
+        option = declaration.declare_bool(group.dark_mode, False)
         option.set_validators("not_missing boolean_validator")
         declaration.declare(group.banner_top, "/static/banner_top.png")
         declaration.declare(group.banner_top_upload, "")
@@ -58,9 +55,9 @@ class MatolabthemePlugin(plugins.SingletonPlugin, DefaultTranslation):
     def update_config_schema(self, schema):
 
         ignore_missing = toolkit.get_validator("ignore_missing")
-        bool_val = toolkit.get_validator("boolean_validator")
+        # bool_val = toolkit.get_validator("boolean_validator")
         unicode_safe = toolkit.get_validator("unicode_safe")
-        dark_mode=toolkit.config.get("ckanext.matolabtheme.dark_mode")
+        # dark_mode = toolkit.config.get("ckanext.matolabtheme.dark_mode")
         schema.update(
             {
                 # This is an existing CKAN core configuration option, we are just
@@ -108,7 +105,6 @@ class MatolabthemePlugin(plugins.SingletonPlugin, DefaultTranslation):
         )
         return schema
 
-    
     # ITemplateHelpers
 
     def get_helpers(self):

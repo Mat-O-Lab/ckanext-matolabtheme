@@ -1,33 +1,32 @@
-import os
-from flask import Blueprint
-from flask.views import MethodView
 import ckan.lib.base as base
 import ckan.plugins.toolkit as toolkit
+from flask import Blueprint
+from flask.views import MethodView
+
+from typing import Any, Union
+
+import ckan.lib.navl.dictization_functions as dict_fns
+import ckan.lib.uploader as uploader
+import ckan.logic as logic
+import ckan.logic.schema
+import ckan.model as model
+from ckan.common import _, config, current_user, request
+from ckan.lib.helpers import helper_functions as h
+from ckan.views.home import CACHE_PARAMETERS
+from flask.wrappers import Response
 
 log = __import__("logging").getLogger(__name__)
 
 blueprint = Blueprint("matolabtheme", __name__)
 
-import ckan.logic.schema
-from ckan.common import _, config, request, current_user
-import ckan.lib.navl.dictization_functions as dict_fns
-from ckan.views.home import CACHE_PARAMETERS
-import ckan.logic as logic
-from typing import Any, Union
-from flask.wrappers import Response
-from ckan.lib.helpers import helper_functions as h
-
-
-import ckan.model as model
-from ckan.common import request
-import ckan.lib.uploader as uploader
-
 if toolkit.check_ckan_version(min_version="2.10"):
     from ckan.types import Context
 else:
+
     class Context(dict):
         def __init__(self, **kwargs):
             super().__init__(**kwargs)
+
 
 class ThemeConfigView(MethodView):
     def post(self) -> Union[str, Response]:
@@ -49,9 +48,11 @@ class ThemeConfigView(MethodView):
                     )
                 )
             )
-            dark_mode=toolkit.config.get("ckanext.matolabtheme.dark_mode")
+            # dark_mode=toolkit.config.get("ckanext.matolabtheme.dark_mode")
             # Set dark_mode based on whether the checkbox was checked
-            data_dict['ckanext.matolabtheme.dark_mode'] = 'ckanext.matolabtheme.dark_mode' in req
+            data_dict["ckanext.matolabtheme.dark_mode"] = (
+                "ckanext.matolabtheme.dark_mode" in req
+            )
             del data_dict["save"]
             # data = logic.get_action("config_option_update")(
             #     {"user": current_user.name}, data_dict
@@ -106,7 +107,7 @@ class ThemeConfigView(MethodView):
                     value = data_dict[key]
                     model.set_system_info(key, value)
                     config[key] = value
-                    
+
         except logic.ValidationError as e:
             data = request.form
             errors = e.error_dict
@@ -124,7 +125,7 @@ class ThemeConfigView(MethodView):
             logic.check_access("sysadmin", context)
         except logic.NotAuthorized:
             base.abort(403, _("Need to be system administrator to administer"))
-        dark_mode=toolkit.config.get("ckanext.matolabtheme.dark_mode")
+        # dark_mode = toolkit.config.get("ckanext.matolabtheme.dark_mode")
         schema = ckan.logic.schema.update_configuration_schema()
         data = {}
         for key in schema:
