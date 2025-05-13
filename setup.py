@@ -11,6 +11,9 @@ here = path.abspath(path.dirname(__file__))
 with open(path.join(here, "README.md"), encoding="utf-8") as f:
     long_description = f.read()
 
+with open(path.join(here,"requirements.txt") as f:
+    requirements = f.read().splitlines()
+
 setup(
     name="""ckanext-matolabtheme""",
     # If you are changing from the default layout of your extension, you may
@@ -21,6 +24,7 @@ setup(
     description="""CKAN theme of the Mat-O-Lab Project, changes landing Page and add alternative Data Privacy Act in English and German.""",
     long_description=long_description,
     long_description_content_type="text/markdown",
+    install_requires=requirements,
     # The project's main homepage.
     url="https://github.com/Mat-O-Lab/ckanext-matolabtheme",
     # Author details
