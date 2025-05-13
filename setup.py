@@ -32,9 +32,8 @@ setup(
     author_email="""thomas.hanke@iwm.fraunhofer.de""",
     # Choose your license
     license="AGPL",
-    package_data = {
-    'ckanext/matolabtheme/public/static': ['*'],
-    },
+    packages=find_packages(),
+    include_package_data=True,
     message_extractors={
         'ckanext': [
             ('**.py', 'python', None),
