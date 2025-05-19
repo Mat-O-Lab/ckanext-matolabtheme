@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ckanext-matolabtheme 0.0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-05-19 09:16+0000\n"
+"POT-Creation-Date: 2025-05-19 09:58+0000\n"
 "PO-Revision-Date: 2025-02-10 09:30+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -51,6 +51,10 @@ msgstr "Bereitgestellt von"
 #: ckanext/matolabtheme/templates/footer.html:41
 msgid "Contact Us"
 msgstr "Kontakt"
+
+#: ckanext/matolabtheme/templates/footer.html:42
+msgid "Legal Notice"
+msgstr "Impressum"
 
 #: ckanext/matolabtheme/templates/header.html:41
 #: ckanext/matolabtheme/templates/home/snippets/promoted.html:36
@@ -493,6 +497,9 @@ msgid ""
 "Legal basis: The legal basis for processing of this data is Art. 6 par. 1"
 " (b) GDPR."
 msgstr ""
+"Rechtsgrundlage: Die Rechtsgrundlage für die Verarbeitung dieser Daten "
+"ist Art. 6 Abs. 1 lit. b DS-GVO."
+
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:86
 msgid ""
@@ -676,7 +683,7 @@ msgstr "Stand:"
 
 #: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:16
 msgid "Enable Dark Mode"
-msgstr ""
+msgstr "Dark Mode einschalten"
 
 #: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:21
 msgid "Banner Top"

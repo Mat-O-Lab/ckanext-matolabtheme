@@ -30,7 +30,7 @@ class MatolabthemePlugin(plugins.SingletonPlugin, DefaultTranslation):
         group = key.ckanext.matolabtheme
         declaration.declare(group.contact_url, "https://github.com/Mat-O-Lab")
         declaration.declare(
-            group.legal_person_md, "legal person name, street number, Zip city, country"
+            group.legal_notice_url, "/legal_notice.html"
         )
         declaration.declare(
             group.contact_dp_commissioner_email_md,

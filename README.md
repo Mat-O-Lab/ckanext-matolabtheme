@@ -60,6 +60,7 @@ To install ckanext-matolabtheme:
 ```bash
 CKANINI__CKANEXT__MATOLABTHEME__CONTACT_URL=<url to contact site>
 CKANINI__CKANEXT__MATOLABTHEME__LEGAL_PERSON_MD=<Legal Body Address in Markdown>
+CKANINI__CKANEXT__MATOLABTHEME__LEGAL_NOTICE_URL=<Url to your legal notice information>
 CKANINI__CKANEXT__MATOLABTHEME__DSVGO_CONTACT_MD=<Contact to adress with dsvgo conflicts in markdown>
 CKANINI__CKANEXT__MATOLABTHEME__CONTACT_DP_COMMISSIONER_EMAIL_MD="[datenprotection_commissioner@example.de](mailto:datenschutzbeauftragte@example.de?subject=dataprotection ${CKAN_HOST})"
 CKANINI__CKAN__FAVICON=/img/favicon.png
@@ -68,6 +69,7 @@ or ckan.ini parameters.
 ```bash
 ckan.matolabtheme.contact_url = <url to contact site>
 ckan.matolabtheme.legal_person_md = <Legal Body Address in Markdown>
+ckan.matolabtheme.legal_notice_url = <Url to your legal notice information>
 ckan.matolabtheme.dsvgo_contact_md = <Contact to adress with dsvgo conflicts in markdown>
 ckan.matolabtheme.dsvgo_contact_md = "[datenprotection_commissioner@example.de](mailto:datenschutzbeauftragte@example.de?subject=dataprotection]"
 ckan.favicon = /img/favicon.png
