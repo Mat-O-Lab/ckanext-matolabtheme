@@ -11,7 +11,7 @@
 {% endblock %}
 
 {% block primary %}
-<article class="module" role="main">
+<Art. class="module" role="main">
     <div class="module-content">
         <h1 class="page-heading text-center">{{ _("Information on data protection in accordance with Art. 13 of the General Data Protection Regulation (GDPR) on") }} {{host}}</h1>
 
@@ -22,13 +22,16 @@
 
         <h2 id="verantwortlicher">{{ _("Controller and Data Protection Commissioner ") }}</h2>
         <section>
-        {{ _("According to the GDPR (Article 4, No. 7) and other data protection regulations, the controller is:")}}
+        {{ _("According to the GDPR (Art. 4, No. 7) and other data protection regulations, the controller is:")}}
         <address class="m-3">
             {{ h.render_markdown(legal_person_address_md,allow_html=True) }}
         </address>
         {{_("The controller is a public corporation represented by its President.")}}
         </section>
-        <p> {{ _("The Data Protection Commissioner can be contacted by email at:")}} {{ h.render_markdown(contact_dp_commissioner_email_md,allow_html=True) }}</p>
+        <p> {{ _("The Data Protection Commissioner can be contacted by email at:")}} 
+            {{ h.render_markdown(contact_dp_commissioner_email_md,allow_html=True) }} 
+            {{_("or by ordinary mail with Data Protection Commissioner being indicated on the envelope.")}}
+        </p>
         <h2 id="aufruf">{{ _("Accessing the website and server log files (visiting the portal)") }}</h2>
         <ul>
             <li>{{ _("The anonymized IP address") }}</li>
@@ -42,7 +45,7 @@
         </ul>
         <p>{{ _("Scope and Purpose: When using the website for information purposes only, i.e. when you do not register or transmit other information, we will only collect the personal data that are transmitted by your browser to our server according to the settings made by you. The data serves the technical optimization of the website and to ensure the security of our information technology systems. The IP address is necessary for the operation or delivery of the website, is shortened in the log files, and is no longer available as a whole after the request. A direct conclusion about individual persons is not possible based on this data. A matching with other data records does not take place. We reserve the right to review this data retrospectively if we become aware of specific indications of illegal use.")}}</p>
         <p>{{ _("Recipient: There is no transfer of data to third parties.")}}</p>
-        <p>{{ _("Legal basis: The legal basis for processing is Art. 6 par. 1 (b), par. 3 (b) GDPR in conjunction with Art. 4 LDSG respectively Art. 20 par. 1 KITG in conjunction with Art. 12 par. 1 LHG.")}}</p>
+        <p>{{ _("Legal basis: The legal basis for processing is Art. 6 par. 1 (b), par. 3 (b) GDPR in conjunction with Art. 4 State Data Protection Act \"Landesdatenschutzgesetz\" (LSDG) respectively Art. 20 par. 1 KITG in conjunction with Art. 12 par. 1 Higher Education Acts \"Landeshochschulgesetz\" (LHG).")}}</p>
         <p>{{ _("Storage duration: The personal data will be stored as long as it is necessary to achieve the purpose for which it was collected. The data will be deleted after a maximum of seven days.") }}</p> 
 
         <p>{{ _("Example of processing:")}}</p>
@@ -58,14 +61,14 @@
             <li>{{ _("Anonymous user ID as UUID") }}</li>
         </ul>
         <p>{{ _("Recipient: There is no transfer of data to third parties.")}}</p>
-        <p>{{ _("Legal basis: The legal basis for the processing of personal data using technically necessary cookies in accordance with § 25 (2) TDDDG is Article 6(1)(f) of the GDPR. The legitimate interest of the operator in data processing according to Article 6(1)(f) of the GDPR is also present in the aforementioned purposes.")}}</p>
+        <p>{{ _("Legal basis: The legal basis for the processing of personal data using technically necessary cookies in accordance with § 25 (2) Telecommunications Digital Services Data Protection Act \"Telekommunikation-Digitale-Dienste-Datenschutz-Gesetz\" (TDDDG) is Art. 6(1)(f) of the GDPR. The legitimate interest of the operator in data processing according to Art. 6(1)(f) of the GDPR is also present in the aforementioned purposes.")}}</p>
         <p>{{ _("Storage duration: The session cookies will be deleted at the latest when you close the browser.")}}</p>
 
         <h2 id="kontaktaufnahme">{{ _("Contact (Email, Phone, Forms)") }}</h2>
         <p>{{ _("Scope and purpose: If you contact us by e-mail, telephone or via a form, the contact details you provide, such as your e-mail address, telephone number and, if applicable, your name, will be stored for the purpose of processing and responding to your request.
             We would like to point out that data transmission (e.g. when communicating by e-mail) may be subject to security vulnerabilities. Complete protection of data against access by third parties is not possible.")}}</p>
         <p>{{ _("Recipient: If necessary for the response to your contact, personal data may be forwarded to responsible parties within the operator. The respective responsible employees of the operator use your personal data solely for processing your inquiry. There is no transfer of data to third parties.")}}</p>
-        <!-- <p>{{ _("Legal basis: The legal basis for the processing of this data is Art. 6 para. 1 lit. e GDPR in conjunction with § 4 LDSG, § 20 para. 1 KITG in conjunction with § 12 para. 1 LHG. § Section 4 LDSG, Section 20 (1) KITG in conjunction with Section 12 (1) LHG or other relevant legal provisions.")}}</p> -->
+        <p>{{ _("Legal basis: The legal basis for the processing of this data is Art. 6 para. 1 lit. e GDPR in conjunction with Art. 4 LDSG respectively Art. 20 para. 1 KITG in conjunction with § 12 para. 1 LHG or other relevant legal provisions.")}}</p>
         <p>{{ _("Storage duration: The personal data will be stored as long as it is necessary to fulfill the aforementioned purpose, meaning the data will be deleted when it can be assumed that further communication is no longer desired.")}}</p>
 
         <h2 id="registrierung">{{ _("Registration process as a user") }}</h2>
@@ -79,7 +82,7 @@
             </ul>
         </p>
         <p>{{ _("Recipient: Name and login name are visible to members of the same organization assigned to them based on their affiliation. There is no transfer of data to third parties.")}}</p>
-        <p>{{ _("Legal basis: The The legal basis for data processing is Art. 6 para. 1 lit. b GDPR.")}}</p>
+        <p>{{ _("Legal basis: The legal basis for processing of this data is Art. 6 par. 1 (b) GDPR.")}}</p>
         <p>{{ _("Storage duration: The personal data will be stored as long as it is necessary to achieve the purpose of its collection. They will be permanently removed upon deletion of the user account.") }}</p> 
 
         <h2 id="links">{{ _("Links to other websites") }}</h2>
@@ -99,15 +102,15 @@
         <h2 id="rechte">{{ _("Your rights") }}</h2>
         <p>{{ _("As far as your personal data are concerned, you have the following rights:") }}</p>
         <ul>
-            <li>{{ _("Right to revoke your consent with effect for the future, provided that processing is based on a consent according to Article 6, par. 1, sub-par. 1, a GDPR (Article 7, par. 3 GDPR).") }}</li>
-            <li>{{ _("Right to confirmation whether data about you are processed and right to information about the data processed and about data processing as well as right to obtain copies of the data (Article 15 GDPR).") }}</li>
-            <li>{{ _("Right to rectification or completion of incorrect or incomplete data (Article 16 GDPR).") }}</li>
-            <li>{{ _("Right to immediate erasure of your personal data (Article 17 GDPR).") }}</li>
-            <li>{{ _("Right to restriction of processing (Article 18 GDPR).") }}</li>
-            <li>{{ _("Right to data portability in a structured, standard, and machine-readable format, if processing is based on a consent according to Article 6, par. 1, sub-par. 1, a or Article 9, par. 2, a or on an agreement according to Article 6, par. 1, sub-par. 1, b (Article 20 GDPR).") }}</li>
-            <li>{{ _("Right to object to the future processing of your personal data, if the data are processed accord-ing to Article 6, par. 1, e or f GDPR (Article 21 GDPR).") }}</li>
+            <li>{{ _("Right to revoke your consent with effect for the future, provided that processing is based on a consent according to Art. 6, par. 1, sub-par. 1, a GDPR (Art. 7, par. 3 GDPR).") }}</li>
+            <li>{{ _("Right to confirmation whether data about you are processed and right to information about the data processed and about data processing as well as right to obtain copies of the data (Art. 15 GDPR).") }}</li>
+            <li>{{ _("Right to rectification or completion of incorrect or incomplete data (Art. 16 GDPR).") }}</li>
+            <li>{{ _("Right to immediate erasure of your personal data (Art. 17 GDPR).") }}</li>
+            <li>{{ _("Right to restriction of processing (Art. 18 GDPR).") }}</li>
+            <li>{{ _("Right to data portability in a structured, standard, and machine-readable format, if processing is based on a consent according to Art. 6, par. 1, sub-par. 1, a or Art. 9, par. 2, a or on an agreement according to Art. 6, par. 1, sub-par. 1, b (Art. 20 GDPR).") }}</li>
+            <li>{{ _("Right to object to the future processing of your personal data, if the data are processed accord-ing to Art. 6, par. 1, e or f GDPR (Art. 21 GDPR).") }}</li>
             <li>{{ _("Right to complain") }}
-                <p>{{ _("In addition, you have the right to complain about the processing of your personal data by the controller of this website with its super-visory authority (Article 77 GDPR). According to Article 25, par. 1, LDSG (State Data Protection Act), the su-pervisory authority of the controller of this website according to Article 51, par. 1 GDPR is:") }}</p>
+                <p>{{ _("In addition, you have the right to complain about the processing of your personal data by the controller of this website with its super-visory authority (Art. 77 GDPR). According to Art. 25, par. 1, LDSG, the su-pervisory authority of the controller of this website according to Art. 51, par. 1 GDPR is:") }}</p>
                 <section>
                     <address class="m-3">
                         {{ h.render_markdown(dsvgo_contact_md,allow_html=True) }}
@@ -118,7 +121,7 @@
 
         <p class="text-end">{{ _("As of:") }} 02.2025</p>
     </div>
-</article>
+</Art.>
 
 <script>
     // Function to populate the Table of Contents
