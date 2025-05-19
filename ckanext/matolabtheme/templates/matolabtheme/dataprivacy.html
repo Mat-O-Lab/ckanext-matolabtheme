@@ -11,7 +11,7 @@
 {% endblock %}
 
 {% block primary %}
-<Art. class="module" role="main">
+<article class="module" role="main">
     <div class="module-content">
         <h1 class="page-heading text-center">{{ _("Information on data protection in accordance with Art. 13 of the General Data Protection Regulation (GDPR) on") }} {{host}}</h1>
 
@@ -109,19 +109,18 @@
             <li>{{ _("Right to restriction of processing (Art. 18 GDPR).") }}</li>
             <li>{{ _("Right to data portability in a structured, standard, and machine-readable format, if processing is based on a consent according to Art. 6, par. 1, sub-par. 1, a or Art. 9, par. 2, a or on an agreement according to Art. 6, par. 1, sub-par. 1, b (Art. 20 GDPR).") }}</li>
             <li>{{ _("Right to object to the future processing of your personal data, if the data are processed accord-ing to Art. 6, par. 1, e or f GDPR (Art. 21 GDPR).") }}</li>
-            <li>{{ _("Right to complain") }}
-                <p>{{ _("In addition, you have the right to complain about the processing of your personal data by the controller of this website with its super-visory authority (Art. 77 GDPR). According to Art. 25, par. 1, LDSG, the su-pervisory authority of the controller of this website according to Art. 51, par. 1 GDPR is:") }}</p>
-                <section>
-                    <address class="m-3">
-                        {{ h.render_markdown(dsvgo_contact_md,allow_html=True) }}
-                    </address>
-                </section>        
-            </li>
         </ul>
-
+        <p>
+            {{ _("In addition, you have the right to complain about the processing of your personal data by the controller of this website with its super-visory authority (Art. 77 GDPR). According to Art. 25, par. 1, LDSG, the su-pervisory authority of the controller of this website according to Art. 51, par. 1 GDPR is:") }}
+            <section>
+                <address class="m-3">
+                    {{ h.render_markdown(dsvgo_contact_md,allow_html=True) }}
+                </address>
+            </section>
+        </p>
         <p class="text-end">{{ _("As of:") }} 02.2025</p>
     </div>
-</Art.>
+</article>
 
 <script>
     // Function to populate the Table of Contents

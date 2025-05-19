@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ckanext-matolabtheme 0.0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-05-19 09:09+0000\n"
+"POT-Creation-Date: 2025-05-19 09:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -508,11 +508,7 @@ msgid ""
 "are processed accord-ing to Art. 6, par. 1, e or f GDPR (Art. 21 GDPR)."
 msgstr ""
 
-#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:112
-msgid "Right to complain"
-msgstr ""
-
-#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:113
+#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:114
 msgid ""
 "In addition, you have the right to complain about the processing of your "
 "personal data by the controller of this website with its super-visory "
@@ -521,7 +517,7 @@ msgid ""
 "par. 1 GDPR is:"
 msgstr ""
 
-#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:122
+#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:121
 msgid "As of:"
 msgstr ""
 

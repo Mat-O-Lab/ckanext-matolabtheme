@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ckanext-matolabtheme 0.0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-05-19 09:09+0000\n"
+"POT-Creation-Date: 2025-05-19 09:16+0000\n"
 "PO-Revision-Date: 2025-02-10 09:30+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -655,11 +655,7 @@ msgstr ""
 "betreffenden Daten, sofern die Daten nach Maßgabe von Art. 6 Abs. 1 lit. "
 "e oder f DS-GVO verarbeitet werden (Art. 21 DS-GVO)"
 
-#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:112
-msgid "Right to complain"
-msgstr "Recht auf Beschwerde"
-
-#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:113
+#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:114
 msgid ""
 "In addition, you have the right to complain about the processing of your "
 "personal data by the controller of this website with its super-visory "
@@ -674,7 +670,7 @@ msgstr ""
 "Verarbeitung Verantwortlichen dieser Website gemäß Art. 51, Abs.. 1 GDPR "
 "ist:"
 
-#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:122
+#: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:121
 msgid "As of:"
 msgstr "Stand:"
 
