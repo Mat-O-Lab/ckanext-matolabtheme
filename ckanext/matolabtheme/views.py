@@ -9,7 +9,6 @@ import ckan.lib.navl.dictization_functions as dict_fns
 import ckan.lib.uploader as uploader
 import ckan.logic as logic
 import ckan.logic.schema
-import ckan.model as model
 from ckan.common import _, config, current_user, request
 from ckan.lib.helpers import helper_functions as h
 from ckan.views.home import CACHE_PARAMETERS
@@ -41,6 +40,7 @@ class ThemeConfigView(MethodView):
         try:
             req = request.form.copy()
             req.update(request.files.to_dict())
+            log.debug(req)
             data_dict = logic.clean_dict(
                 dict_fns.unflatten(
                     logic.tuplize_dict(
@@ -48,65 +48,37 @@ class ThemeConfigView(MethodView):
                     )
                 )
             )
-            # dark_mode=toolkit.config.get("ckanext.matolabtheme.dark_mode")
+            
             # Set dark_mode based on whether the checkbox was checked
             data_dict["ckanext.matolabtheme.dark_mode"] = (
                 "ckanext.matolabtheme.dark_mode" in req
             )
+            del data_dict["ckanext.matolabtheme.dark_mode"]
             del data_dict["save"]
-            # data = logic.get_action("config_option_update")(
-            #     {"user": current_user.name}, data_dict
-            # )
-            # Handle banner uploads AFTER calling CKAN’s function
+            
+            # Handle uploads
             upload = uploader.get_uploader("admin")
-            for key in list(data_dict.keys()):
-                if key == "ckanext.matolabtheme.banner_top":
-                    upload.update_data_dict(
-                        data_dict,
-                        "ckanext.matolabtheme.banner_top",
-                        "ckanext.matolabtheme.banner_top_upload",
-                        "ckanext.matolabtheme.clear_banner_top_upload",
-                    )
-                    upload.upload(uploader.get_max_image_size())
-                    value = data_dict[key]
-                    if upload.filepath:
-                        static_url = upload.filepath.split("storage", 1)[-1]
-                        value = h.url_for_static(static_url)
-                        # Update CKAN's `config` object
-                    model.set_system_info(key, value)
-                    config[key] = value
-                elif key == "ckanext.matolabtheme.banner_bottom":
-                    upload.update_data_dict(
-                        data_dict,
-                        "ckanext.matolabtheme.banner_bottom",
-                        "ckanext.matolabtheme.banner_bottom_upload",
-                        "ckanext.matolabtheme.clear_banner_bottom_upload",
-                    )
-                    upload.upload(uploader.get_max_image_size())
-                    value = data_dict[key]
-                    if upload.filepath:
-                        static_url = upload.filepath.split("storage", 1)[-1]
-                        value = h.url_for_static(static_url)
-                    model.set_system_info(key, value)
-                    config[key] = value
-                elif key == "ckanext.matolabtheme.attribution_logo":
-                    upload.update_data_dict(
-                        data_dict,
-                        "ckanext.matolabtheme.attribution_logo",
-                        "ckanext.matolabtheme.attribution_logo_upload",
-                        "ckanext.matolabtheme.clear_attribution_logo_upload",
-                    )
-                    upload.upload(uploader.get_max_image_size())
-                    value = data_dict[key]
-                    if upload.filepath:
-                        static_url = upload.filepath.split("storage", 1)[-1]
-                        value = h.url_for_static(static_url)
-                    model.set_system_info(key, value)
-                    config[key] = value
-                elif key == "ckanext.matolabtheme.dark_mode":
-                    value = data_dict[key]
-                    model.set_system_info(key, value)
-                    config[key] = value
+            log.debug(data_dict)
+            upload_fields=["ckanext.matolabtheme.banner_top","ckanext.matolabtheme.banner_bottom", "ckanext.matolabtheme.favicon", "ckanext.matolabtheme.attribution_logo"]
+            for key in upload_fields:
+                if key in data_dict.keys():
+                        upload.update_data_dict(
+                            data_dict,
+                            key,
+                            key+"_upload",
+                            "ckanext.matolabtheme.clear_banner_top_upload",
+                        )
+                        upload.upload(uploader.get_max_image_size())
+                        value = data_dict[key]
+                        # Set full Logo url
+                        if value and not value.startswith('http') and not value.startswith('/'):
+                            image_path = 'uploads/admin/'
+                            value = h.url_for_static('{0}{1}'.format(image_path, value))
+                        data_dict[key]=value
+            log.debug(data_dict)
+            data = logic.get_action("config_option_update")(
+                {"user": current_user.name}, data_dict
+            )
 
         except logic.ValidationError as e:
             data = request.form

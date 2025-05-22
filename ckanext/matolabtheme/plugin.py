@@ -48,6 +48,9 @@ class MatolabthemePlugin(plugins.SingletonPlugin, DefaultTranslation):
         declaration.declare(group.banner_bottom, "/static/banner_bottom.png")
         declaration.declare(group.banner_bottom_upload, "")
         declaration.declare(group.clear_banner_bottom_upload, "")
+        declaration.declare(group.favicon, "/static/favicon.png")
+        declaration.declare(group.favicon_upload, "")
+        declaration.declare(group.clear_favicon_upload, "")
         declaration.declare(group.attribution_logo, "/static/favicon.png")
         declaration.declare(group.attribution_logo_upload, "")
         declaration.declare(group.clear_attribution_logo_upload, "")
@@ -86,6 +89,18 @@ class MatolabthemePlugin(plugins.SingletonPlugin, DefaultTranslation):
                     unicode_safe,
                 ],
                 "ckanext.matolabtheme.clear_banner_bottom_upload": [
+                    ignore_missing,
+                    unicode_safe,
+                ],
+                "ckanext.matolabtheme.favicon": [
+                    ignore_missing,
+                    unicode_safe,
+                ],
+                "ckanext.matolabtheme.favicon_upload": [
+                    ignore_missing,
+                    unicode_safe,
+                ],
+                "ckanext.matolabtheme.clear_favicon_upload": [
                     ignore_missing,
                     unicode_safe,
                 ],
