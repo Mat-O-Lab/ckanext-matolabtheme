@@ -40,7 +40,6 @@ class ThemeConfigView(MethodView):
         try:
             req = request.form.copy()
             req.update(request.files.to_dict())
-            log.debug(req)
             data_dict = logic.clean_dict(
                 dict_fns.unflatten(
                     logic.tuplize_dict(
@@ -57,25 +56,35 @@ class ThemeConfigView(MethodView):
             del data_dict["save"]
             
             # Handle uploads
-            upload = uploader.get_uploader("admin")
-            log.debug(data_dict)
-            upload_fields=["ckanext.matolabtheme.banner_top","ckanext.matolabtheme.banner_bottom", "ckanext.matolabtheme.favicon", "ckanext.matolabtheme.attribution_logo"]
+            upload_fields=["banner_top","banner_bottom", "favicon", "attribution_logo"]
+            #upload_fields=["ckanext.matolabtheme.banner_top"]
+            extention_prefix="ckanext.matolabtheme."
             for key in upload_fields:
-                if key in data_dict.keys():
+                config_key=extention_prefix+key
+                if config_key in data_dict.keys():
+                        upload = uploader.get_uploader("admin")
                         upload.update_data_dict(
                             data_dict,
-                            key,
-                            key+"_upload",
-                            "ckanext.matolabtheme.clear_banner_top_upload",
+                            config_key,
+                            config_key+"_upload",
+                            extention_prefix+"clear_"+key+"_upload",
                         )
                         upload.upload(uploader.get_max_image_size())
-                        value = data_dict[key]
-                        # Set full Logo url
+                        value = data_dict[config_key]
+                        # # Set full Logo url
                         if value and not value.startswith('http') and not value.startswith('/'):
                             image_path = 'uploads/admin/'
                             value = h.url_for_static('{0}{1}'.format(image_path, value))
-                        data_dict[key]=value
-            log.debug(data_dict)
+                        data_dict[config_key]=value   
+            #set defaults if empty
+            if "ckanext.matolabtheme.banner_top" in data_dict.keys() and not data_dict["ckanext.matolabtheme.banner_top"]:
+                data_dict["ckanext.matolabtheme.banner_top"]="/static/banner_top.png"
+            if "ckanext.matolabtheme.banner_bottom" in data_dict.keys() and not data_dict["ckanext.matolabtheme.banner_bottom"]:
+                data_dict["ckanext.matolabtheme.banner_bottom"]="/static/banner_bottom.png"
+            if "ckanext.matolabtheme.favicon" in data_dict.keys() and not data_dict["ckanext.matolabtheme.favicon"]:
+                data_dict["ckanext.matolabtheme.favicon"]="/static/favicon.png"
+            if "ckanext.matolabtheme.attribution_logo" in data_dict.keys() and not data_dict["ckanext.matolabtheme.attribution_logo"]:
+                data_dict["ckanext.matolabtheme.attribution_logo"]="/static/favicon.png"
             data = logic.get_action("config_option_update")(
                 {"user": current_user.name}, data_dict
             )
