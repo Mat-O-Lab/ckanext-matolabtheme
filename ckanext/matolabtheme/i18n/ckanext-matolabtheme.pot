@@ -7,9 +7,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: ckanext-matolabtheme 0.0.1\n"
+"Project-Id-Version: ckanext-matolabtheme 0.0.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-05-19 09:58+0000\n"
+"POT-Creation-Date: 2025-05-26 08:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.15.0\n"
 
-#: ckanext/matolabtheme/views.py:40 ckanext/matolabtheme/views.py:127
+#: ckanext/matolabtheme/views.py:39 ckanext/matolabtheme/views.py:108
 msgid "Need to be system administrator to administer"
 msgstr ""
 
@@ -110,22 +110,6 @@ msgstr ""
 
 #: ckanext/matolabtheme/templates/home/snippets/promoted.html:89
 msgid "Organizations"
-msgstr ""
-
-#: ckanext/matolabtheme/templates/macros/form/image_upload_prefix.html:15
-msgid "http://example.com/my-image.jpg"
-msgstr ""
-
-#: ckanext/matolabtheme/templates/macros/form/image_upload_prefix.html:16
-msgid "Image URL"
-msgstr ""
-
-#: ckanext/matolabtheme/templates/macros/form/image_upload_prefix.html:17
-msgid "Image"
-msgstr ""
-
-#: ckanext/matolabtheme/templates/macros/form/image_upload_prefix.html:45
-msgid "Clear Upload"
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:3
@@ -240,9 +224,7 @@ msgstr ""
 msgid ""
 "Legal basis: The legal basis for processing is Art. 6 par. 1 (b), par. 3 (b) "
 "GDPR in conjunction with Art. 4 State Data Protection Act "
-"\"Landesdatenschutzgesetz\" (LSDG) respectively Art. 20 par. 1 KITG in "
-"conjunction with Art. 12 par. 1 Higher Education Acts "
-"\"Landeshochschulgesetz\" (LHG)."
+"\"Landesdatenschutzgesetz\" (LSDG)."
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:49
@@ -338,8 +320,8 @@ msgstr ""
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:71
 msgid ""
 "Legal basis: The legal basis for the processing of this data is Art. 6 para. "
-"1 lit. e GDPR in conjunction with Art. 4 LDSG respectively Art. 20 para. 1 "
-"KITG in conjunction with § 12 para. 1 LHG or other relevant legal provisions."
+"1 lit. e GDPR in conjunction with Art. 4 LDSG or other relevant legal "
+"provisions."
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:72
@@ -525,43 +507,47 @@ msgstr ""
 msgid "As of:"
 msgstr ""
 
-#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:16
+#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:15
 msgid "Enable Dark Mode"
 msgstr ""
 
-#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:21
+#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:19
 msgid "Banner Top"
 msgstr ""
 
-#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:21
+#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:19
 msgid "Banner top"
 msgstr ""
 
-#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:26
+#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:25
 msgid "Banner Bottom"
 msgstr ""
 
-#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:26
+#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:25
 msgid "Banner bottom"
 msgstr ""
 
-#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:31
-msgid "Attribution Logo"
-msgstr ""
-
-#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:31
-msgid "Attribution logo"
+#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:30
+msgid "Favicon"
 msgstr ""
 
 #: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:35
+msgid "Attribution Logo"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:35
+msgid "Attribution logo"
+msgstr ""
+
+#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:39
 msgid "Update Config"
 msgstr ""
 
-#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:44
+#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:48
 msgid "CKAN config options"
 msgstr ""
 
-#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:51
+#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:55
 #, python-format
 msgid ""
 "<p><strong>Site Title:</strong> This is the title of this CKAN instance It "

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ckanext-matolabtheme 0.0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-05-19 09:58+0000\n"
+"POT-Creation-Date: 2025-05-26 08:35+0000\n"
 "PO-Revision-Date: 2025-02-10 09:30+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.15.0\n"
 
-#: ckanext/matolabtheme/views.py:40 ckanext/matolabtheme/views.py:127
+#: ckanext/matolabtheme/views.py:39 ckanext/matolabtheme/views.py:108
 msgid "Need to be system administrator to administer"
 msgstr "Für die Verwaltung muss man Systemadministrator sein"
 
@@ -76,7 +76,6 @@ msgstr "Einreichen"
 msgid "View profile"
 msgstr "Profil anzeigen"
 
-# | msgid "Update Config"
 #: ckanext/matolabtheme/templates/admin/config.html:5
 msgid "Theme Config"
 msgstr "Theme konfigurieren"
@@ -117,22 +116,6 @@ msgstr "Ressourcen"
 #: ckanext/matolabtheme/templates/home/snippets/promoted.html:89
 msgid "Organizations"
 msgstr "Organisationen"
-
-#: ckanext/matolabtheme/templates/macros/form/image_upload_prefix.html:15
-msgid "http://example.com/my-image.jpg"
-msgstr "http://beispiel.de/mein-bild.jpg"
-
-#: ckanext/matolabtheme/templates/macros/form/image_upload_prefix.html:16
-msgid "Image URL"
-msgstr "Bild-URL"
-
-#: ckanext/matolabtheme/templates/macros/form/image_upload_prefix.html:17
-msgid "Image"
-msgstr "Bild"
-
-#: ckanext/matolabtheme/templates/macros/form/image_upload_prefix.html:45
-msgid "Clear Upload"
-msgstr "Löschen"
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:3
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:10
@@ -272,13 +255,10 @@ msgstr "Empfänger: Eine Weitergabe der Daten an Dritte findet nicht statt."
 msgid ""
 "Legal basis: The legal basis for processing is Art. 6 par. 1 (b), par. 3 "
 "(b) GDPR in conjunction with Art. 4 State Data Protection Act "
-"\"Landesdatenschutzgesetz\" (LSDG) respectively Art. 20 par. 1 KITG in "
-"conjunction with Art. 12 par. 1 Higher Education Acts "
-"\"Landeshochschulgesetz\" (LHG)."
+"\"Landesdatenschutzgesetz\" (LSDG)."
 msgstr ""
 "Die Rechtsgrundlage für die Verarbeitung ist Art. 6 Abs. 1 lit. e, Abs. 3"
-" lit. b DS-GVO in Verbindung mit Art. 4 Landesdatenschutzgesetz (LDSG) "
-"bzw. Art. 20 Abs. 1 KITG i.V.m. § 12 Abs. 1 Landeshochschulgesetz (LHG)."
+" lit. b DS-GVO in Verbindung mit Art. 4 Landesdatenschutzgesetz (LDSG). "
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:49
 msgid ""
@@ -421,14 +401,12 @@ msgstr ""
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:71
 msgid ""
 "Legal basis: The legal basis for the processing of this data is Art. 6 "
-"para. 1 lit. e GDPR in conjunction with Art. 4 LDSG respectively Art. 20 "
-"para. 1 KITG in conjunction with § 12 para. 1 LHG or other relevant legal"
-" provisions."
+"para. 1 lit. e GDPR in conjunction with Art. 4 LDSG or other relevant "
+"legal provisions."
 msgstr ""
 "Rechtsgrundlage: Die Rechtsgrundlage für die Verarbeitung dieser Daten "
-"ist Art. 6 Abs. 1 lit. e DS-GVO i.V.m. Art. 4 LDSG, respektive Art. 20 "
-"par. 1 KITG i.V.m. § 12 Abs. 1 LHG bzw. weitere in Frage kommende "
-"Rechtsvorschriften."
+"ist Art. 6 Abs. 1 lit. e DS-GVO i.V.m. Art. 4 LDSG, bzw. weitere in Frage"
+" kommende Rechtsvorschriften."
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:72
 msgid ""
@@ -499,7 +477,6 @@ msgid ""
 msgstr ""
 "Rechtsgrundlage: Die Rechtsgrundlage für die Verarbeitung dieser Daten "
 "ist Art. 6 Abs. 1 lit. b DS-GVO."
-
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:86
 msgid ""
@@ -681,43 +658,47 @@ msgstr ""
 msgid "As of:"
 msgstr "Stand:"
 
-#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:16
+#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:15
 msgid "Enable Dark Mode"
 msgstr "Dark Mode einschalten"
 
-#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:21
+#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:19
 msgid "Banner Top"
 msgstr "Banner oben"
 
-#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:21
+#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:19
 msgid "Banner top"
 msgstr "Banner oben"
 
-#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:26
+#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:25
 msgid "Banner Bottom"
 msgstr "Banner unten"
 
-#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:26
+#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:25
 msgid "Banner bottom"
 msgstr "Banner unten"
 
-#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:31
+#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:30
+msgid "Favicon"
+msgstr "Favicon"
+
+#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:35
 msgid "Attribution Logo"
 msgstr "Urheberrechtslogo"
 
-#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:31
+#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:35
 msgid "Attribution logo"
 msgstr "Urheberrechtslogo"
 
-#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:35
+#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:39
 msgid "Update Config"
 msgstr "Konfiguration aktualisieren"
 
-#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:44
+#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:48
 msgid "CKAN config options"
 msgstr "CKAN-Konfigurationsoptionen"
 
-#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:51
+#: ckanext/matolabtheme/templates/matolabtheme/theme_config.html:55
 #, python-format
 msgid ""
 "<p><strong>Site Title:</strong> This is the title of this CKAN instance "
