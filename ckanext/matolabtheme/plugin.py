@@ -76,43 +76,11 @@ class MatolabthemePlugin(plugins.SingletonPlugin, DefaultTranslation):
                     ignore_missing,
                     unicode_safe,
                 ],
-                "ckanext.matolabtheme.banner_top_upload": [
-                    ignore_missing,
-                    unicode_safe,
-                ],
-                "ckanext.matolabtheme.banner_bottom_upload": [
-                    ignore_missing,
-                    unicode_safe,
-                ],
-                "ckanext.matolabtheme.clear_banner_top_upload": [
-                    ignore_missing,
-                    unicode_safe,
-                ],
-                "ckanext.matolabtheme.clear_banner_bottom_upload": [
-                    ignore_missing,
-                    unicode_safe,
-                ],
                 "ckanext.matolabtheme.favicon": [
                     ignore_missing,
                     unicode_safe,
                 ],
-                "ckanext.matolabtheme.favicon_upload": [
-                    ignore_missing,
-                    unicode_safe,
-                ],
-                "ckanext.matolabtheme.clear_favicon_upload": [
-                    ignore_missing,
-                    unicode_safe,
-                ],
                 "ckanext.matolabtheme.attribution_logo": [
-                    ignore_missing,
-                    unicode_safe,
-                ],
-                "ckanext.matolabtheme.attribution_logo_upload": [
-                    ignore_missing,
-                    unicode_safe,
-                ],
-                "ckanext.matolabtheme.clear_attribution_logo_upload": [
                     ignore_missing,
                     unicode_safe,
                 ],
