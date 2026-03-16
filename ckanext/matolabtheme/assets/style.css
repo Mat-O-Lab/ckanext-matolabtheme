@@ -799,25 +799,11 @@ body.homepage {
   color: #fff;
 }
 
-/* Banner — full-width gradient in Material Digital teal when no image is set */
+/* Banner — uses background-image set via inline style from config */
 .banner {
   position: relative;
-  background: linear-gradient(135deg, #005b7f 0%, #179C7d 100%);
   background-size: cover;
-  background-blend-mode: multiply;
-}
-.banner::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg,
-    rgba(0, 91, 127, 0.88) 0%,
-    rgba(23, 156, 125, 0.72) 100%);
-  z-index: 0;
-}
-.banner > * {
-  position: relative;
-  z-index: 1;
+  background-position: center;
 }
 
 /* Navbar — primary-coloured background with white links */
