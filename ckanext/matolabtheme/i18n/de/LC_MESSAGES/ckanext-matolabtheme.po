@@ -739,3 +739,7 @@ msgstr ""
 "Anmelden mit\n"
 "    SSO"
 
+
+#: ckanext/matolabtheme/templates/home/index.html
+msgid "Browse by category"
+msgstr "Nach Kategorie stöbern"

@@ -63,7 +63,8 @@
   .site-footer a,
   .site-footer .text-end,
   .site-footer .attribution p,
-  .site-footer label { color: var(--bs-light) !important; }
+  .site-footer label,
+  .site-footer .footer-attr-label { color: var(--bs-light) !important; }
 
 /* Common Styles */
 *,
