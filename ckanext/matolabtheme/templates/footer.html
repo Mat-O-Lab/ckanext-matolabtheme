@@ -17,20 +17,25 @@
         <a href="http://www.opendefinition.org/okd/"><img class="footer-badge" src="{{ h.url_for_static('/base/images/od_80x15_blue.png') }}" alt="Open Data" /></a>
       </div>
 
-      {# Right row 1: Powered by #}
+      {# Right row 1: both attribution logos side by side #}
       <div class="footer-right">
         {% block footer_attribution %}
-        <span class="footer-attr-label">{{_('Powered by')}}:</span>
-        <a class="hide-text ms-1" href="http://ckan.org"><img class="footer-attr-logo" src="{{ h.url_for_static_or_external('/base/images/ckan-logo-footer.png') }}" alt="CKAN" /></a>
+        <span class="footer-attr-item">
+          <span class="footer-attr-label">{{_('Powered by')}}:</span>
+          <a class="hide-text ms-1" href="http://ckan.org"><img class="footer-attr-logo" src="{{ h.url_for_static_or_external('/base/images/ckan-logo-footer.png') }}" alt="CKAN" /></a>
+        </span>
+        {% if config.get('ckanext.matolabtheme.attribution_logo') %}
+        <span class="footer-attr-item ms-3">
+          <span class="footer-attr-label">{{_('Provided by')}}:</span>
+          <a class="hide-text ms-1" href="{{ h.contact_url() }}"><img class="footer-attr-logo" src="{{ h.url_for_static_or_external(config.get('ckanext.matolabtheme.attribution_logo')) }}" alt="" /></a>
+        </span>
+        {% endif %}
         {% endblock %}
       </div>
 
-      {# Right row 2: Provided by (optional) #}
+      {# Right row 2: language selector #}
       <div class="footer-right">
-        {% if config.get('ckanext.matolabtheme.attribution_logo') %}
-        <span class="footer-attr-label">{{_('Provided by')}}:</span>
-        <a class="hide-text ms-1" href="{{ h.contact_url() }}"><img class="footer-attr-logo" src="{{ h.url_for_static_or_external(config.get('ckanext.matolabtheme.attribution_logo')) }}" alt="" /></a>
-        {% endif %}
+        {% block footer_lang %}{% snippet "snippets/language_selector.html" %}{% endblock %}
       </div>
 
       {# Right row 3: action buttons #}
@@ -40,7 +45,6 @@
       </div>
 
     </div>
-    {% block footer_lang %}{% snippet "snippets/language_selector.html" %}{% endblock %}
     {% endblock %}
   </div>
 </footer>
