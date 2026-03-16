@@ -1,0 +1,78 @@
+{% ckan_extends %}
+
+{% block package_description %}
+<div class="dataset-detail-header mb-4">
+  <div class="d-flex align-items-start gap-3">
+    <div class="dataset-detail-icon flex-shrink-0">
+      <i class="fas fa-cube"></i>
+    </div>
+    <div class="flex-grow-1">
+      {% if pkg.private %}
+        <span class="badge bg-warning text-dark mb-2">
+          <i class="fa fa-lock"></i> {{ _('Private') }}
+        </span>
+      {% endif %}
+      <h1 class="dataset-detail-title mb-1">
+        {% block page_heading %}
+          {{ h.dataset_display_name(pkg) }}
+          {% if pkg.state.startswith('draft') %}
+            <span class="badge bg-info ms-2">{{ _('Draft') }}</span>
+          {% endif %}
+          {% if pkg.state == 'deleted' %}
+            <span class="badge bg-danger ms-2">{{ _('Deleted') }}</span>
+          {% endif %}
+        {% endblock %}
+      </h1>
+      {% if pkg.organization %}
+      <div class="mb-2">
+        <a href="{{ h.url_for('organization.read', id=pkg.organization.name) }}" class="org-badge">
+          <i class="fas fa-industry me-1"></i>{{ pkg.organization.title or pkg.organization.name }}
+        </a>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% block package_notes %}
+{% if pkg.notes %}
+<div class="card mb-4 border-0 shadow-sm">
+  <div class="card-body">
+    <div class="notes embedded-content">
+      {{ h.render_markdown(h.get_translated(pkg, 'notes')) }}
+    </div>
+  </div>
+</div>
+{% endif %}
+{% endblock %}
+{% endblock %}
+
+{% block package_resources %}
+<div class="resources-panel mb-4">
+  <h4 class="section-heading">
+    <i class="fas fa-paperclip me-2"></i>{{ _("Resources") }}
+  </h4>
+  {% snippet "package/snippets/resources_list.html", pkg=pkg, resources=pkg.resources,
+    can_edit=h.check_access('package_update', {'id':pkg.id }) %}
+</div>
+{% endblock %}
+
+{% block package_tags %}
+{% if pkg.tags %}
+<div class="mb-4">
+  <h5 class="section-heading-sm">
+    <i class="fas fa-tags me-2"></i>{{ _("Tags") }}
+  </h5>
+  {% snippet "package/snippets/tags.html", tags=pkg.tags %}
+</div>
+{% endif %}
+{% endblock %}
+
+{% block package_additional_info %}
+<div class="dataset-details-card">
+  <h5 class="section-heading-sm">
+    <i class="fas fa-info-circle me-2"></i>{{ _("Additional Information") }}
+  </h5>
+  {% snippet "package/snippets/additional_info.html", pkg_dict=pkg %}
+</div>
+{% endblock %}

@@ -1,56 +1,49 @@
 <footer class="site-footer bsb-overlay" style="background-image: url({{ h.url_for_static_or_external(config.get('ckanext.matolabtheme.banner_bottom')) }});">
-  <div class="container">
+  <div class="container h-100">
     {% block footer_content %}
-    <div class="row full-height">
-      <div class="col-md-7 footer-links">
-        {% block footer_nav %}
-        <ul class="list-unstyled">
-          {% block footer_links %}
-          <li><a href="{{ h.url_for('home.about') }}">{{ _('About {0}').format(g.site_title) }}</a></li>
-          {% endblock %}
-        </ul>
-        <ul class="list-unstyled">
-          {% block footer_links_ckan %}
-          {% set api_url = 'http://docs.ckan.org/en/{0}/api/'.format(g.ckan_doc_version) %}
-          <li><a href="{{ h.url_for('matolabtheme.dataprotection') }}">{{ _('Data Privacy') }}</a></li>
-          <li><a href="{{ api_url }}">{{ _('CKAN API') }}</a></li>
-          <li><a href="http://www.ckan.org/">{{ _('CKAN Association') }}</a></li>
-          <li><a href="http://www.opendefinition.org/okd/"><img
-                src="{{ h.url_for_static('/base/images/od_80x15_blue.png') }}" alt="Open Data"></a></li>
-          {% endblock %}
-        </ul>
-        {% endblock %}
+    {% set api_url = 'http://docs.ckan.org/en/{0}/api/'.format(g.ckan_doc_version) %}
+    <div class="footer-grid">
+
+      {# Left-top: links — spans 2 rows #}
+      <div class="footer-links">
+        {% block footer_links %}<a href="{{ h.url_for('home.about') }}">{{ _('About {0}').format(g.site_title) }}</a>{% endblock %}
+        <a href="{{ h.url_for('matolabtheme.dataprotection') }}">{{ _('Data Privacy') }}</a>
+        <a href="{{ api_url }}">{{ _('CKAN API') }}</a>
+        <a href="http://www.ckan.org/">{{ _('CKAN Association') }}</a>
       </div>
-      <div class="col-md-5 attribution d-flex flex-column justify-content-end gx-5">
+
+      {# Left-bottom: badge — row 3 #}
+      <div class="footer-badge-cell">
+        <a href="http://www.opendefinition.org/okd/"><img class="footer-badge" src="{{ h.url_for_static('/base/images/od_80x15_blue.png') }}" alt="Open Data" /></a>
+      </div>
+
+      {# Right row 1: both attribution logos side by side #}
+      <div class="footer-right">
         {% block footer_attribution %}
-        <div class="row mb-2 justify-content-end">
-          <div class="col text-end">
-            <div class="w-100">{{_('Powered by')}}:</div>
-            <a class="hide-text" href="http://ckan.org"><img class="img-fluid" src="{{ h.url_for_static_or_external('/base/images/ckan-logo-footer.png') }}" style="height: 21px;" /></a>
-          </div>
-          {% if config.get('ckanext.matolabtheme.attribution_logo') %}
-          <div class="col text-end">
-            <div class="w-100">{{_('Provided by')}}:</div>
-            <a class="hide-text" href="{{ h.contact_url() }}"><img class="img-fluid" src="{{ h.url_for_static_or_external(config.get('ckanext.matolabtheme.attribution_logo')) }}" style="height: 21px;" /></a>
-          </div>
+        <span class="footer-attr-item">
+          <span class="footer-attr-label">{{_('Powered by')}}:</span>
+          <a class="hide-text ms-1" href="http://ckan.org"><img class="footer-attr-logo" src="{{ h.url_for_static_or_external('/base/images/ckan-logo-footer.png') }}" alt="CKAN" /></a>
+        </span>
+        {% if config.get('ckanext.matolabtheme.attribution_logo') %}
+        <span class="footer-attr-item ms-3">
+          <span class="footer-attr-label">{{_('Provided by')}}:</span>
+          <a class="hide-text ms-1" href="{{ h.contact_url() }}"><img class="footer-attr-logo" src="{{ h.url_for_static_or_external(config.get('ckanext.matolabtheme.attribution_logo')) }}" alt="" /></a>
+        </span>
         {% endif %}
         {% endblock %}
-        </div>
-        <div class="row mtb-2 justify-content-end">
-            <div class="col text-end">
-              <a class="btn bsb-btn-2xl btn-outline-light" href="{{ h.contact_url() }}" role="button">{{ _('Contact Us')}}</a>
-              <a class="btn bsb-btn-2xl btn-outline-light" href="{{config.get('ckanext.matolabtheme.legal_notice_url')}}">{{ _('Legal Notice') }}</a>
-            </div>
-        </div>
-        <!-- <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-              
-        </div> -->
-        <div class="row justify-content-end">
-        {% block footer_lang %}
-        {% snippet "snippets/language_selector.html" %}
-        {% endblock %}
-        </div>
       </div>
+
+      {# Right row 2: language selector #}
+      <div class="footer-right">
+        {% block footer_lang %}{% snippet "snippets/language_selector.html" %}{% endblock %}
+      </div>
+
+      {# Right row 3: action buttons #}
+      <div class="footer-right">
+        <a class="btn btn-sm btn-outline-light" href="{{ h.contact_url() }}" role="button">{{ _('Contact Us')}}</a>
+        <a class="btn btn-sm btn-outline-light ms-2" href="{{config.get('ckanext.matolabtheme.legal_notice_url')}}">{{ _('Legal Notice') }}</a>
+      </div>
+
     </div>
     {% endblock %}
   </div>
