@@ -20,12 +20,9 @@
             {% if intro %}
             {{ h.render_markdown(intro|replace('^[ \t]*|[ \t]*$', '')) }}
             {% else %}
-            <h1 class="display-1 text-center fw-bold mb-4">{{ _("Welcome to CKAN") }}</h1>
+            <h1 class="display-1 text-center fw-bold mb-4">{{ _("Product Information Hub") }}</h1>
             <p class="lead text-center mb-3 d-flex justify-content-sm-center">
-              <span class="col-12 fw-bold fs-3">{% trans %}This is a nice introductory paragraph about CKAN
-                or the site
-                in general. We don't have any copy to go here yet but soon we will
-                {% endtrans %}
+              <span class="col-12 fw-bold fs-3">{% trans %}Find detailed product specifications, safety data sheets, handling instructions and compliance documents — all in one place.{% endtrans %}
               </span>
             </p>
             {% endif %}
@@ -33,7 +30,7 @@
               <form class="nav navbar-form navbar-left" action="{{url_for('dataset.search')}}" method="get">
                 <div class="input-group">
                   <input id="search" class="form-control" type="search" name="q"
-                    placeholder="{{ _('Search our database...') }}" aria-label="{{ _('Search') }}" />
+                    placeholder="{{ _('Search products...') }}" aria-label="{{ _('Search') }}" />
                   <button class="btn btn-primary" type="submit" aria-label="{{ _('Submit') }}"><i
                       class="fa fa-search"></i></button>
                 </div>
@@ -65,19 +62,19 @@
   <div class="col d-flex align-items-start justify-content-center border-light-5 ">
     <a class="counter-link m-3" href="{{ h.url_for('dataset.search')}}">
       <h1 class="fw-bold mb-0">
-        <i class="fas fa-database"></i>
+        <i class="fas fa-box-open"></i>
         <div id="dataset_counter" class="theme-counter" data-target="0" data-duration="0.5">0</div>
       </h1>
-      <h3>{{ _("Datasets") }}</h3>
+      <h3>{{ _("Products") }}</h3>
     </a>
   </div>
   <div class="col d-flex justify-content-center border-start border-light-5">
     <a class="counter-link m-3" href="{{ h.url_for('dataset.search')}}">
       <h1 class="fw-bold mb-0">
-        <i class="fas fa-file"></i>
+        <i class="fas fa-file-alt"></i>
         <div id="resource_counter" class="theme-counter" data-target="0" data-duration="0.5">0</div>
       </h1>
-      <h3>{{ _("Resources") }}</h3>
+      <h3>{{ _("Files") }}</h3>
     </a>
   </div>
   <div class="col d-flex justify-content-center border-start border-light-5">

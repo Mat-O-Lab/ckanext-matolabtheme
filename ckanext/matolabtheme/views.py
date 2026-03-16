@@ -127,8 +127,8 @@ class DataPrivacyView(MethodView):
                 "dsvgo_contact_md": toolkit.config.get(
                     "ckanext.matolabtheme.dsvgo_contact_md"
                 ),
-                "contact_dp_commissioner_email_md": toolkit.config.get(
-                    "ckanext.matolabtheme.contact_dp_commissioner_email_md"
+                "contact_url": toolkit.config.get(
+                    "ckanext.matolabtheme.contact_url"
                 ),
             },
         )

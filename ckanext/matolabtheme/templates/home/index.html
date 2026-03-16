@@ -23,17 +23,20 @@
       <div class="bg-overlay" style="background-image: url('/static/voronoi_bg.png')"></div>
       {% block index_content %}
       {% with items = h.get_facet_items_dict("tags", search_facets, 30) %}
-      {% if items or not hide_empty %}
+      {% if items %}
+      <h5 class="text-center text-muted mb-3 mt-2 fw-semibold text-uppercase ls-1">{{ _("Browse by category") }}</h5>
+      <div class="d-flex flex-wrap justify-content-center">
       {% for item in items %}
-      <a type="button" class="btn btn-outline-primary text-primary bg-light position-relative rounded-pill m-3 popup"
+      <a type="button" class="btn btn-outline-primary text-primary bg-light position-relative rounded-pill m-2 product-tag-pill"
         href="{{url_for('dataset.search')}}?tags={{item.name}}">
-        {{item.name}}
+        <i class="fas fa-tag me-1 small"></i>{{item.name}}
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
           {{item.count}}
-          <span class="visually-hidden">unread messages</span>
+          <span class="visually-hidden">products</span>
         </span>
       </a>
       {% endfor %}
+      </div>
       {% endif %}
       {% endwith %}
       {% endblock %}

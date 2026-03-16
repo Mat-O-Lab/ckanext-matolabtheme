@@ -1,0 +1,111 @@
+# English translations for ckanext-matolabtheme.
+# Overrides CKAN core strings to rename Dataset → Product.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ckanext-matolabtheme 0.0.1\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-05-26 08:35+0000\n"
+"PO-Revision-Date: 2026-03-16 00:00+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+# Extension own strings
+msgid "Product Information Hub"
+msgstr "Product Information Hub"
+
+msgid "Search products..."
+msgstr "Search products..."
+
+msgid "Products"
+msgstr "Products"
+
+msgid "Files"
+msgstr "Files"
+
+msgid "Browse by category"
+msgstr "Browse by category"
+
+msgid "Product Categories"
+msgstr "Product Categories"
+
+msgid "Product Details"
+msgstr "Product Details"
+
+msgid "Product Files"
+msgstr "Product Files"
+
+# CKAN core overrides: Dataset → Product
+msgid "Dataset"
+msgstr "Product"
+
+msgid "dataset"
+msgstr "product"
+
+msgid "Datasets"
+msgstr "Products"
+
+msgid "Add Dataset"
+msgstr "Add Product"
+
+msgid "Search datasets"
+msgstr "Search products"
+
+msgid "Search datasets..."
+msgstr "Search products..."
+
+msgid "Dataset not found"
+msgstr "Product not found"
+
+msgid "Dataset has been deleted."
+msgstr "Product has been deleted."
+
+msgid "Sorry no datasets found for \"{query}\""
+msgstr "Sorry, no products found for \"{query}\""
+
+msgid "No datasets found for \"{query}\""
+msgstr "No products found for \"{query}\""
+
+msgid "{number} dataset found"
+msgid_plural "{number} datasets found"
+msgstr[0] "{number} product found"
+msgstr[1] "{number} products found"
+
+msgid "{number} dataset found for \"{query}\""
+msgid_plural "{number} datasets found for \"{query}\""
+msgstr[0] "{number} product found for \"{query}\""
+msgstr[1] "{number} products found for \"{query}\""
+
+msgid "Datasets in group: {group}"
+msgstr "Products in group: {group}"
+
+msgid "Datasets in organization: {group}"
+msgstr "Products in company: {group}"
+
+msgid "Datasets per page"
+msgstr "Products per page"
+
+# CKAN core overrides: Organization → Company
+msgid "Organization"
+msgstr "Company"
+
+msgid "organization"
+msgstr "company"
+
+msgid "Organizations"
+msgstr "Companies"
+
+msgid "organizations"
+msgstr "companies"
+
+msgid "Add Organization"
+msgstr "Add Company"
+
+msgid "My Organizations"
+msgstr "My Companies"

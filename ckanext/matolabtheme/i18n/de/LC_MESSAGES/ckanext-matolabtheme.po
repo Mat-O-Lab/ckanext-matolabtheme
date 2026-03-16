@@ -62,8 +62,9 @@ msgid "Search"
 msgstr "Suche"
 
 #: ckanext/matolabtheme/templates/header.html:42
-msgid "Search datasets..."
-msgstr "Datensätze suchen..."
+#: ckanext/matolabtheme/templates/home/snippets/promoted.html:36
+msgid "Search products..."
+msgstr "Produkte suchen..."
 
 #: ckanext/matolabtheme/templates/header.html:43
 #: ckanext/matolabtheme/templates/home/snippets/promoted.html:37
@@ -85,8 +86,8 @@ msgid "Welcome"
 msgstr "Willkommen"
 
 #: ckanext/matolabtheme/templates/home/snippets/promoted.html:23
-msgid "Welcome to CKAN"
-msgstr "Willkommen bei CKAN"
+msgid "Product Information Hub"
+msgstr "Produktinformationsportal"
 
 #: ckanext/matolabtheme/templates/home/snippets/promoted.html:25
 msgid ""
@@ -97,25 +98,99 @@ msgstr ""
 "Allgemeinen. Wir haben noch keinen Text dafür, aber bald werden wir ihn "
 "haben."
 
-#: ckanext/matolabtheme/templates/home/snippets/promoted.html:36
-msgid "Search our database..."
-msgstr "Durchsuchen Sie unsere Datenbank..."
-
 #: ckanext/matolabtheme/templates/home/snippets/promoted.html:58
 msgid "Log in"
 msgstr "Anmelden"
 
 #: ckanext/matolabtheme/templates/home/snippets/promoted.html:71
-msgid "Datasets"
-msgstr "Datensätze"
+msgid "Products"
+msgstr "Produkte"
 
 #: ckanext/matolabtheme/templates/home/snippets/promoted.html:80
-msgid "Resources"
-msgstr "Ressourcen"
+msgid "Files"
+msgstr "Dateien"
 
 #: ckanext/matolabtheme/templates/home/snippets/promoted.html:89
 msgid "Organizations"
-msgstr "Organisationen"
+msgstr "Unternehmen"
+
+# CKAN core string overrides: Dataset → Produkt
+msgid "Dataset"
+msgstr "Produkt"
+
+msgid "dataset"
+msgstr "Produkt"
+
+msgid "Datasets"
+msgstr "Produkte"
+
+msgid "Add Dataset"
+msgstr "Produkt hinzufügen"
+
+msgid "Search datasets"
+msgstr "Produktsuche"
+
+msgid "Search datasets..."
+msgstr "Produkte suchen..."
+
+msgid "Dataset not found"
+msgstr "Produkt nicht gefunden"
+
+msgid "Dataset has been deleted."
+msgstr "Produkt wurde gelöscht."
+
+msgid "Sorry no datasets found for \"{query}\""
+msgstr "Keine Produkte für \"{query}\" gefunden"
+
+msgid "No datasets found for \"{query}\""
+msgstr "Keine Produkte gefunden für \"{query}\""
+
+msgid "{number} dataset found"
+msgid_plural "{number} datasets found"
+msgstr[0] "{number} Produkt gefunden"
+msgstr[1] "{number} Produkte gefunden"
+
+msgid "{number} dataset found for \"{query}\""
+msgid_plural "{number} datasets found for \"{query}\""
+msgstr[0] "{number} Produkt für \"{query}\" gefunden"
+msgstr[1] "{number} Produkte für \"{query}\" gefunden"
+
+msgid "Datasets in group: {group}"
+msgstr "Produkte in der Gruppe: {group}"
+
+msgid "Datasets in organization: {group}"
+msgstr "Produkte im Unternehmen {group}"
+
+# CKAN core overrides: Organization → Unternehmen
+msgid "Organization"
+msgstr "Unternehmen"
+
+msgid "organization"
+msgstr "Unternehmen"
+
+msgid "Add Organization"
+msgstr "Unternehmen hinzufügen"
+
+msgid "My Organizations"
+msgstr "Meine Unternehmen"
+
+msgid "organizations"
+msgstr "Unternehmen"
+
+msgid "Datasets per page"
+msgstr "Produkte pro Seite"
+
+msgid "Browse by category"
+msgstr "Nach Kategorie stöbern"
+
+msgid "Product Categories"
+msgstr "Produktkategorien"
+
+msgid "Product Details"
+msgstr "Produktdetails"
+
+msgid "Product Files"
+msgstr "Produktdateien"
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:3
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:10
