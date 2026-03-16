@@ -1,9 +1,9 @@
 {% ckan_extends %}
 
 {% block package_description %}
-<div class="product-detail-header mb-4">
+<div class="dataset-detail-header mb-4">
   <div class="d-flex align-items-start gap-3">
-    <div class="product-detail-icon flex-shrink-0">
+    <div class="dataset-detail-icon flex-shrink-0">
       <i class="fas fa-cube"></i>
     </div>
     <div class="flex-grow-1">
@@ -12,7 +12,7 @@
           <i class="fa fa-lock"></i> {{ _('Private') }}
         </span>
       {% endif %}
-      <h1 class="product-detail-title mb-1">
+      <h1 class="dataset-detail-title mb-1">
         {% block page_heading %}
           {{ h.dataset_display_name(pkg) }}
           {% if pkg.state.startswith('draft') %}
@@ -25,7 +25,7 @@
       </h1>
       {% if pkg.organization %}
       <div class="mb-2">
-        <a href="{{ h.url_for('organization.read', id=pkg.organization.name) }}" class="product-org-badge">
+        <a href="{{ h.url_for('organization.read', id=pkg.organization.name) }}" class="org-badge">
           <i class="fas fa-industry me-1"></i>{{ pkg.organization.title or pkg.organization.name }}
         </a>
       </div>
@@ -48,9 +48,9 @@
 {% endblock %}
 
 {% block package_resources %}
-<div class="product-files-panel mb-4">
-  <h4 class="product-section-heading">
-    <i class="fas fa-paperclip me-2"></i>{{ _("Product Files") }}
+<div class="resources-panel mb-4">
+  <h4 class="section-heading">
+    <i class="fas fa-paperclip me-2"></i>{{ _("Resources") }}
   </h4>
   {% snippet "package/snippets/resources_list.html", pkg=pkg, resources=pkg.resources,
     can_edit=h.check_access('package_update', {'id':pkg.id }) %}
@@ -60,8 +60,8 @@
 {% block package_tags %}
 {% if pkg.tags %}
 <div class="mb-4">
-  <h5 class="product-section-heading-sm">
-    <i class="fas fa-tags me-2"></i>{{ _("Product Categories") }}
+  <h5 class="section-heading-sm">
+    <i class="fas fa-tags me-2"></i>{{ _("Tags") }}
   </h5>
   {% snippet "package/snippets/tags.html", tags=pkg.tags %}
 </div>
@@ -69,9 +69,9 @@
 {% endblock %}
 
 {% block package_additional_info %}
-<div class="product-details-card">
-  <h5 class="product-section-heading-sm">
-    <i class="fas fa-info-circle me-2"></i>{{ _("Product Details") }}
+<div class="dataset-details-card">
+  <h5 class="section-heading-sm">
+    <i class="fas fa-info-circle me-2"></i>{{ _("Additional Information") }}
   </h5>
   {% snippet "package/snippets/additional_info.html", pkg_dict=pkg %}
 </div>

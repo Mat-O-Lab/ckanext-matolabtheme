@@ -1,19 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 52" width="260" height="52" role="img" aria-label="Your Company">
-  <!-- Cube icon -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 38" width="200" height="38" role="img" aria-label="Your Company">
+  <!-- Isometric cube — white/light faces so it reads on any background -->
   <!-- Top face -->
-  <polygon points="22,6 38,14 22,22 6,14" fill="#a6bbc8"/>
+  <polygon points="18,2 34,10 18,18 2,10" fill="rgba(255,255,255,0.95)"/>
   <!-- Left face -->
-  <polygon points="6,14 22,22 22,42 6,34" fill="#005b7f"/>
+  <polygon points="2,10 18,18 18,36 2,28" fill="rgba(166,187,200,0.8)"/>
   <!-- Right face -->
-  <polygon points="38,14 22,22 22,42 38,34" fill="#1a7a9e"/>
-  <!-- Cube outline -->
-  <polygon points="22,6 38,14 22,22 6,14" fill="none" stroke="#005b7f" stroke-width="1" stroke-linejoin="round"/>
-  <polygon points="6,14 22,22 22,42 6,34" fill="none" stroke="#005b7f" stroke-width="1" stroke-linejoin="round"/>
-  <polygon points="38,14 22,22 22,42 38,34" fill="none" stroke="#005b7f" stroke-width="1" stroke-linejoin="round"/>
-
-  <!-- Wordmark -->
-  <text x="50" y="20" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif"
-        font-size="15" font-weight="700" fill="#005b7f" letter-spacing="0.5">Your Company</text>
-  <text x="50" y="36" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif"
-        font-size="10" font-weight="400" fill="#a6bbc8" letter-spacing="1.5">PRODUCT CATALOG</text>
+  <polygon points="34,10 18,18 18,36 34,28" fill="rgba(200,220,235,0.7)"/>
+  <!-- Wordmark — white so it works on dark/teal backgrounds -->
+  <text x="44" y="26"
+        font-family="system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif"
+        font-size="18" font-weight="700" fill="#ffffff" letter-spacing="0.3">Your Company</text>
 </svg>

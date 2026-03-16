@@ -1,5 +1,6 @@
 # English translations for ckanext-matolabtheme.
-# Overrides CKAN core strings to rename Dataset → Product.
+# Overrides CKAN core strings for the product-catalog flavour.
+# All product/company naming lives here — templates use standard CKAN msgids.
 #
 msgid ""
 msgstr ""
@@ -17,29 +18,22 @@ msgstr ""
 "Generated-By: Babel 2.15.0\n"
 
 # Extension own strings
-msgid "Product Information Hub"
-msgstr "Product Information Hub"
-
-msgid "Search products..."
-msgstr "Search products..."
-
-msgid "Products"
-msgstr "Products"
-
-msgid "Files"
-msgstr "Files"
-
 msgid "Browse by category"
 msgstr "Browse by category"
 
-msgid "Product Categories"
-msgstr "Product Categories"
+msgid "Find and explore datasets — all in one place."
+msgstr "Find and explore datasets — all in one place."
 
-msgid "Product Details"
+# CKAN core overrides: counter labels
+msgid "Resources"
+msgstr "Files"
+
+# CKAN core overrides: detail-page section headings
+msgid "Tags"
+msgstr "Categories"
+
+msgid "Additional Information"
 msgstr "Product Details"
-
-msgid "Product Files"
-msgstr "Product Files"
 
 # CKAN core overrides: Dataset → Product
 msgid "Dataset"

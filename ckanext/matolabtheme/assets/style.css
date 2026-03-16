@@ -145,7 +145,8 @@ a:hover {
 }
 
 .index-logo {
-  max-height: 150px;
+  max-height: 36px;
+  width: auto;
 }
 
 .navbar-nav li a {
@@ -419,9 +420,15 @@ table.dataTable tbody tr > .dtfc-fixed-right {
 
 .btn-light,
 .btn-default {
-  color: var(--bs-body-color);
+  color: var(--bs-primary);
   background-color: var(--bs-light);
-  border-color: var(--bs-light);
+  border-color: var(--bs-border-color, #dee2e6);
+}
+.btn-light:hover,
+.btn-default:hover {
+  color: #fff;
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
 }
 
 .btn-primary {
@@ -467,10 +474,281 @@ table.dataTable tbody tr > .dtfc-fixed-right {
    Product Catalog Styles
    ============================================================ */
 
+/* ════════════════════════════════════════════════
+   Homepage: all sections fit in one viewport.
+   Adjust the four --hp-*-vh variables below to
+   redistribute space.  They must sum to 100.
+     hero + counter + tags + footer = 100vh
+   ════════════════════════════════════════════════ */
+body.homepage {
+  /* Section heights in viewport-height units — must sum to 100.
+     Golden ratio: hero (focal) : rest ≈ 40 : 60
+     Within rest: counter (glance) : tags (browse) : footer (anchor)
+                        12         :      32        :       16          */
+  /* hero 30 + counter 12 (pulled up 3vh over hero) + tags 43 + footer 18 = 100
+     (hero reduced from 33→30 to accommodate dvh/vh browser chrome discrepancy) */
+  --hp-hero-vh:    27;
+  --hp-counter-vh: 12;
+  --hp-tags-vh:    43;
+  --hp-footer-vh:  18;
+  --hp-overlap-vh:  3;  /* how many vh the counter cards lift into the hero */
+
+  /* Three text sizes used throughout — do not add more.
+     title:subtitle ≈ 1.6:1 (golden), subtitle:small ≈ 1.4:1 */
+  --txt-lg: clamp(1.4rem, 2.8vh, 2rem);      /* hero title, counter numbers */
+  --txt-md: clamp(0.9rem, 1.9vh, 1.15rem);   /* subtitle, counter labels, search */
+  --txt-sm: clamp(0.65rem, 1.3vh, 0.8rem);   /* tag pills, footer, meta  */
+
+  overflow: hidden;   /* hard stop — nothing scrolls past 100vh */
+  height: 100dvh;
+}
+
+/* Hero section */
+.hero-section {
+  height: calc(var(--hp-hero-vh) * 1vh);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  /* extra bottom padding so the search bar doesn't hide behind lifted cards */
+  padding-bottom: calc(var(--hp-overlap-vh) * 1vh + 0.5rem) !important;
+}
+
+/* Top bar: logo left, user right — compact */
+.hero-topbar {
+  flex-shrink: 0;
+  padding: 0.5rem 1.5rem;
+}
+.hero-logo-img {
+  height: clamp(24px, 3.5vh, 40px);
+  width: auto;
+}
+
+/* Hero body — bottom-anchored so search flows into the counter strip below */
+.hero-body {
+  flex: 1;
+  justify-content: flex-end !important;
+  padding: 0.25rem 1rem 1.5rem;
+  min-height: 0;
+}
+
+/* Hero title */
+.hero-title {
+  font-size: var(--txt-lg);
+  line-height: 1.15;
+  color: #fff;
+  max-width: 900px;
+  margin-bottom: 0.4rem !important;
+}
+
+/* Hero subtitle — same scale as search input for visual unity */
+.hero-subtitle {
+  font-size: var(--txt-md);
+  font-weight: 400;
+  color: rgba(255,255,255,0.88);
+  max-width: 820px;
+  margin-bottom: 0.6rem !important;
+}
+
+/* Hero search bar — sized to match subtitle */
+.hero-search {
+  width: 100%;
+  max-width: 480px;
+}
+.hero-search .form-control-lg {
+  font-size: var(--txt-md) !important;
+  padding: 0.45rem 1rem !important;
+}
+.hero-search .btn {
+  font-size: var(--txt-md) !important;
+  padding: 0.45rem 1.2rem !important;
+}
+
+/* Counter row — lifts up over the hero gradient */
+.homepage .counter-row {
+  height: calc(var(--hp-counter-vh) * 1vh);
+  margin-top: calc(var(--hp-overlap-vh) * -1vh);
+  position: relative;
+  z-index: 10;
+  flex-shrink: 0;
+  flex-wrap: nowrap !important;
+  overflow: hidden;
+  padding: 0 !important;
+  gap: 0 !important;
+  align-items: center !important;
+}
+.homepage .counter-row > .col {
+  /* Override Bootstrap row-cols-1 (flex-basis:100%) — always show 3 equal columns */
+  flex: 0 0 33.333% !important;
+  max-width: 33.333% !important;
+  padding: 0 !important;
+  align-items: center !important;
+}
+.homepage .counter-row h1 {
+  font-size: var(--txt-lg);
+  margin: 0;
+  line-height: 1;
+}
+.homepage .counter-row h3 {
+  font-size: var(--txt-md);
+  margin: 0;
+  margin-top: 0.15em;
+}
+.homepage .counter-row .counter-link {
+  margin: 0 !important;
+  padding: 0.4rem 0.75rem;
+  text-align: center;
+}
+
+/* Tag cloud / main section — vertically centered, no dead space */
+.homepage .main {
+  height: calc(var(--hp-tags-vh) * 1vh);
+  flex-grow: 0 !important;   /* override Bootstrap flex-grow-1 on this element */
+  flex-shrink: 0;
+  overflow: hidden;
+  padding: 0 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/* Collapse Bootstrap m-3 margin so the row doesn't add empty outer space */
+.homepage .main > .row {
+  flex-shrink: 0;
+  margin: 0 !important;
+}
+/* Column: flex column with gap — spacing comes from gap, not h5 margins */
+.homepage .main > .row > .col-md-auto {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0 1rem !important;
+}
+/* Heading — zero margins, gap above handles spacing */
+.homepage .main h5 {
+  font-size: var(--txt-sm) !important;
+  margin: 0 !important;
+  letter-spacing: 0.08em;
+}
+/* Pills — no per-pill margin; container gap spaces them */
+.homepage .theme-tag-pill {
+  padding: 0.18rem 0.55rem !important;
+  font-size: var(--txt-sm) !important;
+  margin: 0 !important;
+}
+/* Pill container — wrapping grid with badge padding */
+.homepage .main .d-flex.flex-wrap {
+  gap: 0.35rem;
+  padding-top: 0.7rem;    /* room for the position-absolute badge above first row */
+  padding-bottom: 0.2rem;
+  align-content: flex-start;
+  overflow: hidden;
+  max-height: calc(var(--hp-tags-vh) * 1vh - 3.5rem);
+}
+
+/* Footer — fit all content into --hp-footer-vh without clipping */
+.homepage .site-footer {
+  height: calc(var(--hp-footer-vh) * 1vh);
+  flex-grow: 0 !important;
+  flex-shrink: 0;
+  overflow: hidden;
+  padding: 0 !important;
+}
+.homepage .site-footer .container {
+  /* Explicit height — no % inheritance chain needed */
+  height: calc(var(--hp-footer-vh) * 1vh) !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  overflow: hidden;
+}
+
+/* CSS Grid: 2 columns × 3 rows.
+   Grid gets definite height from container, 1fr rows split it evenly. */
+.homepage .site-footer .footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  height: 100%;
+}
+
+/* Left-top: links stack vertically, wrap into extra column when height runs out */
+.homepage .site-footer .footer-links {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 0 0.7rem;
+  overflow: hidden;
+  padding: 0.25rem 0.5rem 0 0;
+  /* max-height = 2 grid rows = 2/3 of the footer height */
+  max-height: calc(var(--hp-footer-vh) * 1vh * 2 / 3);
+}
+
+/* Left-bottom: Open Data badge, row 3 */
+.homepage .site-footer .footer-badge-cell {
+  grid-column: 1;
+  grid-row: 3;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Right column cells — right-aligned, vertically centred */
+.homepage .site-footer .footer-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.4rem;
+  overflow: hidden;
+  white-space: nowrap;
+  color: var(--bs-light);
+  padding: 0 0 0 0.5rem;
+}
+
+.homepage .site-footer .footer-attr-label {
+  font-size: var(--txt-sm);
+  opacity: 0.75;
+}
+
+/* Logos: capped by max-height so they don't push rows taller */
+.homepage .site-footer .footer-attr-logo {
+  max-height: 1.6rem;
+  height: auto;
+  width: auto;
+  display: block;
+}
+.homepage .site-footer .footer-badge {
+  max-height: 1.1rem;
+  height: auto;
+  width: auto;
+  display: block;
+}
+
+/* Links */
+.homepage .site-footer a:not(.btn) {
+  font-size: var(--txt-sm) !important;
+  color: var(--bs-light) !important;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.homepage .site-footer a:not(.btn):hover {
+  text-decoration: underline;
+}
+.homepage .site-footer .btn {
+  font-size: var(--txt-sm) !important;
+  padding: 0.15rem 0.55rem !important;
+  line-height: 1.4;
+}
+
+/* Language selector — hidden on landing page */
+.homepage .site-footer .lang-select {
+  display: none !important;
+}
+
 /* Banner — full-width gradient in Material Digital teal when no image is set */
 .banner {
   position: relative;
-  min-height: 180px;
   background: linear-gradient(135deg, #005b7f 0%, #179C7d 100%);
   background-size: cover;
   background-blend-mode: multiply;
@@ -524,17 +802,17 @@ aside,
 }
 
 /* ---- Homepage category pills ---- */
-.product-tag-pill {
+.theme-tag-pill {
   font-size: 0.875rem;
   padding: 0.4rem 1rem;
   transition: background-color 0.15s ease, transform 0.1s ease;
 }
-.product-tag-pill:hover {
+.theme-tag-pill:hover {
   transform: translateY(-1px);
 }
 
 /* ---- Product list items (search results) ---- */
-.product-list-item {
+.dataset-list-item {
   border-radius: 0.5rem;
   padding: 1rem 1.25rem !important;
   margin-bottom: 0.5rem;
@@ -543,57 +821,56 @@ aside,
   transition: box-shadow 0.15s ease, border-color 0.15s ease;
   list-style: none;
 }
-.product-list-item:hover {
+.dataset-list-item:hover {
   box-shadow: 0 4px 16px rgba(var(--bs-primary-rgb), 0.12);
   border-color: rgba(var(--bs-primary-rgb), 0.3) !important;
 }
 
 /* Product icon in list */
-.product-icon-col {
+.dataset-icon-col {
   width: 3rem;
   height: 3rem;
   border-radius: 0.5rem;
   background: rgba(var(--bs-primary-rgb), 0.08);
   margin-top: 0.25rem;
 }
-.product-icon {
+.dataset-icon {
   font-size: 1.5rem;
   color: var(--bs-primary);
 }
 
 /* Product title link */
-.product-title-link {
+.dataset-title-link {
   color: var(--bs-primary);
   font-weight: 600;
   font-size: 1.1rem;
   text-decoration: none;
 }
-.product-title-link:hover {
+.dataset-title-link:hover {
   text-decoration: underline;
   color: var(--bs-primary);
 }
 
 /* Organization badge */
-.product-org-badge {
+.org-badge {
   display: inline-flex;
   align-items: center;
   font-size: 0.8rem;
-  color: var(--bs-secondary);
-  background: rgba(var(--bs-secondary-rgb), 0.12);
+  color: var(--bs-primary);
+  background: rgba(var(--bs-primary-rgb), 0.08);
   border-radius: 2rem;
   padding: 0.15rem 0.65rem;
   text-decoration: none;
   font-weight: 500;
-  border: 1px solid rgba(var(--bs-secondary-rgb), 0.25);
+  border: 1px solid rgba(var(--bs-primary-rgb), 0.25);
 }
-.product-org-badge:hover {
-  background: rgba(var(--bs-primary-rgb), 0.08);
-  color: var(--bs-primary);
-  border-color: rgba(var(--bs-primary-rgb), 0.2);
+.org-badge:hover {
+  background: rgba(var(--bs-primary-rgb), 0.15);
+  border-color: rgba(var(--bs-primary-rgb), 0.45);
 }
 
 /* Product notes in list (2-line clamp) */
-.product-notes {
+.dataset-notes {
   font-size: 0.9rem;
   color: var(--bs-body-color);
   display: -webkit-box;
@@ -604,7 +881,7 @@ aside,
 }
 
 /* Color-coded format badges */
-.product-format-badge {
+.format-badge {
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -627,10 +904,10 @@ aside,
 .format-xml            { background-color: #e91e63; color: #fff; }
 .format-xlsx,
 .format-xls            { background-color: #1d6f42; color: #fff; }
-.product-format-badge:not([class*="format-"]) { background-color: #6c757d; color: #fff; }
+.format-badge:not([class*="format-"]) { background-color: #6c757d; color: #fff; }
 
 /* ---- Product detail page ---- */
-.product-detail-header {
+.dataset-detail-header {
   background: linear-gradient(135deg,
     rgba(var(--bs-primary-rgb), 0.06) 0%,
     rgba(var(--bs-success-rgb), 0.04) 100%);
@@ -638,7 +915,7 @@ aside,
   border: 1px solid rgba(var(--bs-primary-rgb), 0.12);
   padding: 1.5rem;
 }
-.product-detail-icon {
+.dataset-detail-icon {
   width: 4rem;
   height: 4rem;
   border-radius: 0.75rem;
@@ -649,14 +926,14 @@ aside,
   font-size: 2rem;
   color: var(--bs-primary);
 }
-.product-detail-title {
+.dataset-detail-title {
   font-size: 1.75rem;
   font-weight: 700;
   color: var(--bs-primary);
 }
 
 /* Section headings on detail page */
-.product-section-heading {
+.section-heading {
   font-size: 1rem;
   font-weight: 600;
   color: var(--bs-primary);
@@ -666,7 +943,7 @@ aside,
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
 }
-.product-section-heading-sm {
+.section-heading-sm {
   font-size: 0.875rem;
   font-weight: 600;
   color: var(--bs-primary);
@@ -678,7 +955,7 @@ aside,
 }
 
 /* Product files panel */
-.product-files-panel {
+.resources-panel {
   background: rgba(var(--bs-primary-rgb), 0.03);
   border: 1px solid rgba(var(--bs-primary-rgb), 0.1);
   border-radius: 0.5rem;
@@ -686,7 +963,7 @@ aside,
 }
 
 /* Product details card */
-.product-details-card {
+.dataset-details-card {
   background: rgba(var(--bs-primary-rgb), 0.02);
   border: 1px solid rgba(var(--bs-primary-rgb), 0.08);
   border-radius: 0.5rem;
@@ -699,3 +976,9 @@ aside,
 
 /* ---- Homepage tagline spacing ---- */
 .ls-1 { letter-spacing: 0.05em; }
+
+/* Counter row — white card strip between hero and tags */
+.counter-row {
+  background-color: #fff !important;
+  box-shadow: 0 2px 12px rgba(0,91,127,0.08);
+}

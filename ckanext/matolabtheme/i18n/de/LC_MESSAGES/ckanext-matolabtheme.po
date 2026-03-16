@@ -63,8 +63,8 @@ msgstr "Suche"
 
 #: ckanext/matolabtheme/templates/header.html:42
 #: ckanext/matolabtheme/templates/home/snippets/promoted.html:36
-msgid "Search products..."
-msgstr "Produkte suchen..."
+msgid "Search..."
+msgstr "Suchen..."
 
 #: ckanext/matolabtheme/templates/header.html:43
 #: ckanext/matolabtheme/templates/home/snippets/promoted.html:37
@@ -85,30 +85,23 @@ msgstr "Theme konfigurieren"
 msgid "Welcome"
 msgstr "Willkommen"
 
-#: ckanext/matolabtheme/templates/home/snippets/promoted.html:23
-msgid "Product Information Hub"
-msgstr "Produktinformationsportal"
-
-#: ckanext/matolabtheme/templates/home/snippets/promoted.html:25
-msgid ""
-"This is a nice introductory paragraph about CKAN or the site in general. "
-"We don't have any copy to go here yet but soon we will"
-msgstr ""
-"Dies ist ein schöner einführender Abs. über CKAN oder die Seite im "
-"Allgemeinen. Wir haben noch keinen Text dafür, aber bald werden wir ihn "
-"haben."
-
 #: ckanext/matolabtheme/templates/home/snippets/promoted.html:58
 msgid "Log in"
 msgstr "Anmelden"
 
-#: ckanext/matolabtheme/templates/home/snippets/promoted.html:71
-msgid "Products"
-msgstr "Produkte"
-
-#: ckanext/matolabtheme/templates/home/snippets/promoted.html:80
-msgid "Files"
+# Counter labels — override CKAN standard strings
+msgid "Resources"
 msgstr "Dateien"
+
+# Detail-page section headings
+msgid "Tags"
+msgstr "Kategorien"
+
+msgid "Additional Information"
+msgstr "Produktdetails"
+
+msgid "Find and explore datasets — all in one place."
+msgstr "Alle Produktinformationen auf einen Blick."
 
 #: ckanext/matolabtheme/templates/home/snippets/promoted.html:89
 msgid "Organizations"
@@ -183,14 +176,6 @@ msgstr "Produkte pro Seite"
 msgid "Browse by category"
 msgstr "Nach Kategorie stöbern"
 
-msgid "Product Categories"
-msgstr "Produktkategorien"
-
-msgid "Product Details"
-msgstr "Produktdetails"
-
-msgid "Product Files"
-msgstr "Produktdateien"
 
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:3
 #: ckanext/matolabtheme/templates/matolabtheme/dataprivacy.html:10

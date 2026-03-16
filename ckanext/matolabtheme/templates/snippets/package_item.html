@@ -10,13 +10,13 @@ hide_resources - If true hides the resources (default: false).
 {% set notes = h.markdown_extract(package.notes, extract_length=200) %}
 
 {% block package_item %}
-<li class="{{ item_class or 'dataset-item' }} product-list-item">
+<li class="{{ item_class or 'dataset-item' }} dataset-list-item">
   {% block content %}
   <div class="dataset-content d-flex align-items-start gap-3">
 
     {# Product icon column #}
-    <div class="product-icon-col flex-shrink-0 d-none d-sm-flex align-items-center justify-content-center">
-      <i class="fas fa-cube product-icon"></i>
+    <div class="dataset-icon-col flex-shrink-0 d-none d-sm-flex align-items-center justify-content-center">
+      <i class="fas fa-cube dataset-icon"></i>
     </div>
 
     {# Main content column #}
@@ -32,7 +32,7 @@ hide_resources - If true hides the resources (default: false).
           {% endif %}
         {% endblock %}
         {% block heading_title %}
-        <a href="{{ h.url_for('%s.read' % package.type, id=package.name) }}" title="{{ title }}" class="product-title-link">
+        <a href="{{ h.url_for('%s.read' % package.type, id=package.name) }}" title="{{ title }}" class="dataset-title-link">
           {{ title|truncate(80) }}
         </a>
         {% endblock %}
@@ -49,7 +49,7 @@ hide_resources - If true hides the resources (default: false).
       {# Organization badge #}
       {% if package.organization %}
       <div class="mb-1">
-        <a href="{{ h.url_for('organization.read', id=package.organization.name) }}" class="product-org-badge">
+        <a href="{{ h.url_for('organization.read', id=package.organization.name) }}" class="org-badge">
           <i class="fas fa-industry me-1"></i>{{ package.organization.title or package.organization.name }}
         </a>
       </div>
@@ -57,10 +57,10 @@ hide_resources - If true hides the resources (default: false).
 
       {% block notes %}
       {% if notes %}
-        <p class="product-notes mb-2">{{ notes|urlize }}</p>
+        <p class="dataset-notes mb-2">{{ notes|urlize }}</p>
       {% else %}
-        <p class="product-notes empty mb-2 text-muted fst-italic">
-          {{ h.humanize_entity_type('package', package.type, 'no description') or _("No product description available.") }}
+        <p class="dataset-notes empty mb-2 text-muted fst-italic">
+          {{ h.humanize_entity_type('package', package.type, 'no description') or _("No description available.") }}
         </p>
       {% endif %}
       {% endblock %}
@@ -73,7 +73,7 @@ hide_resources - If true hides the resources (default: false).
         {% for resource in h.dict_list_reduce(package.resources, 'format') %}
         <li>
           <a href="{{ h.url_for(package.type ~ '.read', id=package.name) }}"
-             class="badge product-format-badge format-{{ resource.lower()|replace('/', '-')|replace('+', '-')|replace(' ', '-') }}"
+             class="badge format-badge format-{{ resource.lower()|replace('/', '-')|replace('+', '-')|replace(' ', '-') }}"
              data-format="{{ resource.lower() }}">{{ resource }}</a>
         </li>
         {% endfor %}
