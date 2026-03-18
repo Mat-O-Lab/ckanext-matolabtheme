@@ -1,7 +1,12 @@
 [![Tests](https://github.com/Mat-O-Lab/ckanext-matolabtheme/actions/workflows/test.yml/badge.svg)](https://github.com/Mat-O-Lab/ckanext-matolabtheme/actions/workflows/test.yml)
+[![DOI](https://zenodo.org/badge/latestdoi/84372618.svg)](https://zenodo.org/badge/latestdoi/84372618)
+
 # ckanext-matolabtheme
 
-CKAN theme of the Mat-O-Lab Project, changes landing Page and add alternative Data Privacy Act in English and German.  
+A CKAN extension providing the Mat-O-Lab theme for data portals. It includes
+configurable branding (logo, banner, favicon), GDPR-compliant privacy pages in
+English and German, and a customisable landing page suitable for materials
+science research data repositories.
 
 ## Requirements
 
