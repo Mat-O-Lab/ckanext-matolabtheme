@@ -1,5 +1,5 @@
 [![Tests](https://github.com/Mat-O-Lab/ckanext-matolabtheme/actions/workflows/test.yml/badge.svg)](https://github.com/Mat-O-Lab/ckanext-matolabtheme/actions/workflows/test.yml)
-[![DOI](https://zenodo.org/badge/latestdoi/19088706.svg)](https://zenodo.org/badge/latestdoi/19088706)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19088706.svg)](https://doi.org/10.5281/zenodo.19088706)
 
 # ckanext-matolabtheme
 
