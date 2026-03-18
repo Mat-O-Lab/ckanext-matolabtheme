@@ -78,6 +78,21 @@ To run the tests, do:
 pytest --ckan-ini=test.ini
 ```
 
+## Citation
+
+If you use this software, please cite it. GitHub shows a **"Cite this repository"** button (top right of the repo page) that exports the [CITATION.cff](CITATION.cff) in APA or BibTeX format.
+
+After the first Zenodo release, a DOI-specific BibTeX entry will be available on the Zenodo record. Until then:
+
+```bibtex
+@software{hanke_ckanext_matolabtheme,
+  author       = {Hanke, Thomas},
+  title        = {ckanext-matolabtheme},
+  url          = {https://github.com/Mat-O-Lab/ckanext-matolabtheme},
+  license      = {AGPL-3.0-or-later},
+}
+```
+
 ## License
 
 [AGPL](https://www.gnu.org/licenses/agpl-3.0.en.html)
