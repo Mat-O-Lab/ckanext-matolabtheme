@@ -10,15 +10,8 @@ Compatibility with core CKAN versions:
 | CKAN version    | Compatible?   |
 | --------------- | ------------- |
 | 2.9 and earlier | not tested    |
-| 2.10            | yes           |
-| 2.11            | yes           |
-
-Suggested values:
-
-* "yes"
-* "not tested" - I can't think of a reason why it wouldn't work
-* "not yet" - there is an intention to get it working
-* "no"
+| 2.10            | ✓ CI tested   |
+| 2.11            | ✓ CI tested   |
 
 
 ## Installation
@@ -66,13 +59,11 @@ If no contact_url is given, it will relate to the about page!
 
 ## Developer installation
 
-To install ckanext-csvtocsvw for development, activate your CKAN virtualenv and
-do:
+To install ckanext-matolabtheme for development, activate your CKAN virtualenv and do:
 ```bash
 git clone https://github.com/Mat-O-Lab/ckanext-matolabtheme.git
 cd ckanext-matolabtheme
-python setup.py develop
-pip install -r dev-requirements.txt
+pip install -e ".[dev]"
 ```
 
 ## Tests
