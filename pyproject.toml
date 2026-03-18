@@ -1,0 +1,68 @@
+[build-system]
+requires = ["setuptools>=64", "setuptools-scm>=8"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "ckanext-matolabtheme"
+dynamic = ["version"]
+description = "CKAN theme of the Mat-O-Lab Project, changes landing Page and adds alternative Data Privacy Act in English and German."
+readme = "README.md"
+license = { text = "AGPL" }
+authors = [{ name = "Thomas Hanke", email = "thomas.hanke@iwm.fraunhofer.de" }]
+keywords = ["CKAN", "Theme"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "requests>=2.4.2",
+    "sqlalchemy",
+]
+
+[project.urls]
+Homepage = "https://github.com/Mat-O-Lab/ckanext-matolabtheme"
+Repository = "https://github.com/Mat-O-Lab/ckanext-matolabtheme"
+
+[project.entry-points."ckan.plugins"]
+matolabtheme = "ckanext.matolabtheme.plugin:MatolabthemePlugin"
+
+[project.entry-points."babel.extractors"]
+ckan = "ckan.lib.extract:extract_ckan"
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-ckan"]
+
+[tool.setuptools.packages.find]
+include = ["ckanext*"]
+
+[tool.setuptools.package-data]
+"ckanext.matolabtheme" = [
+    "templates/**/*.html",
+    "public/**/*.svg",
+    "public/**/*.png",
+    "assets/**/*.css",
+    "assets/**/*.js",
+    "assets/**/*.less",
+    "i18n/**/*.mo",
+    "i18n/**/*.po",
+    "migration/**/*.ini",
+    "migration/**/*.py",
+    "migration/**/*.mako",
+    "*.json",
+    "*.yml",
+]
+
+[tool.setuptools_scm]
+# Version automatically derived from git tags (e.g. v1.0.6 -> 1.0.6)
+
+[tool.pytest.ini_options]
+filterwarnings = [
+    "ignore::sqlalchemy.exc.SADeprecationWarning",
+    "ignore::sqlalchemy.exc.SAWarning",
+    "ignore::DeprecationWarning",
+]
+addopts = "--ckan-ini test.ini"

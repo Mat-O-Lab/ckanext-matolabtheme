@@ -5,8 +5,8 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - name: Install requirements
@@ -54,14 +54,12 @@ jobs:
       CKAN_REDIS_URL: redis://redis:6379/1
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Install requirements
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # required for setuptools-scm
+    - name: Install extension
       run: |
-        pip install -r requirements.txt
-        pip install -r dev-requirements.txt
-    - name: Install requirements (common)
-      run: |
-        pip install -e .
+        pip install -e ".[dev]"
         # Replace default path to CKAN core config file with the one on the container
         sed -i -e 's/use = config:.*/use = config:\/srv\/app\/src\/ckan\/test-core.ini/' test.ini
     - name: Setup extension
@@ -70,6 +68,6 @@ jobs:
     - name: Run tests
       run: pytest --ckan-ini=test.ini --cov=ckanext.matolabtheme --disable-warnings ckanext/matolabtheme || ([ $? = 5 ] && exit 0 || exit $?)
     - name: Upload coverage report to codecov
-      uses: codecov/codecov-action@v1
+      uses: codecov/codecov-action@v4
       with:
-        file: ./coverage.xml--cov=ckanext.matolabtheme
+        files: ./coverage.xml
