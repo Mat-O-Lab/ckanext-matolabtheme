@@ -286,6 +286,139 @@ table.dataTable tbody tr > .dtfc-fixed-right {
   padding: 20px 0;
 }
 
+/* Non-homepage footer: fixed 130px — same structure as homepage footer */
+body:not(.homepage) .wrapper {
+  flex-grow: 1;
+}
+body:not(.homepage) .site-footer {
+  height: 130px !important;
+  min-height: 0 !important;
+  flex-shrink: 0 !important;
+  flex-grow: 0 !important;
+  background-size: 100% 100% !important;
+  overflow: hidden;
+  padding: 0 !important;
+}
+body:not(.homepage) .site-footer .container {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  overflow: hidden;
+}
+body:not(.homepage) .site-footer .footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  height: 130px;
+}
+body:not(.homepage) .site-footer .footer-links {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 0 0.7rem;
+  overflow: hidden;
+  padding: 0.25rem 0.5rem 0 0;
+  max-height: calc(130px * 2 / 3);
+}
+body:not(.homepage) .site-footer .footer-badge-cell {
+  grid-column: 1;
+  grid-row: 3;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+body:not(.homepage) .site-footer .footer-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.4rem;
+  overflow: hidden;
+  white-space: nowrap;
+  color: var(--bs-light);
+  padding: 0 0 0 0.5rem;
+}
+body:not(.homepage) .site-footer .footer-attr-label {
+  font-size: 0.75rem;
+  opacity: 0.75;
+}
+body:not(.homepage) .site-footer .footer-attr-logo {
+  max-height: 1.6rem;
+  height: auto;
+  width: auto;
+  display: block;
+}
+body:not(.homepage) .site-footer .footer-badge {
+  max-height: 1.1rem;
+  height: auto;
+  width: auto;
+  display: block;
+}
+body:not(.homepage) .site-footer a:not(.btn) {
+  font-size: 0.75rem !important;
+  color: var(--bs-light) !important;
+  text-decoration: none;
+  white-space: nowrap;
+}
+body:not(.homepage) .site-footer a:not(.btn):hover {
+  text-decoration: underline;
+}
+body:not(.homepage) .site-footer .btn {
+  font-size: 0.75rem !important;
+  padding: 0.15rem 0.55rem !important;
+  line-height: 1.4;
+}
+body:not(.homepage) .site-footer .footer-attr-item {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+body:not(.homepage) .site-footer .lang-select {
+  display: inline-flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+body:not(.homepage) .site-footer .lang-select .form-group {
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+  gap: 0.4rem !important;
+  margin: 0 !important;
+}
+body:not(.homepage) .site-footer .lang-select label {
+  display: inline !important;
+  font-size: 0.75rem !important;
+  color: #fff !important;
+  opacity: 0.7;
+  white-space: nowrap !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+body:not(.homepage) .site-footer .select2-container {
+  display: none !important;
+}
+body:not(.homepage) .site-footer .lang-select select {
+  display: inline-block !important;
+  font-size: 0.75rem !important;
+  padding: 0.1rem 0.3rem !important;
+  background: rgba(0,0,0,0.45) !important;
+  color: #fff !important;
+  border: 1px solid rgba(255,255,255,0.5) !important;
+  border-radius: 0.25rem !important;
+  cursor: pointer !important;
+  width: auto !important;
+  max-width: 9rem !important;
+  appearance: auto !important;
+  -webkit-appearance: auto !important;
+}
+body:not(.homepage) .site-footer .lang-select select option {
+  background: #222;
+  color: #fff;
+}
+
 .page-header .nav-tabs li.active a,
 .page-header .nav-tabs a:hover {
   background-color: var(--bs-light);
@@ -486,11 +619,10 @@ body.homepage {
      Golden ratio: hero (focal) : rest ≈ 40 : 60
      Within rest: counter (glance) : tags (browse) : footer (anchor)
                         12         :      32        :       16          */
-  /* hero 30 + counter 12 (pulled up 3vh over hero) + tags 43 + footer 18 = 100
-     (hero reduced from 33→30 to accommodate dvh/vh browser chrome discrepancy) */
-  --hp-hero-vh:    27;
+  /* hero 33 + counter 12 (pulled up 3vh over hero) + tags 37 + footer 18 = 100 */
+  --hp-hero-vh:    33;
   --hp-counter-vh: 12;
-  --hp-tags-vh:    43;
+  --hp-tags-vh:    37;
   --hp-footer-vh:  18;
   --hp-overlap-vh:  3;  /* how many vh the counter cards lift into the hero */
 
@@ -511,58 +643,19 @@ body.homepage {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  /* extra bottom padding so the search bar doesn't hide behind lifted cards */
-  padding-bottom: calc(var(--hp-overlap-vh) * 1vh + 0.5rem) !important;
 }
 
-/* Top bar: logo left, user right — compact */
-.hero-topbar {
-  flex-shrink: 0;
-  padding: 0.5rem 1.5rem;
-}
-.hero-logo-img {
-  height: clamp(24px, 3.5vh, 40px);
-  width: auto;
-}
-
-/* Hero body — vertically centred; padding-bottom keeps search clear of counter overlap */
-.hero-body {
+/* Inner row expands to fill the fixed-height hero, columns vertically centred */
+.hero-section > .row {
   flex: 1;
-  justify-content: center !important;
-  padding: 0.25rem 1rem calc(var(--hp-overlap-vh) * 1vh + 0.75rem);
   min-height: 0;
+  align-items: center;
 }
 
-/* Hero title */
-.hero-title {
-  font-size: var(--txt-lg);
-  line-height: 1.15;
-  color: #fff;
-  max-width: 900px;
-  margin-bottom: 0.4rem !important;
-}
-
-/* Hero subtitle — same scale as search input for visual unity */
-.hero-subtitle {
-  font-size: var(--txt-md);
-  font-weight: 400;
-  color: rgba(255,255,255,0.88);
-  max-width: 820px;
-  margin-bottom: 0.6rem !important;
-}
-
-/* Hero search bar — sized to match subtitle */
-.hero-search {
-  width: 100%;
-  max-width: 480px;
-}
-.hero-search .form-control-lg {
-  font-size: var(--txt-md) !important;
-  padding: 0.45rem 1rem !important;
-}
-.hero-search .btn {
-  font-size: var(--txt-md) !important;
-  padding: 0.45rem 1.2rem !important;
+/* Logo in hero — scales with viewport height */
+.index-logo {
+  max-height: clamp(80px, 13vh, 150px);
+  width: auto;
 }
 
 /* Counter row — lifts up over the hero gradient */
@@ -655,20 +748,18 @@ body.homepage {
   padding: 0 !important;
 }
 .homepage .site-footer .container {
-  /* Explicit height — no % inheritance chain needed */
-  height: calc(var(--hp-footer-vh) * 1vh) !important;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
   overflow: hidden;
 }
 
 /* CSS Grid: 2 columns × 3 rows.
-   Grid gets definite height from container, 1fr rows split it evenly. */
+   Height is set directly here so the grid doesn't depend on the container's h-100. */
 .homepage .site-footer .footer-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(3, 1fr);
-  height: 100%;
+  height: calc(var(--hp-footer-vh) * 1vh);
 }
 
 /* Left-top: links stack vertically, wrap into extra column when height runs out */
@@ -797,6 +888,37 @@ body.homepage {
 .homepage .site-footer .lang-select select option {
   background: #222;
   color: #fff;
+}
+
+/* ── Narrow / portrait viewport fallback ────────────────────────────────
+   When aspect ratio is below 4:3 (portrait tablets, mobile, narrow
+   browser window), release the 100dvh lock so the page scrolls
+   naturally. Only height/overflow is changed — no layout shifts.
+   ──────────────────────────────────────────────────────────────────────── */
+@media (max-aspect-ratio: 4/3) {
+  body.homepage {
+    height: auto !important;
+    overflow: auto !important;
+  }
+  .hero-section {
+    height: auto !important;
+    min-height: 25vh;
+  }
+  .homepage .counter-row {
+    height: auto !important;
+  }
+  .homepage .main {
+    height: auto !important;
+    flex-grow: 1 !important;   /* fill remaining height so no white gap */
+    flex-shrink: 1 !important;
+  }
+  .homepage .site-footer {
+    height: auto !important;
+  }
+  .homepage .site-footer .footer-grid {
+    height: auto !important;
+    grid-template-rows: auto !important;  /* 1fr needs definite height — reset to auto */
+  }
 }
 
 /* Banner — uses background-image set via inline style from config */
