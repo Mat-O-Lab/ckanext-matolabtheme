@@ -1,51 +1,58 @@
 {% set intro = g.site_intro_text %}
 
 {% block home_image %}
-<section class="banner position-relative hero-section" style="background-image: url({{ h.url_for_static_or_external(config.get('ckanext.matolabtheme.banner_top')) }});">
-
-  {# ── Top bar: logo (left) + user (right) ──────────────────────────── #}
-  <div class="hero-topbar d-flex justify-content-between align-items-center px-4 pt-3">
-    <a href="{{ h.url_for('home.index') }}" class="hero-logo-link">
-      {% if g.site_logo %}
-      <img src="{{ h.url_for_static_or_external(g.site_logo) }}" alt="{{ g.site_title }}" class="hero-logo-img"/>
-      {% else %}
-      <img src="{{ h.url_for_static('/static/Logo.svg') }}" alt="{{ g.site_title }}" class="hero-logo-img"/>
-      {% endif %}
-    </a>
-    <div class="hero-user">
+<section class="p-3 banner position-relative hero-section" style="background-image: url({{ h.url_for_static_or_external(config.get('ckanext.matolabtheme.banner_top')) }});">
+  <div class="row">
+    <div class="col-6 col-sm-2 order-1 order-sm-1 d-flex justify-content-start align-items-center">
+      <a class="d-flex justify-content-center" style="min-width: 100%;" href="{{ h.url_for('home.index') }}">
+        {% if g.site_logo %}
+        <img class="img-fluid index-logo" src="{{ h.url_for_static_or_external(g.site_logo) }}" alt="{{ g.site_title }}" title="{{ g.site_title }}"/>
+        {% else %}
+        <img class="img-fluid index-logo" src="{{ h.url_for_static('/static/Logo.svg') }}" alt="{{ g.site_title }}" title="{{ g.site_title }}"/>
+        {% endif %}
+      </a>
+    </div>
+    <div class="col-12 col-sm-8 order-3 order-sm-2">
+      <div class="row justify-content-md-center align-items-center text-light justify-content-center">
+        <div class="col-12 text-center pt-3">
+          {% if intro %}
+          {{ h.render_markdown(intro|replace('^[ \t]*|[ \t]*$', '')) }}
+          {% else %}
+          <h1 class="display-1 text-center fw-bold mb-4">{{ g.site_description or g.site_title }}</h1>
+          <p class="lead text-center mb-3 d-flex justify-content-sm-center">
+            <span class="col-12 fw-bold fs-3">
+              {% trans %}Find and explore datasets — all in one place.{% endtrans %}
+            </span>
+          </p>
+          {% endif %}
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-3">
+            <form class="nav navbar-form navbar-left" action="{{ url_for('dataset.search') }}" method="get">
+              <div class="input-group">
+                <input id="search" class="form-control" type="search" name="q"
+                  placeholder="{{ _('Search...') }}" aria-label="{{ _('Search') }}"/>
+                <button class="btn btn-primary" type="submit" aria-label="{{ _('Submit') }}">
+                  <i class="fa fa-search"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-sm-2 order-2 order-sm-3 d-flex justify-content-end align-items-center">
       {% if c.userobj %}
-      <a class="btn btn-outline-light btn-sm" href="{{ h.url_for('dashboard.datasets') }}"
-         data-module="me" data-me="{{ c.userobj.id }}">
-        {{ h.user_image((c.user if c and c.user else ''), size=20) }}
-        <span class="username ms-1">{{ c.userobj.display_name }}</span>
+      <a class="btn btn-outline-light" data-module="me" data-me="{{ c.userobj.id }}"
+        href="{{ h.url_for('dashboard.datasets') }}">
+        {{ h.user_image((c.user if c and c.user else ''), size=22) }}
+        <span class="username">{{ c.userobj.display_name }}</span>
       </a>
       {% else %}
-      <a class="btn btn-outline-light btn-sm" href="{{ h.url_for('user.login') }}">{{ _("Log in") }}</a>
+      <a class="btn btn-outline-light" href="{{ h.url_for('user.login') }}">
+        <span class="username">{{ _("Log in") }}</span>
+      </a>
       {% endif %}
     </div>
   </div>
-
-  {# ── Hero body: title + subtitle + search ─────────────────────────── #}
-  <div class="hero-body d-flex flex-column justify-content-center align-items-center text-center px-3">
-    {% if intro %}
-    <div class="text-light hero-intro">{{ h.render_markdown(intro|replace('^[ \t]*|[ \t]*$', '')) }}</div>
-    {% else %}
-    <h1 class="hero-title fw-bold mb-3">{{ g.site_description or g.site_title }}</h1>
-    <p class="hero-subtitle mb-4">
-      {% trans %}Find and explore datasets — all in one place.{% endtrans %}
-    </p>
-    {% endif %}
-    <form class="hero-search" action="{{ url_for('dataset.search') }}" method="get">
-      <div class="input-group">
-        <input id="search" class="form-control form-control-lg" type="search" name="q"
-               placeholder="{{ _('Search...') }}" aria-label="{{ _('Search') }}"/>
-        <button class="btn btn-primary px-4" type="submit" aria-label="{{ _('Submit') }}">
-          <i class="fa fa-search"></i>
-        </button>
-      </div>
-    </form>
-  </div>
-
 </section>
 
 {# ── Counter strip ────────────────────────────────────────────────────── #}

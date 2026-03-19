@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata from this file."
+type: software
+title: ckanext-matolabtheme
+abstract: >-
+  A CKAN extension that provides the Mat-O-Lab theme for data portals.
+  It includes configurable branding (logo, banner, favicon), GDPR-compliant
+  privacy pages in English and German, and a customisable landing page
+  suitable for materials science research data repositories.
+authors:
+  - family-names: Hanke
+    given-names: Thomas
+    affiliation: Fraunhofer Institute for Mechanics of Materials IWM
+    email: thomas.hanke@iwm.fraunhofer.de
+    orcid: "https://orcid.org/0000-0003-1649-6832"
+repository-code: https://github.com/Mat-O-Lab/ckanext-matolabtheme
+url: https://github.com/Mat-O-Lab/ckanext-matolabtheme
+license: AGPL-3.0-or-later
+keywords:
+  - CKAN
+  - open data
+  - data portal
+  - FAIR data
+  - research data management
+  - materials science
+  - Mat-O-Lab
+  - GDPR
+  - Python
+  - theme

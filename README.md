@@ -1,7 +1,12 @@
 [![Tests](https://github.com/Mat-O-Lab/ckanext-matolabtheme/actions/workflows/test.yml/badge.svg)](https://github.com/Mat-O-Lab/ckanext-matolabtheme/actions/workflows/test.yml)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19088706.svg)](https://doi.org/10.5281/zenodo.19088706)
+
 # ckanext-matolabtheme
 
-CKAN theme of the Mat-O-Lab Project, changes landing Page and add alternative Data Privacy Act in English and German.  
+A CKAN extension providing the Mat-O-Lab theme for data portals. It includes
+configurable branding (logo, banner, favicon), GDPR-compliant privacy pages in
+English and German, and a customisable landing page suitable for materials
+science research data repositories.
 
 ## Requirements
 
@@ -71,6 +76,21 @@ pip install -e ".[dev]"
 To run the tests, do:
 ```bash
 pytest --ckan-ini=test.ini
+```
+
+## Citation
+
+If you use this software, please cite it. GitHub shows a **"Cite this repository"** button (top right of the repo page) that exports the [CITATION.cff](CITATION.cff) in APA or BibTeX format.
+
+After the first Zenodo release, a DOI-specific BibTeX entry will be available on the Zenodo record. Until then:
+
+```bibtex
+@software{hanke_ckanext_matolabtheme,
+  author       = {Hanke, Thomas},
+  title        = {ckanext-matolabtheme},
+  url          = {https://github.com/Mat-O-Lab/ckanext-matolabtheme},
+  license      = {AGPL-3.0-or-later},
+}
 ```
 
 ## License
