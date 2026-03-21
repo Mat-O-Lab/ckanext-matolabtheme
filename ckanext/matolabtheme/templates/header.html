@@ -5,7 +5,6 @@
 <nav class="navbar navbar-dark navbar-expand-lg navbar-light bg-primary">
   <div class="container-fluid">
     {% block header_logo %}
-    {% if g.site_logo %}
     <a class="navbar-brand" href="{{ h.url_for('home.index') }}">
       {% if g.site_logo %}
       <img src="{{ h.url_for_static_or_external(g.site_logo) }}" alt="{{ g.site_title }}" title="{{ g.site_title }}"
@@ -15,7 +14,6 @@
       height="30"/>
       {% endif %}
     </a>
-    {% endif %}
     {% endblock %}
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
       aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">

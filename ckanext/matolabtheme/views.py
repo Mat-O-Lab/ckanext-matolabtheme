@@ -82,9 +82,9 @@ class ThemeConfigView(MethodView):
             if "ckanext.matolabtheme.banner_bottom" in data_dict.keys() and not data_dict["ckanext.matolabtheme.banner_bottom"]:
                 data_dict["ckanext.matolabtheme.banner_bottom"]="/static/banner_bottom.png"
             if "ckanext.matolabtheme.favicon" in data_dict.keys() and not data_dict["ckanext.matolabtheme.favicon"]:
-                data_dict["ckanext.matolabtheme.favicon"]="/static/favicon.png"
+                data_dict["ckanext.matolabtheme.favicon"]="/static/Logo.svg"
             if "ckanext.matolabtheme.attribution_logo" in data_dict.keys() and not data_dict["ckanext.matolabtheme.attribution_logo"]:
-                data_dict["ckanext.matolabtheme.attribution_logo"]="/static/favicon.png"
+                data_dict["ckanext.matolabtheme.attribution_logo"]="/static/Logo.svg"
             data = logic.get_action("config_option_update")(
                 {"user": current_user.name}, data_dict
             )

@@ -48,10 +48,10 @@ class MatolabthemePlugin(plugins.SingletonPlugin, DefaultTranslation):
         declaration.declare(group.banner_bottom, "/static/banner_bottom.png")
         declaration.declare(group.banner_bottom_upload, "")
         declaration.declare(group.clear_banner_bottom_upload, "")
-        declaration.declare(group.favicon, "/static/favicon.png")
+        declaration.declare(group.favicon, "/static/Logo.svg")
         declaration.declare(group.favicon_upload, "")
         declaration.declare(group.clear_favicon_upload, "")
-        declaration.declare(group.attribution_logo, "/static/favicon.png")
+        declaration.declare(group.attribution_logo, "/static/Logo.svg")
         declaration.declare(group.attribution_logo_upload, "")
         declaration.declare(group.clear_attribution_logo_upload, "")
 
