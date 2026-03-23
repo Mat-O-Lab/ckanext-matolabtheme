@@ -12,7 +12,7 @@
 }
 
 :root {
-  --bs-primary: #005b7f;
+  --bs-primary: #1a3d5c;
   --bs-secondary: #a6bbc8;
   --bs-success: #179C7d;
   --bs-info: #f58220;
@@ -20,7 +20,7 @@
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
   --bs-dark: #212529;
-  --bs-primary-rgb: 0, 91, 127;
+  --bs-primary-rgb: 26, 61, 92;
   --bs-secondary-rgb: 166, 187, 200;
   --bs-success-rgb: 23, 156, 125;
   --bs-info-rgb: 245, 130, 32;

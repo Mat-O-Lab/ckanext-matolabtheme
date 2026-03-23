@@ -3,10 +3,10 @@
 
 # ckanext-matolabtheme
 
-A CKAN extension providing the Mat-O-Lab theme for data portals. It includes
-configurable branding (logo, banner, favicon), GDPR-compliant privacy pages in
-English and German, and a customisable landing page suitable for materials
-science research data repositories.
+A CKAN extension that transforms a CKAN instance into a **product catalog UI**.
+It includes configurable branding (logo, banner, favicon), GDPR-compliant
+privacy pages in English and German, and a product-oriented landing page
+suitable for materials science research data repositories.
 
 ## Requirements
 
@@ -39,6 +39,32 @@ pip install ckanext-matolabtheme
 ```bash
 sudo service apache2 reload
 ```
+
+## Theming
+
+### Banners
+Header (`banner_top.svg`) and footer (`banner_bottom.svg`) banners are crisp
+SVG files — a deep-navy gradient with a subtle hexagonal lattice pattern.
+Upload replacements or set an external URL via **Admin → Theme Config**.
+
+### Colors
+On first load the plugin seeds `ckan.site_custom_css` with a default navy
+CSS variable palette (if no custom CSS is already configured):
+
+```css
+:root {
+  --bs-primary: #1a3d5c;
+  --bs-primary-rgb: 26, 61, 92;
+  --bs-secondary: #4a7fa5;
+  --bs-secondary-rgb: 74, 127, 165;
+  --bs-body-bg: #f0f4f7;
+  --bs-body-bg-rgb: 240, 244, 247;
+}
+```
+
+To customise colors go to **Admin → Config → Custom CSS** and override any
+CSS variable — no restart or code change required. Clearing the field restores
+the plugin defaults on the next restart.
 
 ## Config settings
 

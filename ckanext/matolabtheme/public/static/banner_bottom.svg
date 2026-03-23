@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 200" preserveAspectRatio="xMidYMid slice" width="1920" height="200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1d4a6e"/>
+      <stop offset="100%" stop-color="#0a1628"/>
+    </linearGradient>
+    <pattern id="hex" x="0" y="0" width="108" height="62.35" patternUnits="userSpaceOnUse">
+      <polygon points="54,0 81,15.6 81,46.8 54,62.35 27,46.8 27,15.6"
+               fill="none" stroke="white" stroke-width="1" opacity="0.06"/>
+      <polygon points="108,0 135,15.6 135,46.8 108,62.35 81,46.8 81,15.6"
+               fill="none" stroke="white" stroke-width="1" opacity="0.06"/>
+      <polygon points="0,0 27,15.6 27,46.8 0,62.35 -27,46.8 -27,15.6"
+               fill="none" stroke="white" stroke-width="1" opacity="0.06"/>
+    </pattern>
+  </defs>
+  <rect width="1920" height="200" fill="url(#bg)"/>
+  <rect width="1920" height="200" fill="url(#hex)"/>
+</svg>

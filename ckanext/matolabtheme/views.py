@@ -78,9 +78,9 @@ class ThemeConfigView(MethodView):
                         data_dict[config_key]=value   
             #set defaults if empty
             if "ckanext.matolabtheme.banner_top" in data_dict.keys() and not data_dict["ckanext.matolabtheme.banner_top"]:
-                data_dict["ckanext.matolabtheme.banner_top"]="/static/banner_top.png"
+                data_dict["ckanext.matolabtheme.banner_top"]="/static/banner_top.svg"
             if "ckanext.matolabtheme.banner_bottom" in data_dict.keys() and not data_dict["ckanext.matolabtheme.banner_bottom"]:
-                data_dict["ckanext.matolabtheme.banner_bottom"]="/static/banner_bottom.png"
+                data_dict["ckanext.matolabtheme.banner_bottom"]="/static/banner_bottom.svg"
             if "ckanext.matolabtheme.favicon" in data_dict.keys() and not data_dict["ckanext.matolabtheme.favicon"]:
                 data_dict["ckanext.matolabtheme.favicon"]="/static/Logo.svg"
             if "ckanext.matolabtheme.attribution_logo" in data_dict.keys() and not data_dict["ckanext.matolabtheme.attribution_logo"]:

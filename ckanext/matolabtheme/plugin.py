@@ -17,10 +17,23 @@ class MatolabthemePlugin(plugins.SingletonPlugin, DefaultTranslation):
 
     # IConfigurer
 
+    _DEFAULT_CUSTOM_CSS = (
+        ":root{"
+        "--bs-primary:#1a3d5c;"
+        "--bs-primary-rgb:26,61,92;"
+        "--bs-secondary:#4a7fa5;"
+        "--bs-secondary-rgb:74,127,165;"
+        "--bs-body-bg:#f0f4f7;"
+        "--bs-body-bg-rgb:240,244,247;"
+        "}"
+    )
+
     def update_config(self, config_):
         toolkit.add_template_directory(config_, "templates")
         toolkit.add_public_directory(config_, "public")
         toolkit.add_resource("assets", "matolabtheme")
+        if not config_.get("ckan.site_custom_css"):
+            config_["ckan.site_custom_css"] = self._DEFAULT_CUSTOM_CSS
 
     # IConfigDeclaration
 
@@ -42,10 +55,10 @@ class MatolabthemePlugin(plugins.SingletonPlugin, DefaultTranslation):
         )
         option = declaration.declare_bool(group.dark_mode, False)
         option.set_validators("not_missing boolean_validator")
-        declaration.declare(group.banner_top, "/static/banner_top.png")
+        declaration.declare(group.banner_top, "/static/banner_top.svg")
         declaration.declare(group.banner_top_upload, "")
         declaration.declare(group.clear_banner_top_upload, "")
-        declaration.declare(group.banner_bottom, "/static/banner_bottom.png")
+        declaration.declare(group.banner_bottom, "/static/banner_bottom.svg")
         declaration.declare(group.banner_bottom_upload, "")
         declaration.declare(group.clear_banner_bottom_upload, "")
         declaration.declare(group.favicon, "/static/Logo.svg")
