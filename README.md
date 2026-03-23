@@ -40,6 +40,32 @@ pip install ckanext-matolabtheme
 sudo service apache2 reload
 ```
 
+## Theming
+
+### Banners
+Header (`banner_top.svg`) and footer (`banner_bottom.svg`) are crisp SVG files —
+a teal gradient with flowing sinusoidal wave lines. Upload replacements or set
+an external URL via **Admin → Theme Config**.
+
+### Colors
+On first load the plugin seeds `ckan.site_custom_css` with a default navy CSS
+variable palette (if no custom CSS is already configured):
+
+```css
+:root {
+  --bs-primary: #1a3d5c;
+  --bs-primary-rgb: 26, 61, 92;
+  --bs-secondary: #4a7fa5;
+  --bs-secondary-rgb: 74, 127, 165;
+  --bs-body-bg: #f0f4f7;
+  --bs-body-bg-rgb: 240, 244, 247;
+}
+```
+
+To customise colors go to **Admin → Config → Custom CSS** and override any
+CSS variable — no restart required. Clearing the field restores the plugin
+defaults on the next restart.
+
 ## Config settings
 
 ```bash

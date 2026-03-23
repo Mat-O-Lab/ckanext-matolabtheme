@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 400" preserveAspectRatio="xMidYMid slice" width="1920" height="400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0d3d56"/>
+      <stop offset="55%" stop-color="#0b7a82"/>
+      <stop offset="100%" stop-color="#1ab5a0"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="72%" cy="48%" r="38%">
+      <stop offset="0%" stop-color="white" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1920" height="400" fill="url(#bg)"/>
+  <rect width="1920" height="400" fill="url(#glow)"/>
+  <!-- Wave 1: T=2400 A=40 y=200 UP  w=1.8 o=0.20 -->
+  <path fill="none" stroke="white" stroke-width="1.8" opacity="0.20"
+    d="M-600,200 C-218,160 218,160 600,200 C982,240 1418,240 1800,200 C2182,160 2618,160 3000,200"/>
+  <!-- Wave 2: T=1680 A=55 y=210 DOWN  w=1.5 o=0.17 -->
+  <path fill="none" stroke="white" stroke-width="1.5" opacity="0.17"
+    d="M-400,210 C-133,265 172,265 440,210 C707,155 1012,155 1280,210 C1547,265 1852,265 2120,210"/>
+  <!-- Wave 3: T=1440 A=35 y=190 UP  w=1.3 o=0.15 -->
+  <path fill="none" stroke="white" stroke-width="1.3" opacity="0.15"
+    d="M-200,190 C29,155 291,155 520,190 C749,225 1011,225 1240,190 C1469,155 1731,155 1960,190"/>
+  <!-- Wave 4: T=1920 A=65 y=215 DOWN  w=2 o=0.18 -->
+  <path fill="none" stroke="white" stroke-width="2" opacity="0.18"
+    d="M-480,215 C-174,280 174,280 480,215 C786,150 1134,150 1440,215 C1746,280 2094,280 2400,215"/>
+  <!-- Wave 5: T=1200 A=30 y=185 UP  w=1.2 o=0.13 -->
+  <path fill="none" stroke="white" stroke-width="1.2" opacity="0.13"
+    d="M-300,185 C-109,155 109,155 300,185 C491,215 709,215 900,185 C1091,155 1309,155 1500,185 C1691,215 1909,215 2100,185"/>
+  <!-- Wave 6: T=2880 A=50 y=205 UP  w=1.5 o=0.14 -->
+  <path fill="none" stroke="white" stroke-width="1.5" opacity="0.14"
+    d="M-720,205 C-262,155 261,155 720,205 C1178,255 1701,255 2160,205"/>
+  <!-- Wave 7: T=1560 A=25 y=195 DOWN  w=1 o=0.11 -->
+  <path fill="none" stroke="white" stroke-width="1" opacity="0.11"
+    d="M-100,195 C148,220 431,220 680,195 C928,170 1211,170 1460,195 C1708,220 1991,220 2240,195"/>
+  <!-- Wave 8: T=1080 A=45 y=220 UP  w=1.3 o=0.15 -->
+  <path fill="none" stroke="white" stroke-width="1.3" opacity="0.15"
+    d="M-540,220 C-368,175 -172,175 0,220 C172,265 368,265 540,220 C712,175 908,175 1080,220 C1252,265 1448,265 1620,220 C1792,175 1988,175 2160,220"/>
+  <!-- Wave 9: T=2160 A=38 y=180 UP  w=1.2 o=0.12 -->
+  <path fill="none" stroke="white" stroke-width="1.2" opacity="0.12"
+    d="M-800,180 C-456,142 -64,142 280,180 C624,218 1016,218 1360,180 C1704,142 2096,142 2440,180"/>
+  <!-- Wave 10: T=1320 A=20 y=230 DOWN  w=0.9 o=0.09 -->
+  <path fill="none" stroke="white" stroke-width="0.9" opacity="0.09"
+    d="M-260,230 C-50,250 190,250 400,230 C610,210 850,210 1060,230 C1270,250 1510,250 1720,230 C1930,210 2170,210 2380,230"/>
+  <!-- Wave 11: T=3360 A=70 y=205 DOWN  w=2 o=0.11 -->
+  <path fill="none" stroke="white" stroke-width="2" opacity="0.11"
+    d="M-840,205 C-305,275 305,275 840,205 C1375,135 1985,135 2520,205"/>
+  <!-- Wave 12: T=960 A=15 y=215 UP  w=0.8 o=0.08 -->
+  <path fill="none" stroke="white" stroke-width="0.8" opacity="0.08"
+    d="M-120,215 C33,200 207,200 360,215 C513,230 687,230 840,215 C993,200 1167,200 1320,215 C1473,230 1647,230 1800,215 C1953,200 2127,200 2280,215"/>
+</svg>
