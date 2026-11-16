@@ -34,7 +34,7 @@ matolabtheme = "ckanext.matolabtheme.plugin:MatolabthemePlugin"
 ckan = "ckan.lib.extract:extract_ckan"
 
 [project.optional-dependencies]
-dev = ["pytest", "pytest-ckan"]
+dev = ["pytest", "pytest-cov", "pytest-ckan"]
 
 [tool.setuptools.packages.find]
 include = ["ckanext*"]
