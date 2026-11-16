@@ -92,8 +92,18 @@ def _make_nav_item(menu_item: str, title: str, **kw: Any) -> Markup:
     )
 
 
+def theme_config(key: str, default: Any = None) -> Any:
+    """Read a ckanext.matolabtheme.* option from the CKAN config.
+
+    Since CKAN 2.12 the ``config`` object inside Jinja templates is the Flask
+    config, which no longer contains CKAN options. Use this helper instead.
+    """
+    return toolkit.config.get("ckanext.matolabtheme." + key, default)
+
+
 def get_helpers():
     return {
+        "theme_config": theme_config,
         "parent_site_url": parent_site_url,
         "custom_build_nav_main": custom_build_nav_main,
         "contact_url": contact_url,

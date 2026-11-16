@@ -1,7 +1,7 @@
 {% set intro = g.site_intro_text %}
 
 {% block home_image %}
-<section class="p-3 banner position-relative hero-section" style="background-image: url({{ h.url_for_static_or_external(config.get('ckanext.matolabtheme.banner_top')) }});">
+<section class="p-3 banner position-relative hero-section" style="background-image: url({{ h.url_for_static_or_external(h.theme_config('banner_top')) }});">
   <div class="row">
     <div class="col-6 col-sm-2 order-1 order-sm-1 d-flex justify-content-start align-items-center">
       <a class="d-flex justify-content-center" style="min-width: 100%;" href="{{ h.url_for('home.index') }}">

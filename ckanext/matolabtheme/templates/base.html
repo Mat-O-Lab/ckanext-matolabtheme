@@ -7,13 +7,13 @@
 {%- block styles %}
 {{ super() }}
 {% asset 'matolabtheme/style' %}
-{% if config.get('ckanext.matolabtheme.dark_mode') %}
+{% if h.theme_config('dark_mode') %}
 {% asset 'matolabtheme/dark' %}
 {% endif %}
 {% endblock %}
 
 {% block links -%}
-      <link rel="shortcut icon" href="{{ h.url_for_static_or_external(config.get('ckanext.matolabtheme.favicon')) }}" />
+      <link rel="shortcut icon" href="{{ h.url_for_static_or_external(h.theme_config('favicon')) }}" />
 {% endblock -%}
 
 {% block bodytag %}

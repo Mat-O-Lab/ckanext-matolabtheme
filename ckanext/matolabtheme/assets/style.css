@@ -1143,3 +1143,20 @@ aside,
   background-color: #fff !important;
   box-shadow: 0 2px 12px rgba(var(--bs-primary-rgb), 0.08);
 }
+
+/* CKAN 2.12 ships Select2 4.x, which marks the original <select> as
+   .select2-hidden-accessible (1px, clipped, absolutely positioned).
+   The footer language selector uses the native select, so undo that. */
+.site-footer .lang-select select.select2-hidden-accessible {
+  position: static !important;
+  clip: auto !important;
+  clip-path: none !important;
+  width: auto !important;
+  height: auto !important;
+  overflow: visible !important;
+  margin: 0 !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  padding: 0.1rem 0.3rem !important;
+  white-space: normal !important;
+}
+
