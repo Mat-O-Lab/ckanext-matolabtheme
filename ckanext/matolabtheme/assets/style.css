@@ -1160,3 +1160,66 @@ aside,
   white-space: normal !important;
 }
 
+/* Hero default title/subtitle (used when no site intro text is set):
+   scale with viewport height so title + subtitle + search always fit the
+   fixed-height hero on one row each. */
+.hero-section .hero-title {
+  font-size: clamp(1.5rem, 3.8vh, 2.6rem);
+  line-height: 1.1;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.hero-section .hero-subtitle {
+  font-size: var(--txt-md, 1rem);
+  margin: 0;
+}
+.hero-section .hero-subtitle > span {
+  font-size: inherit;
+}
+/* Search: one fixed row (input + button never wrap) */
+.hero-section form .input-group {
+  flex-wrap: nowrap;
+  width: min(28rem, 80vw);
+}
+.hero-section form {
+  margin: 0;
+  padding: 0;
+}
+
+/* Hero centre column: text area takes all free vertical space, the search
+   bar is pinned to the bottom with a fixed height. */
+.hero-section > .row {
+  align-items: stretch;
+}
+.hero-section .hero-center {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding: 0;
+}
+.hero-section .hero-text {
+  flex: 1 1 0;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.hero-section .hero-search {
+  flex: 0 0 auto;
+  height: 2.5rem;
+  margin-top: 0.5rem;
+}
+.hero-section .hero-search form {
+  height: 100%;
+}
+.hero-section .hero-search .input-group {
+  height: 100%;
+}
+.hero-section .hero-search .form-control,
+.hero-section .hero-search .btn {
+  height: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+}
