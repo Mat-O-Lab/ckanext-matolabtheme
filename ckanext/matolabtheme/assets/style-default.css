@@ -173,3 +173,23 @@ a:hover {
 .wrapper {
   border-top: 3px solid var(--bs-primary);
 }
+
+/* The .badge { color } rule above now sits in this file, after the .format-* colours of style.css. In the original single
+   stylesheet those came later and won, so declare them again here to keep that order on the default theme. */
+.format-csv,
+.format-pdf,
+.format-md,
+.format-markdown,
+.format-html,
+.format-json,
+.format-application-ld-json,
+.format-json-ld,
+.format-text-turtle,
+.format-text-turtle--charset-utf-8,
+.format-ttl,
+.format-sparql,
+.format-xml,
+.format-xlsx,
+.format-xls {
+  color: #fff;
+}

@@ -153,3 +153,12 @@ def test_midnight_royal_blue_is_mapped_to_our_primary():
     css = read("style-midnight.css")
     for needle in ("--bs-link-color: var(--bs-primary)", ".form-label", ".btn-primary", ".pagination"):
         assert needle in css, needle
+
+
+def test_default_theme_keeps_the_original_badge_cascade():
+    """.badge { color } moved to style-default.css, which loads after style.css. The .format-* colours used to come
+    later in the single stylesheet and won; they must be re-declared after it (found by a before/after pixel diff)."""
+    default = read("style-default.css")
+    i = default.index(".badge {")
+    tail = default[i:]
+    assert ".format-csv" in tail and "color: #fff" in tail
