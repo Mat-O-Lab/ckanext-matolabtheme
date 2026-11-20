@@ -101,10 +101,20 @@ def theme_config(key: str, default: Any = None) -> Any:
     return toolkit.config.get("ckanext.matolabtheme." + key, default)
 
 
+MIDNIGHT_BLUE_TEMPLATES = "templates-midnight-blue"
+
+
+def is_midnight_blue() -> bool:
+    """True when CKAN runs with the opt-in midnight-blue theme
+    (``ckan.base_templates_folder = templates-midnight-blue``)."""
+    return toolkit.config.get("ckan.base_templates_folder") == MIDNIGHT_BLUE_TEMPLATES
+
+
 def get_helpers():
     return {
         "theme_config": theme_config,
         "parent_site_url": parent_site_url,
         "custom_build_nav_main": custom_build_nav_main,
         "contact_url": contact_url,
+        "matolabtheme_is_midnight_blue": is_midnight_blue,
     }

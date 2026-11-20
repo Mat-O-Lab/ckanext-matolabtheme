@@ -19,6 +19,18 @@ style:
     - style.css
   output: matolabtheme/matolabtheme.css
 
+# overrides of the default CKAN theme (not loaded on midnight-blue, which styles these itself)
+style-default:
+  contents:
+    - style-default.css
+  output: matolabtheme/matolabtheme_default.css
+
+# fixes for the CKAN midnight-blue theme
+style-midnight:
+  contents:
+    - style-midnight.css
+  output: matolabtheme/matolabtheme_midnight.css
+
 dark:
   contents:
     - dark.css
