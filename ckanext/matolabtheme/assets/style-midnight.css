@@ -1,0 +1,30 @@
+/* matolabtheme: fixes for the CKAN midnight-blue theme (loaded instead of style-default.css) */
+
+/* midnight-blue paints every .homepage h1 / .h1 white (its hero is dark). Our counters sit on a light strip
+   and take their colour from the surrounding .counter-link, so give them back the inherited colour. */
+.homepage .counter-row h1,
+.homepage .counter-row .h1 {
+  color: inherit;
+}
+
+/* midnight-blue sets its own text colour for .badge[data-format=...], made for its pale badges.
+   style.css gives csv/json/pdf/rdf/zip solid brand backgrounds, so set a text colour that reads on each one
+   (contrast: dark on orange 5.9, dark on lime 8.9, white on red 4.5, white on navy 11.3, white on steel blue 4.3). */
+.badge[data-format="csv"],
+.badge[data-format*="csv"],
+.badge[data-format="json"],
+.badge[data-format*="json"] {
+  color: var(--bs-dark);
+}
+
+.badge[data-format="pdf"],
+.badge[data-format*="pdf"],
+.badge[data-format="rdf"],
+.badge[data-format*="rdf"],
+.badge[data-format*="nquad"],
+.badge[data-format*="ntriples"],
+.badge[data-format*="turtle"],
+.badge[data-format="zip"],
+.badge[data-format*="zip"] {
+  color: #fff;
+}

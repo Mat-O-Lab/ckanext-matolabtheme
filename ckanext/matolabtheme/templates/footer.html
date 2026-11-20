@@ -22,7 +22,7 @@
         {% block footer_attribution %}
         <span class="footer-attr-item">
           <span class="footer-attr-label">{{_('Powered by')}}:</span>
-          <a class="hide-text ms-1" href="http://ckan.org"><img class="footer-attr-logo" src="{{ h.url_for_static_or_external('/base/images/ckan-logo-footer.png') }}" alt="CKAN" /></a>
+          <a class="hide-text ms-1" href="http://ckan.org"><img class="footer-attr-logo" src="{{ h.url_for_static_or_external('/base/images/ckan-logo-white.png' if h.matolabtheme_is_midnight_blue() else '/base/images/ckan-logo-footer.png') }}" alt="CKAN" /></a>
         </span>
         {% if h.theme_config('attribution_logo') %}
         <span class="footer-attr-item ms-3">

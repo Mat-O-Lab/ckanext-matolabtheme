@@ -17,6 +17,7 @@ Compatibility with core CKAN versions:
 | 2.9 and earlier | not tested    |
 | 2.10            | ✓ CI tested   |
 | 2.11            | ✓ CI tested   |
+| 2.12            | ✓ tested      |
 
 
 ## Installation
@@ -41,6 +42,21 @@ sudo service apache2 reload
 ```
 
 ## Theming
+
+### CKAN base themes: default and midnight-blue
+The plugin works with both CKAN base themes. CKAN 2.12 ships an opt-in **midnight-blue** theme (the default of
+CKAN 3.0):
+
+```ini
+ckan.base_public_folder = public-midnight-blue
+ckan.base_templates_folder = templates-midnight-blue
+```
+
+(in Docker: `CKANINI__CKAN__BASE_PUBLIC_FOLDER` / `CKANINI__CKAN__BASE_TEMPLATES_FOLDER`). The plugin detects the active
+theme and loads matching styles: `style.css` always, `style-default.css` (overrides of forms, navigation, links... of the
+default theme) only on the default theme, and `style-midnight.css` (a few fixes) only on midnight-blue, which styles
+those parts itself. The optional dark mode (`ckanext.matolabtheme.dark_mode`) is only available on the default theme.
+The homepage, footer and dataset item templates replace their core counterparts and keep the Mat-O-Lab layout on both themes.
 
 ### Banners
 Header (`banner_top.svg`) and footer (`banner_bottom.svg`) are crisp SVG files —

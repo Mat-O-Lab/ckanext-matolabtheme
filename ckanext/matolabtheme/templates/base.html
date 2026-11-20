@@ -7,8 +7,14 @@
 {%- block styles %}
 {{ super() }}
 {% asset 'matolabtheme/style' %}
+{% if h.matolabtheme_is_midnight_blue() %}
+{# midnight-blue styles forms, nav, links... itself: only our fixes #}
+{% asset 'matolabtheme/style-midnight' %}
+{% else %}
+{% asset 'matolabtheme/style-default' %}
 {% if h.theme_config('dark_mode') %}
 {% asset 'matolabtheme/dark' %}
+{% endif %}
 {% endif %}
 {% endblock %}
 
