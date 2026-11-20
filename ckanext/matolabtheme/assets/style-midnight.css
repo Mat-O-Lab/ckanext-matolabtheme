@@ -7,6 +7,17 @@
   color: inherit;
 }
 
+/* --- format badges: midnight only colours some formats (as outlined badges) and leaves e.g. PNG/SVG
+       with white text and no background. Give every format badge a solid fallback; the per-format colours
+       from style.css (higher specificity) and the rules below win over it. --- */
+:where(.badge.format-badge) {
+  background-color: var(--bs-secondary);
+}
+
+.badge.format-badge {
+  color: #fff;
+}
+
 /* midnight-blue sets its own text colour for .badge[data-format=...], made for its pale badges.
    style.css gives csv/json/pdf/rdf/zip solid brand backgrounds, so set a text colour that reads on each one
    (contrast: dark on orange 5.9, dark on lime 8.9, white on red 4.5, white on navy 11.3, white on steel blue 4.3). */
@@ -27,4 +38,105 @@
 .badge[data-format="zip"],
 .badge[data-format*="zip"] {
   color: #fff;
+}
+
+
+/* --- brand colour: midnight-blue hard-codes its own royal blue (#153084) in most components instead of using
+       --bs-primary, so links, buttons and panels would not match the navy palette set in style.css. --- */
+:root,
+[data-bs-theme="light"] {
+  --bs-link-color: var(--bs-primary);
+  --bs-link-hover-color: color-mix(in srgb, var(--bs-primary), black 25%);
+}
+
+.form-label,
+.col-form-label {
+  color: var(--bs-primary);
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: color-mix(in srgb, var(--bs-primary), black 15%);
+  --bs-btn-hover-border-color: color-mix(in srgb, var(--bs-primary), black 15%);
+  --bs-btn-active-bg: color-mix(in srgb, var(--bs-primary), black 25%);
+  --bs-btn-active-border-color: color-mix(in srgb, var(--bs-primary), black 25%);
+  --bs-btn-disabled-bg: var(--bs-primary);
+  --bs-btn-disabled-border-color: var(--bs-primary);
+}
+
+.btn-outline-primary,
+.btn-link {
+  --bs-btn-color: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: var(--bs-primary);
+  --bs-btn-hover-border-color: var(--bs-primary);
+  --bs-btn-active-bg: var(--bs-primary);
+  --bs-btn-active-border-color: var(--bs-primary);
+  --bs-btn-disabled-color: var(--bs-primary);
+  --bs-btn-disabled-border-color: var(--bs-primary);
+}
+
+.nav {
+  --bs-nav-link-color: var(--bs-primary);
+}
+
+.pagination {
+  --bs-pagination-color: var(--bs-primary);
+  --bs-pagination-active-bg: var(--bs-primary);
+  --bs-pagination-active-border-color: var(--bs-primary);
+}
+
+.secondary .accordion .accordion-button:not(.collapsed),
+.module-narrow .nav-item.active,
+.module-narrow .nav-aside li.active,
+.secondary .nav-options .active,
+.secondary .nav-options .active:hover,
+.followee-container li.active,
+.form-check-input:checked,
+.form-check-input[type="checkbox"]:indeterminate {
+  background-color: var(--bs-primary);
+}
+
+.form-control:focus,
+.form-select:focus,
+.form-check-input:focus,
+.form-check-input:checked,
+.view-list li a.active,
+.view-list li a:hover,
+.view-list li.active a {
+  border-color: var(--bs-primary);
+}
+
+/* --- spacing: the white background we give the columns (style.css) is a container in our design, but
+       midnight-blue lays the panels out as free cards without any inner padding, so the first panel and
+       the results box touched the container's top edge. --- */
+.main .secondary {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+/* --- "Anmelden" (btn-outline-light on the teal hero): style.css fills the button with --bs-dark on hover, which is a
+       charcoal block on the gradient. Invert it instead: light fill, primary-coloured text. The base rule sets its text
+       colour with !important, so the hover rule needs it as well. --- */
+.btn-outline-light:hover,
+.btn-outline-light:focus-visible,
+.btn-outline-light:active {
+  color: var(--bs-primary) !important;
+  background-color: var(--bs-light);
+  border-color: var(--bs-light);
+}
+
+/* --- sticky footer: on short pages (login, ...) the footer ended mid-window. The default theme got this from a
+       flex-column <body> plus .wrapper { flex-grow: 1 } (style-default.css); midnight-blue has no .wrapper and its
+       main part differs per page (.main, .login-main, ...), so push the footer down instead. The homepage has its
+       own full-height layout and is left alone. --- */
+body:not(.homepage) {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body:not(.homepage) > .site-footer {
+  margin-top: auto;
 }

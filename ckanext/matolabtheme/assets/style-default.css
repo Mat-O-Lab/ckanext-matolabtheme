@@ -131,3 +131,45 @@ a {
 .tab-content > .active {
   display: block;
 }
+
+/* layout, typography and spacing parts of rules whose colours stay in style.css (midnight-blue does these itself) */
+:root {
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+  --bs-body-font-family: var(--bs-font-sans-serif);
+  --bs-body-font-size: 1rem;
+  --bs-body-font-weight: 400;
+  --bs-body-line-height: 1.5;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
+a:hover {
+  text-decoration: underline;
+}
+.wrapper {
+  position: relative;
+  min-height: 300px;
+}
+.invisible {
+  visibility: hidden;
+}
+.js .table-toggle-more .toggle-seperator td {
+  height: 11px;
+  padding: 0;
+  mix-blend-mode: multiply;
+}
+.page-item.disabled .page-link {
+  pointer-events: none;
+}
+.wrapper {
+  border-top: 3px solid var(--bs-primary);
+}
