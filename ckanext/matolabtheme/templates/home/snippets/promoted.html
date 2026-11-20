@@ -1,7 +1,7 @@
 {% set intro = g.site_intro_text %}
 
 {% block home_image %}
-<section class="p-3 banner position-relative hero-section" style="background-image: url({{ h.url_for_static_or_external(config.get('ckanext.matolabtheme.banner_top')) }});">
+<section class="p-3 banner position-relative hero-section" style="background-image: url({{ h.url_for_static_or_external(h.theme_config('banner_top')) }});">
   <div class="row">
     <div class="col-6 col-sm-2 order-1 order-sm-1 d-flex justify-content-start align-items-center">
       <a class="d-flex justify-content-center" style="min-width: 100%;" href="{{ h.url_for('home.index') }}">
@@ -12,31 +12,29 @@
         {% endif %}
       </a>
     </div>
-    <div class="col-12 col-sm-8 order-3 order-sm-2">
-      <div class="row justify-content-md-center align-items-center text-light justify-content-center">
-        <div class="col-12 text-center pt-3">
-          {% if intro %}
-          {{ h.render_markdown(intro|replace('^[ \t]*|[ \t]*$', '')) }}
-          {% else %}
-          <h1 class="display-1 text-center fw-bold mb-4">{{ g.site_description or g.site_title }}</h1>
-          <p class="lead text-center mb-3 d-flex justify-content-sm-center">
-            <span class="col-12 fw-bold fs-3">
-              {% trans %}Find and explore datasets — all in one place.{% endtrans %}
-            </span>
-          </p>
-          {% endif %}
-          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-3">
-            <form class="nav navbar-form navbar-left" action="{{ url_for('dataset.search') }}" method="get">
-              <div class="input-group">
-                <input id="search" class="form-control" type="search" name="q"
-                  placeholder="{{ _('Search...') }}" aria-label="{{ _('Search') }}"/>
-                <button class="btn btn-primary" type="submit" aria-label="{{ _('Submit') }}">
-                  <i class="fa fa-search"></i>
-                </button>
-              </div>
-            </form>
+    <div class="col-12 col-sm-8 order-3 order-sm-2 hero-center">
+      <div class="hero-text text-light text-center">
+        {% if intro %}
+        {{ h.render_markdown(intro|replace('^[ \t]*|[ \t]*$', '')) }}
+        {% else %}
+        <h1 class="hero-title text-center fw-bold">{{ g.site_description or g.site_title }}</h1>
+        <p class="hero-subtitle text-center d-flex justify-content-sm-center">
+          <span class="col-12 fw-bold">
+            {% trans %}Find and explore datasets — all in one place.{% endtrans %}
+          </span>
+        </p>
+        {% endif %}
+      </div>
+      <div class="hero-search d-flex justify-content-center">
+        <form class="nav navbar-form navbar-left" action="{{ url_for('dataset.search') }}" method="get">
+          <div class="input-group">
+            <input id="search" class="form-control" type="search" name="q"
+              placeholder="{{ _('Search...') }}" aria-label="{{ _('Search') }}"/>
+            <button class="btn btn-primary" type="submit" aria-label="{{ _('Submit') }}">
+              <i class="fa fa-search"></i>
+            </button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
     <div class="col-6 col-sm-2 order-2 order-sm-3 d-flex justify-content-end align-items-center">

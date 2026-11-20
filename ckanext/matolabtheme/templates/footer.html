@@ -1,4 +1,4 @@
-<footer class="site-footer bsb-overlay" style="background-image: url({{ h.url_for_static_or_external(config.get('ckanext.matolabtheme.banner_bottom')) }});">
+<footer class="site-footer bsb-overlay" style="background-image: url({{ h.url_for_static_or_external(h.theme_config('banner_bottom')) }});">
   <div class="container">
     {% block footer_content %}
     {% set api_url = 'http://docs.ckan.org/en/{0}/api/'.format(g.ckan_doc_version) %}
@@ -24,10 +24,10 @@
           <span class="footer-attr-label">{{_('Powered by')}}:</span>
           <a class="hide-text ms-1" href="http://ckan.org"><img class="footer-attr-logo" src="{{ h.url_for_static_or_external('/base/images/ckan-logo-footer.png') }}" alt="CKAN" /></a>
         </span>
-        {% if config.get('ckanext.matolabtheme.attribution_logo') %}
+        {% if h.theme_config('attribution_logo') %}
         <span class="footer-attr-item ms-3">
           <span class="footer-attr-label">{{_('Provided by')}}:</span>
-          <a class="hide-text ms-1" href="{{ h.contact_url() }}"><img class="footer-attr-logo" src="{{ h.url_for_static_or_external(config.get('ckanext.matolabtheme.attribution_logo')) }}" alt="" /></a>
+          <a class="hide-text ms-1" href="{{ h.contact_url() }}"><img class="footer-attr-logo" src="{{ h.url_for_static_or_external(h.theme_config('attribution_logo')) }}" alt="" /></a>
         </span>
         {% endif %}
         {% endblock %}
@@ -41,7 +41,7 @@
       {# Right row 3: action buttons #}
       <div class="footer-right">
         <a class="btn btn-sm btn-outline-light" href="{{ h.contact_url() }}" role="button">{{ _('Contact Us')}}</a>
-        <a class="btn btn-sm btn-outline-light ms-2" href="{{config.get('ckanext.matolabtheme.legal_notice_url')}}">{{ _('Legal Notice') }}</a>
+        <a class="btn btn-sm btn-outline-light ms-2" href="{{h.theme_config('legal_notice_url')}}">{{ _('Legal Notice') }}</a>
       </div>
 
     </div>

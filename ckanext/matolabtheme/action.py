@@ -55,11 +55,10 @@ def theme_stats(context: Context, data_dict: dict[str, Any]) -> dict[str, Any]:
             resource.c["state"] != "deleted",
         )
     )
-    res_rows = conn.execute(s).fetchall()
+    res = conn.execute(s).scalar()
     orgs = [serialize_row(row) for row in org_rows]
     org_count = len(orgs)
     pkg_sum = sum([org.get("count", 0) for org in orgs])
-    res = res_rows[0]["count_1"] if len(res_rows) > 0 else None
     # res_count = len(model.Package().resources)
     return {
         "orgs": orgs,
